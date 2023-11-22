@@ -1,0 +1,45 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+:root {
+    --ifm-color-primary: #4688fa;
+    --ifm-color-primary-dark: #2e72ea;
+    --ifm-color-primary-darker: #1c5bc8;
+    --ifm-color-primary-darkest: #113d8a;
+    --ifm-color-primary-light: #5c97ff;
+    --ifm-color-primary-lighter: #71bdff;
+    --ifm-color-primary-lightest: #8fd6ff;
+    --ifm-code-font-size: 95%;
+    --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme='dark'] {
+    --ifm-color-primary: #4688fa;
+    --ifm-color-primary-dark: #2e72ea;
+    --ifm-color-primary-darker: #1c5bc8;
+    --ifm-color-primary-darkest: #113d8a;
+    --ifm-color-primary-light: #5c97ff;
+    --ifm-color-primary-lighter: #71bdff;
+    --ifm-color-primary-lightest: #8fd6ff;
+    --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
+
+.dropdown-separator {
+    margin: 0.3rem 0.2rem;
+}
+
+body {
+    font-family: Roboto, noto sans, noto sans cjk, open sans, helvetica neue, sans-serif;
+    font-size: 15px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Roboto, noto sans, noto sans cjk, open sans, helvetica neue, sans-serif;
+}
+
+code {
+    font-family: Monaco, Menlo, Consolas, dejavu sans mono, monospace;
+}
