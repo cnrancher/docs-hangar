@@ -13,7 +13,7 @@ const config = {
     baseUrl: "/",
     // GitHub pages deployment config.
     organizationName: "cnrancher",
-    projectName: "hangar-docs",
+    projectName: "docs-hangar",
     onBrokenLinks: "log",
     onBrokenMarkdownLinks: "throw",
     onDuplicateRoutes: "warn",
@@ -91,7 +91,7 @@ const config = {
                             value: "<hr class='dropdown-separator'>",
                         },
                         {
-                            to: "https://github.com/cnrancher/hangar-docs/i18n/",
+                            to: "https://github.com/cnrancher/docs-hangar/i18n/",
                             label: "Help us translate",
                         },
                     ],
@@ -117,7 +117,7 @@ const config = {
                     routeBasePath: "docs",
                     sidebarPath: require.resolve("./sidebars.js"),
                     showLastUpdateTime: true,
-                    editUrl: "https://github.com/cnrancher/hangar-docs/edit/main/",
+                    editUrl: "https://github.com/cnrancher/docs-hangar/edit/main/",
                     lastVersion: "v1.6",
                     versions: {
                         "current": {
