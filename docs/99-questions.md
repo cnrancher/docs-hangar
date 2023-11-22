@@ -55,3 +55,7 @@ See [archive](save/archive) page.
 4. Warning: `no avaiable image for specified arch and os`
 
     The architecture / OS of the image to be copied does not match the architecture & OS specified by the `--arch` and `--os` parameter.
+
+    Example：the image to be copied only contains `amd64` architecture, but `--arch` option of hangar is `arm64`.
+
+    This warning message will not affect the image copy process. When this warning message shows, it is only used to inform that this container image has not been copied.

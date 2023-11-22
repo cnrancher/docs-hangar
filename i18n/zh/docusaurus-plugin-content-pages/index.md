@@ -2,34 +2,29 @@
 
 # Hangar
 
-Hangar 是一个灵活且易用的容器镜像拷贝工具，支持多架构 & 跨平台容器镜像拷贝，旨在简化复杂的批量拷贝容器镜像至私有镜像仓库过程。
+Hangar 是一个灵活且易用的容器镜像拷贝工具，支持多架构 & 多平台容器镜像拷贝，旨在简化复杂的批量拷贝容器镜像至私有镜像仓库过程。
 
-Hangar 支持以下功能：
-- 在镜像仓库（Registry）之间 Mirror 容器镜像（参考 [Mirror](#) 命令）。
-- 从镜像仓库中下载容器镜像至本地压缩包中（参考 [Save](#) 命令），之后将压缩包中的镜像上传至镜像仓库服务器中（参考 [Load](#) 命令）。
-- 验证已拷贝的容器镜像，确保容器镜像均被正确的拷贝（参考 [Validate](#) 命令）。
-- 其他用于处理镜像列表文件以及压缩包文件的高级命令（参考 [高级用法](#)）。
+- Hangar 不依赖任何容器运行时（Daemon）。
+- 不受运行的系统和架构限制，支持 Linux/Unix 系统。
+- 支持 Docker 镜像和 [OCI 镜像](https://github.com/opencontainers/image-spec)。
+- 支持并发拷贝容器镜像，提高性能。
+- 支持从压缩文件中导入/导出容器镜像，以应用在离线部署（Air-Gap）场景。
+
+Hangar 提供了以下功能：
+
+- 在镜像仓库（Registry）之间 Mirror 容器镜像（参考 [Mirror](/docs/mirror/mirror) 命令）。
+- 从镜像仓库中下载容器镜像至压缩包中（参考 [Save](/docs/save/save) 命令），之后将压缩包中的镜像上传至镜像仓库服务器中（参考 [Load](/docs/load/load) 命令），适用于离线部署（Air-Gap）镜像仓库。
+- 验证已拷贝的容器镜像，确保容器镜像均被正确的拷贝（参考 [Validate](/docs/advanced-usage/validate) 命令）。
+- 其他用于处理镜像列表文件以及处理压缩包的高级命令（参考 [高级用法](/docs/advanced-usage)）。
 
 ## 使用文档
 
-Hangar 使用文档可在本站的 [Documents](/zh/docs/) 页面获取。
+Hangar 详细使用文档可在本站的 [Documents](/zh/docs/) 页面获取。
 
 ## 依赖
 
-自 Hangar `v1.7.0` 版本起，Hangar 移除了所有的第三方可执行二进制文件依赖。
+自 Hangar `v1.7.0` 版本起，Hangar 移除了所有的第三方可执行二进制文件依赖，以提高容器镜像拷贝速度并减少性能损耗。
 
-## License
+## 贡献代码
 
-Copyright 2023 SUSE Rancher.
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+如果您在使用过程中遇到了 BUG 或对 Hangar 有任何建议，欢迎提交 [Issue](https://github.com/cnrancher/hangar/issues) 或 [PR](https://github.com/cnrancher/hangar/pulls)。

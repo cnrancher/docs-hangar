@@ -1,12 +1,12 @@
 ---
-title: "Mirror Command"
+title: "Mirror 命令"
 ---
 
-`hangar mirror` command is for mirror multiple container images between image registry servers. It allows you to specify architecture and platforms when copying image, and use multiple workers to copy images parallelly.
+`hangar mirror` 命令用在镜像仓库服务器之间于批量拷贝容器镜像。Hangar 允许您指定需要拷贝的容器镜像架构 & 平台参数，启用多线程并发拷贝容器镜像。
 
-## Quick Start
+## 快速上手
 
-Use following command to mirror multiple images between image registry servers parallelly:
+使用以下命令在镜像仓库服务器之间多线程的批量拷贝容器镜像：
 
 ```bash
 hangar mirror \
@@ -18,11 +18,11 @@ hangar mirror \
     --jobs=4
 ```
 
-## Image List Format
+## 镜像列表格式
 
-`hangar mirror` command supports two different kinds of image list formats, see [Image List Formats](image-list-format) for image list format specification.
+`hangar mirror` 支持两种不同的镜像列表格式，请参考 [镜像列表格式](image-list-format) 页面。
 
-## Usage
+## 使用方法
 
 ```txt title="hangar mirror --help"
 Mirror images between registry servers

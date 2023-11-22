@@ -1,13 +1,13 @@
 ---
-title: "Load Command"
+title: "Load 命令"
 ---
 
-The `hangar load` command loads images from zip archive file created by [save](../save/save) command to registry server, it allows to upload container images to registry server without a public internet connection,
-and the `load` command can be used in Air-Gapped (offline) installation scenarios.
+`hangar load` 命令将 [save](../save/save) 命令创建的压缩包中的镜像上传至镜像仓库服务器中。
+您可以在没有公网连接的环境上传容器镜像，`load` 命令适用于离线环境（Air-Gap）场景部署私有镜像仓库。
 
-## Quick Start
+## 快速上手
 
-Use following command to load multiple container images from archive file created by [save](../save/save#quick-start) command to the *destination registry server* parallelly.
+使用以下命令将压缩包中存储的镜像批量上传至**目标镜像仓库**中：
 
 ```bash
 hangar load \
@@ -19,7 +19,7 @@ hangar load \
     --jobs=4
 ```
 
-## Usage
+## 使用方法
 
 ```txt title="hanagr load --help"
 Load images from zip archive created by 'save' command to registry server.
@@ -66,41 +66,41 @@ Use "hangar load [command] --help" for more information about a command.
 
 ## Harbor 2.X
 
-Hangar will try to create **Harbor Project** automatically on `load` command if the destination registry is harbor.
+若*目标镜像仓库*为 Harbor，Hangar `load` 命令将尝试自动为目标镜像仓库创建 **Harbor Project**。
 
-You need to create **Harbor Project** manually if Hangar can't create the project automatically, or the image will fail to copy.
+若 Hangar 无法自动创建 **Harbor Project**，请手动创建。
 
-## Load from different architecture archives
+## 加载不同架构的压缩包文件
 
-This feature allows you to sequentially load container images from multiple archive files containing different architectures.
+Hangar 的此特性允许依次从包含不同架构的容器镜像压缩包中上传镜像至镜像仓库服务器中。
 
-Here is an example:
+请参考以下例子：
 
-1. Prepare an image list file.
+1. 准备一份镜像列表。
 
     ```txt title="example_image_list.txt"
     docker.io/library/nginx:1.22
     docker.io/library/nginx:1.23
     ```
-2. Save images by different architectures.
+2. 使用 `save` 分别创建包含不同架构的压缩包。
 
     ```bash
-    # Save AMD64 (x86_64) architecture images only
+    # 仅下载 AMD64 (x86_64) 架构容器镜像
     hangar save -f example_image_list.txt -d amd64-images.zip -a amd64
     ```
 
     ```bash
-    # Save ARM64 (aarch64) architecture images only
+    # 仅下载 ARM64 (aarch64) 架构容器镜像
     hangar save -f example_image_list.txt -d arm64-images.zip -a arm64
     ```
 
-3. Load the `amd64` (x86_64) architecture images from archive file first.
+3. 先将 `amd64` (x86_64) 架构的镜像上传至镜像仓库中。
 
     ```bash
     hangar load -s amd64-images.zip -d DESTINATION_REGISTRY_URL
     ```
 
-    The manifest of the loaded images only contains the AMD64 architecture:
+    已上传至镜像仓库的镜像 Manifest 索引如下，仅包含 AMD64 架构：
 
     ```bash
     hangar inspect docker://<DESTINATION_REGISTRY_URL>/library/nginx:1.22 --raw | jq
@@ -121,13 +121,13 @@ Here is an example:
     }
     ```
 
-4. Then load the `arm64` (aarch64) architecture images from archive file.
+4. 再将包含 `arm64` (aarch64) 架构的容器镜像上传至镜像仓库。
 
     ```bash
     hangar load -s arm64-images.zip -d DESTINATION_REGISTRY_URL
     ```
 
-    Now the manifest of the loaded images contains both AMD64 and ARM64 architectures:
+    现在已上传至镜像仓库的镜像 Manifest 索引将包含 AMD64 和 ARM64 两种架构：
 
     ```bash
     hangar inspect docker://<DESTINATION_REGISTRY_URL>/library/nginx:1.22 --raw | jq

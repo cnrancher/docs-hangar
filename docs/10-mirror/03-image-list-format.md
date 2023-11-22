@@ -19,13 +19,15 @@ title: "Image List Formats"
     Each line contains **"[source image] [destination image] [TAG]"**, separated with white space `' '`:
 
     ```txt title="Mirror format example"
-    # <SOURCE> <DEST> <TAG>
+    # <SOURCE> <DESTINATION> <TAG>
 
-    docker.io/hello-world private.io/library/hello-world latest
-    nginx                 example.io/library/nginx       1.22
-    mysql                 example.io/mysql/mysql         8
+    docker.io/hello-world private.io/library/mirrored-hello-world latest
+    nginx                 example.io/library/mirrored-nginx       1.22
+    mysql                 example.io/mysql/mirrored-mysql         8
+    quay.io/skopeo/stable example.io/library/mirrored-skopeo      latest
     ```
 
-    The "mirror" format is used for mirror multiple images to different registry servers and projects.
+    The "mirror" format is used for rename the copied destination image name,
+    and it allows to mirror multiple images to different registry servers and projects.
 
 The line begin with `//` or `#` will be treated as comment.

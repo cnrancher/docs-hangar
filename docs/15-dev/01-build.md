@@ -15,7 +15,7 @@ You can follow the below instructions to build hangar executable binary.
     ```bash
     git clone https://github.com/hangar.git && cd hangar
     ```
-1. Build hangar by using `Makefile`:
+1. Build hangar by using `make`:
     ```bash
     # Get help information
     make help
@@ -26,3 +26,4 @@ You can follow the below instructions to build hangar executable binary.
     # Clean up the generated files
     make clean
     ```
+1. The built binary file is available in `bin` directory.

@@ -26,7 +26,7 @@ Therefore, this will cause Hangar to no longer support `tar.gz` format compresse
 ## Different with `docker save`
 
 The archive file created by Hangar is not compatible with `docker save` or other tools (`podman`) archive files,
-and currently the Hangar [load](load) command only supports to upload container images to registry server.
+and currently the Hangar [load](../load/load) command only supports to upload container images to registry server.
 It does not support export container images from archive file to docker daemon, CRI-O and containerd daemon protocol.
 
 The file size of the archive file created by Hangar is similar (or much smaller) than archive files created by other tools.

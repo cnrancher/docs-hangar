@@ -2,7 +2,7 @@
 
 # Hangar
 
-Hangar is a **simple** and **easy-to-use** command line utility for mirroring multi-architecture & platform container images between container image registries. Aiming to simplify the process of copying container images between image registries.
+Hangar is a **simple** and **easy-to-use** command line utility for mirroring multi-architecture & multi-platform container images between container image registries. Aiming to simplify the process of copying container images between image registries.
 
 - Hangar allows to copy container images without container runtime (daemon).
 - Not restricted by the architecture and OS of the runtime system, it supports running on Linux/Unix systems.
