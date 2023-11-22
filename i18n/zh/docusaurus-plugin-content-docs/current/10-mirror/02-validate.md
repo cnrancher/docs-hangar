@@ -6,7 +6,7 @@ title: "Mirror Validate 命令"
 
 ## 快速上手
 
-在执行完 [mirror](mirror#quick-start) 命令后，使用下方命令校验已拷贝的镜像:
+在执行完 [mirror](mirror#快速上手) 命令后，使用下方命令校验已拷贝的镜像:
 
 ```bash
 hangar mirror validate \

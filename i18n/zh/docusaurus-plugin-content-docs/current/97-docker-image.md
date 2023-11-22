@@ -6,7 +6,7 @@ Hangar 的 Docker 镜像支持 `amd64` 和 `arm64` 架构。
 
 :::note
 
-自 Hangar `v1.7.0` 起，Hangar Docker 镜像的入口程序（Entrypoint）将改为 `bash`，而非 `hangar` 可执行文件。
+自 Hangar `v1.7.0` 起，Hangar Docker 镜像的 Entrypoint 改为 `bash`，而非 `hangar` 可执行文件。
 
 :::
 

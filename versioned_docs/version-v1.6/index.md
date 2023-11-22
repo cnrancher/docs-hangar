@@ -9,8 +9,8 @@ sidebar_position: 0
 - [save](save/save): Download the container image to the local file and generate a compressed package.
 - [load](load/load): Load the file created by [save](save/save) command onto the private registry.
 - [convert-list](advanced-usage/convert-list): Convert image list from `rancher-images.txt` to format used by [mirror](mirror/mirror) command.
-- [mirror-validate](mirror/mirror-validate): Validate the mirrored image.
-- [load-validate](load/load-validate): Validate the loaded image.
+- [mirror-validate](mirror/validate): Validate the mirrored image.
+- [load-validate](load/validate): Validate the loaded image.
 - [sync](advanced-usage/sync): Sync extra images into image cache folder.
 - [compress](advanced-usage/compress): Compress the image cache folder.
 - [decompress](advanced-usage/decompress): Decompress tarball created by [save](save/save) command.

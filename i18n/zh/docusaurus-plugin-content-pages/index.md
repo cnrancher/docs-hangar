@@ -19,7 +19,7 @@ Hangar 提供了以下功能：
 
 ## 使用文档
 
-Hangar 详细使用文档可在本站的 [Documents](/zh/docs/) 页面获取。
+Hangar 详细使用文档可在本站的 [使用文档](/zh/docs/) 页面获取。
 
 ## 依赖
 
