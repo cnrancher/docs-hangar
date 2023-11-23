@@ -6,11 +6,10 @@ title: "常见问题"
 
 使用的依赖：
 
-1. Hangar 使用了 [comtainers/images](https://github.com/containers/image) API 执行容器镜像拷贝相关操作。
-
-    因为 [containers/signature](https://github.com/containers/signature) API 使用了 C 库，因此在编译 Hangar 时需要启用 `CGO`，编译后的可执行文件存在动态链接库。
-
-1. Hangar 使用 [helm](https://github.com/helm/helm) 依赖用于在 Helm Chart 中生成镜像列表。
+1. Hangar 使用了 [containers/images](https://github.com/containers/image) API 执行容器镜像拷贝相关操作。<br />
+    因 [containers/signature](https://github.com/containers/signature) API 使用了 C 库，因此在编译 Hangar 时需要启用 `CGO`，编译后的可执行文件存在动态链接库。
+1. Hangar 使用 [Helm](https://github.com/helm/helm) API 用于在 Helm Chart 中生成镜像列表。
+1. Hangar 使用 [cobra](https://github.com/spf13/cobra) 处理命令行交互，生成 [命令行补全脚本](advanced-usage/completion)。
 
 ## Hangar 缓存文件夹
 
@@ -65,3 +64,11 @@ Hangar 使用 `${HOME}/.cache/hangar_cache` 暂存下载的容器镜像 Blobs �
     例如待拷贝的镜像仅支持 `amd64` 架构，而 `--arch` 设定的是 `arm64` 时，会出现此 Warning 信息。
 
     此警告信息不会影响正常的镜像拷贝流程，当出现此警告时只用于提醒该镜像没有被拷贝。
+
+1. 在向 Harbor 仓库拷贝镜像时遇到报错：`authentication required`
+
+    请检查镜像的 Harbor Project 是否已经创建，在执行 `hangar mirror` 命令时需要手动创建 Harbor Project。
+
+1. 报错：`server gave HTTP response to HTTPS client`
+
+    若镜像仓库使用自签名 HTTPS 证书或 HTTP，请添加 `--tls-verify=false` 参数。

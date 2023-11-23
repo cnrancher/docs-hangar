@@ -2,7 +2,7 @@
 title: "Shell Completion"
 ---
 
-The `hangar completion` command allows to generate a shell completion script for different shells.
+The `hangar completion` command allows to generate shell completion scripts for different shells.
 
 ## Quick Start
 

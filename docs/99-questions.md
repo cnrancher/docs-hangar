@@ -6,11 +6,10 @@ title: "Q&A"
 
 Dependencies:
 
-1. Hangar uses [comtainers/images](https://github.com/containers/image) dependecy to perform image copy operations.
-
+1. Hangar uses [containers/images](https://github.com/containers/image) dependecy to perform image copy operations.<br />
     Since the [containers/signature](https://github.com/containers/signature) API uses C libraries, so CGO was enabled when building hangar binary, and the built binary file has dynamic link libraries.
-
-1. Hangar uses [helm](https://github.com/helm/helm) dependencies to generate image list from helm chart.
+1. Hangar uses [Helm](https://github.com/helm/helm) library for generating image list from Helm Chart.
+1. Hangar uses [cobra](https://github.com/spf13/cobra) library to handle commands and generate [shell completion scripts](advanced-usage/completion).
 
 ## Hangar cache directory
 
@@ -65,3 +64,11 @@ See [archive](save/archive) page.
     Example：the image to be copied only contains `amd64` architecture, but `--arch` option of hangar is `arm64`.
 
     This warning message will not affect the image copy process. When this warning message shows, it is only used to inform that this container image has not been copied.
+
+1. Error when copy images to Harbor 2.X registry: `authentication required`
+
+    Check whether the Harbor Project exists. You need to create Harbor Project manually when running `mirror` command.
+
+1. Error: `server gave HTTP response to HTTPS client`
+
+    Add `--tls-verify=false` option if registry server is using self-signed certificate or HTTP.
