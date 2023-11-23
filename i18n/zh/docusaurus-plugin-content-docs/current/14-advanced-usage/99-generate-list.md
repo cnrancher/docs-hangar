@@ -4,7 +4,13 @@ title: "generate-list 命令"
 
 `hangar generate-list` 命令用于生成 Rancher 镜像列表。
 
-## QuickStart
+:::warning
+
+`generate-list` 命令仅适用于测试场景，请在 Rancher GitHub [Release](https://github.com/rancher/rancher/releases) 页面下载对应版本的 `rancher-images.txt` 镜像列表！
+
+:::
+
+## 快速上手
 
 根据 Rancher 版本号，获取最新的 KDM 数据，并自动克隆 Chart 仓库到本地，生成镜像列表：
 

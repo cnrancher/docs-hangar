@@ -11,6 +11,8 @@ If some images fail to download when running the [save](../save/save) command, y
 Use following command to append new container images to the existing archive file created by [save](../save/save#quick-start) command parallelly:
 
 ```bash
+#!/bin/bash
+
 hangar sync \
     --file="extra_image_list.txt" \
     --source="docker.io" \

@@ -18,7 +18,7 @@ title: "压缩文件格式"
 
 ## 为什么使用 zip 格式？
 
-相比 TAR 归档格式（`tar.gz`），`zip` 文件格式包含一份文件索引（[Directory](https://en.wikipedia.org/wiki/ZIP_(file_format)#Structure)) 记录了压缩包中存储的文件信息，因此 `zip` 格式支持随机读取，且支持向已有的压缩包文件中增添新的文件。因此 Hangar 1.7 改为使用 `zip` 文件格式，以减少执行 `save/load/sync` 命令时不必要的磁盘空间浪费。
+相比压缩的 TAR 归档格式（`tar.gz`），`zip` 文件格式包含一份文件索引（[Directory](https://en.wikipedia.org/wiki/ZIP_(file_format)#Structure)) 记录了压缩包中存储的文件信息，因此 `zip` 格式支持随机读取，且支持向已有的压缩包文件中增添新的文件。因此 Hangar 1.7 改为使用 `zip` 文件格式，以减少执行 `save/load/sync` 命令时不必要的磁盘空间浪费。
 
 因此，Hangar 将不再支持 `tar.gz` 格式的文件，旧版本中所使用的 `saved-image-cache` 缓存文件夹也将不复存在。
 

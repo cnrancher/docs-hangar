@@ -8,15 +8,35 @@ title: "Mirror Command"
 
 Use following command to mirror multiple images between image registry servers parallelly:
 
-```bash
-hangar mirror \
-    --file=IMAGE_LIST.txt \
-    --source=[SOURCE_REGISTRY_URL] \
-    --destination=[DESTINATION_REGISTRY_URL] \
-    --arch=amd64,arm64 \
-    --os=linux \
-    --jobs=4
-```
+1. Prepare an example image list file.
+
+    ```txt title="example_image_list.txt"
+    cnrancher/hangar:latest
+    cnrancher/hangar:v1.7.0
+    # Add more images here...
+    ```
+
+    > Hangar `mirror` command supports two kinds of image list file formats, the image list file in this example is in `default` format. See [Image List Formats](image-list-format) for image list format specification.
+
+1. Run following command to mirror **amd64 & arm64, linux** container images by image list file from *SOURCE REGISTRY* to *DESTINATION REGISTRY* parallelly.
+
+    ```bash
+    #!/bin/bash
+
+    hangar mirror \
+        --file="example_image_list.txt" \
+        --source=SOURCE_REGISTRY_URL \
+        --destination=DESTINATION_REGISTRY_URL \
+        --arch=amd64,arm64 \
+        --os=linux \
+        --jobs=4
+    ```
+
+1. Use [inspect](../advanced-usage/inspect) command to view the copitd image manifest.
+
+    ```bash
+    hangar inspect --raw docker://DESTINATION_REGISTRY_URL/cnrancher/hangar:latest
+    ```
 
 ## Image List Format
 

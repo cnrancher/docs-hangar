@@ -9,6 +9,8 @@ title: "获取压缩包中存储的镜像信息"
 使用以下命令查看 [save](../save/save#快速上手) 创建的压缩包中包含的镜像信息：
 
 ```bash
+#!/bin/bash
+
 hangar archive ls --file="save_example.zip"
 ```
 

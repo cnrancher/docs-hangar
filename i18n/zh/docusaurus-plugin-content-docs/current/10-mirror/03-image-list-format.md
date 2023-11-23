@@ -4,7 +4,7 @@ title: "镜像列表格式"
 
 `hangar mirror` 命令支持两种不同的镜像列表格式：
 
-1. 默认（Default）镜像列表格式（此格式可用于 `mirror/save/load/sync`）命令：
+1. 默认（Default）镜像列表格式（此格式适用于 `mirror/save/load/sync` 命令）：
 
     ```text title="默认镜像列表格式"
     # <REGISTRY>/<PROJECT>/<NAME>:<TAG>

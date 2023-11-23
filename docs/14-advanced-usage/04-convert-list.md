@@ -2,7 +2,13 @@
 title: "Convert image list format"
 ---
 
-The `convert-list` command allows to convert image list format from `default` format to the `mirror` format (see [image list format specification](../mirror/image-list-format)).
+The `hangar convert-list` command allows to convert image list format from `default` format to the `mirror` format (see [image list format specification](../mirror/image-list-format)).
+
+:::note
+
+The `mirror` command supports both `default` and `mirror` format image list files. You can use the `mirror` command to copy container images with the `default` format image list file directly.
+
+:::
 
 ## Quick Start
 

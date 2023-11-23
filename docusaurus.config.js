@@ -79,10 +79,6 @@ const config = {
                     ],
                 },
                 {
-                    type: "search",
-                    position: "right",
-                },
-                {
                     type: "localeDropdown",
                     position: "right",
                     dropdownItemsAfter: [
@@ -95,6 +91,10 @@ const config = {
                             label: "Help us translate",
                         },
                     ],
+                },
+                {
+                    type: "search",
+                    position: "right",
                 },
             ],
         },

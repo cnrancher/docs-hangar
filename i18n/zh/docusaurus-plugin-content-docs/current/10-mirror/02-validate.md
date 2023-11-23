@@ -9,10 +9,12 @@ title: "Mirror Validate 命令"
 在执行完 [mirror](mirror#快速上手) 命令后，使用下方命令校验已拷贝的镜像:
 
 ```bash
+#!/bin/bash
+
 hangar mirror validate \
-    --file=example_image_list.txt \
-    --source=[SOURCE_REGISTRY_URL] \
-    --destination=[DESTINATION_REGISTRY_URL] \
+    --file="example_image_list.txt" \
+    --source=SOURCE_REGISTRY_URL \
+    --destination=DESTINATION_REGISTRY_URL \
     --arch=amd64,arm64 \
     --os=linux \
     --jobs=4

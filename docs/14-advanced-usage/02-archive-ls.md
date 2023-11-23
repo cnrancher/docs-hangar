@@ -9,6 +9,8 @@ The `hangar archive ls` command supports listing the images in the archive file.
 Use following command to list images in archive file created by [save](../save/save) command:
 
 ```bash
+#!/bin/bash
+
 hangar archive ls --file="save_example.zip"
 ```
 

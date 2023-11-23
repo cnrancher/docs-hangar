@@ -2,22 +2,30 @@
 title: "Load 命令"
 ---
 
-`hangar load` 命令将 [save](../save/save) 命令创建的压缩包中的镜像上传至镜像仓库服务器中。
-您可以在没有公网连接的环境上传容器镜像，`load` 命令适用于离线环境（Air-Gap）场景部署私有镜像仓库。
+`hangar load` 命令用于将 [save](../save/save) 命令创建的压缩包中的镜像上传至镜像仓库服务器中。
+您可以在没有公网连接的环境上传容器镜像至私有仓库，`load` 命令支持用于离线环境（Air-Gap）场景部署私有镜像仓库。
 
 ## 快速上手
 
 使用以下命令将压缩包中存储的镜像批量上传至**目标镜像仓库**中：
 
 ```bash
+#!/bin/bash
+
 hangar load \
-    --file=example_image_list.txt \
-    --source=save_example.zip \
+    --file="example_image_list.txt" \
+    --source="save_example.zip" \
     --destination=DESTINATION_REGISTRY_URL \
     --arch=amd64,arm64 \
     --os=linux \
     --jobs=4
 ```
+
+## Harbor 2.X
+
+若*目标镜像仓库*为 Harbor，Hangar `load` 命令将尝试自动为目标镜像仓库创建 **Harbor Project**。
+
+若 Hangar 无法自动创建 **Harbor Project**，请手动创建。
 
 ## 使用方法
 
@@ -64,12 +72,6 @@ Global Flags:
 Use "hangar load [command] --help" for more information about a command.
 ```
 
-## Harbor 2.X
-
-若*目标镜像仓库*为 Harbor，Hangar `load` 命令将尝试自动为目标镜像仓库创建 **Harbor Project**。
-
-若 Hangar 无法自动创建 **Harbor Project**，请手动创建。
-
 ## 加载不同架构的压缩包文件
 
 Hangar 的此特性允许依次从包含不同架构的容器镜像压缩包中上传镜像至镜像仓库服务器中。
@@ -111,7 +113,7 @@ Hangar 的此特性允许依次从包含不同架构的容器镜像压缩包中�
         {
           "mediaType": "application/vnd.docker.distribution.manifest.v2+json",
           "size": 1235,
-          "digest":     "sha256:7dcde3f4d7eec9ccd22f2f6873a1f0b10be189405dcbfbaac417487e4fb44c4b",
+          "digest": "sha256:7dcde3f4d7eec9ccd22f2f6873a1f0b10be189405dcbfbaac417487e4fb44c4b",
           "platform": {
             "architecture": "amd64",
             "os": "linux"
@@ -138,7 +140,7 @@ Hangar 的此特性允许依次从包含不同架构的容器镜像压缩包中�
         {
           "mediaType": "application/vnd.docker.distribution.manifest.v2+json",
           "size": 1230,
-          "digest":     "sha256:66f1a9ae96f5a18068fcbd53e0171c78b40adffa3d70f565341eb453a34bb099",
+          "digest": "sha256:66f1a9ae96f5a18068fcbd53e0171c78b40adffa3d70f565341eb453a34bb099",
           "platform": {
             "architecture": "arm64",
             "os": "linux",
@@ -148,7 +150,7 @@ Hangar 的此特性允许依次从包含不同架构的容器镜像压缩包中�
         {
           "mediaType": "application/vnd.docker.distribution.manifest.v2+json",
           "size": 1235,
-          "digest":     "sha256:7dcde3f4d7eec9ccd22f2f6873a1f0b10be189405dcbfbaac417487e4fb44c4b",
+          "digest": "sha256:7dcde3f4d7eec9ccd22f2f6873a1f0b10be189405dcbfbaac417487e4fb44c4b",
           "platform": {
             "architecture": "amd64",
             "os": "linux"

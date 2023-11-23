@@ -9,9 +9,11 @@ title: "Load Validate 命令"
 使用以下命令，验证 [load](load#快速上手) 命令将容器镜像上传至镜像仓库:
 
 ```bash
+#!/bin/bash
+
 hangar load validate \
-    --file=example_image_list.txt \
-    --source=save_example.zip \
+    --file="example_image_list.txt" \
+    --source="save_example.zip" \
     --destination=DESTINATION_REGISTRY_URL \
     --arch=amd64,arm64 \
     --os=linux \

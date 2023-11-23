@@ -19,14 +19,26 @@ title: "Save 命令"
 2. 将镜像从 `docker.io` 镜像仓库下载至压缩包 `saved_example.zip` 中:
 
     ```bash
+    #!/bin/bash
+
     hangar save \
-        --file example_image_list.txt \
-        --source=docker.io \
-        --destination=save_example.zip \
+        --file="example_image_list.txt" \
+        --source="docker.io" \
+        --destination="save_example.zip" \
         --arch=amd64,arm64 \
         --os=linux \
         --jobs=4
     ```
+
+    最终镜像文件将被保存在 `saved_example.zip` 压缩包中。
+
+## 压缩文件格式
+
+从 `v1.7.0` 起，Hangar 使用 `zip` 格式。
+
+**旧版本的 Hangar 创建的压缩包格式（`tar.gz`）将无法与新版本（`zip`）格式相兼容。**
+
+关于压缩文件的更多信息，请参考 [load](../load/load) 命令和 [压缩文件格式](archive) 页面。
 
 ## 使用方法
 
@@ -68,11 +80,3 @@ Global Flags:
 
 Use "hangar save [command] --help" for more information about a command.
 ```
-
-## 压缩文件格式
-
-从 `v1.7.0` 起，Hangar 使用 `zip` 格式。
-
-**旧版本的 Hangar 创建的压缩包格式（`tar.gz`）将无法与新版本（`zip`）格式相兼容。**
-
-关于压缩文件的更多信息，请参考 [load](../load/load) 和 [压缩文件格式](archive) 页面。

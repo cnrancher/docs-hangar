@@ -15,7 +15,7 @@ You can follow the below instructions to build hangar executable binary.
     ```bash
     git clone https://github.com/hangar.git && cd hangar
     ```
-1. Build hangar by using `make`:
+1. Build hangar in container by executing `make` commands:
     ```bash
     # Get help information
     make help

@@ -11,6 +11,8 @@ title: "Sync 命令"
 使用以下命令，向 [save](../save/save#快速上手) 命令创建的压缩包中增添新的镜像:
 
 ```bash
+#!/bin/bash
+
 hangar sync \
     --file="extra_image_list.txt" \
     --source="docker.io" \

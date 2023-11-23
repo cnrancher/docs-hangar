@@ -19,16 +19,26 @@ Use following command to save multiple container images from registry server int
 2. Save images from `docker.io` registry server into local archive file:
 
     ```bash
+    #!/bin/bash
+
     hangar save \
-        --file example_image_list.txt \
-        --source=docker.io \
-        --destination=save_example.zip \
+        --file="example_image_list.txt" \
+        --source="docker.io" \
+        --destination="save_example.zip" \
         --arch=amd64,arm64 \
         --os=linux \
         --jobs=4
     ```
 
     The images will saved into `saved_example.zip`.
+
+## Archive File
+
+Hangar uses the `zip` format archive file since version `v1.7.0`.
+
+**It should be noted that archive file created by older versions of hangar (`tar.gz`) are not compatible with new versions.**
+
+For more information about hangar archive usage, see [load](../load/load) and [archive](archive) page.
 
 ## Usage
 
@@ -70,11 +80,3 @@ Global Flags:
 
 Use "hangar save [command] --help" for more information about a command.
 ```
-
-## Archive File
-
-Hangar uses the `zip` format archive file since version `v1.7.0`.
-
-**It should be noted that archive file created by older versions of hangar (`tar.gz`) are not compatible with new versions.**
-
-For more information about hangar archive usage, see [load](../load/load) and [archive](archive) page.

@@ -46,13 +46,11 @@ sidebar_position: 0
 
 ## 配置文件
 
-Hangar 使用 [containers/image](https://github.com/containers/image/tree/main/docs) 相同的配置文件：
+Hangar 使用与 [containers/image](https://github.com/containers/image/tree/main/docs) 相同的配置文件：
 
 - `/etc/containers/policy.json`: 默认的 Policy 配置文件。可使用 `--insecure-policy` 参数跳过策略检查步骤。
 
-    默认的 Policy 配置文件可在 [default-policy.json](https://github.com/containers/skopeo/blob/main/default-policy.json) 获取。
-
-<!-- TODO: Update the default policy file lint to hangar project -->
+    默认的 Policy 配置文件可在 [default-policy.json](https://github.com/cnrancher/hangar/blob/main/default-policy.json) 获取。
 
 ## 命令
 
@@ -69,7 +67,7 @@ Hangar 使用 [containers/image](https://github.com/containers/image/tree/main/d
 Hangar 兼容 API V2 容器镜像仓库，例如：
 - [Docker Registry](https://docs.docker.com/registry/)
 - [Harbor 2.X](https://goharbor.io/docs/)
-- 共有云平台提供的镜像仓库服务，例如: 腾讯云 TCR、阿里云 ACR 等...
+- 公有云平台提供的镜像仓库服务，例如: 腾讯云 TCR、阿里云 ACR 等...
 
 您需要确保容器镜像仓库支持以下格式的 Manifest 索引（`mediaType`）：
 - `application/vnd.docker.distribution.manifest.list.v2+json`

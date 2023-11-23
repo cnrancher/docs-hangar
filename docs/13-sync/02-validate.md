@@ -9,6 +9,8 @@ The `hangar sync validate` command (subcommand of `hangar save`) is similar to `
 Verify the synced (appended) images according to image list file after executing the [sync](sync#quick-start) command:
 
 ```bash
+#!/bin/bash
+
 hangar sync validate \
     --file="extra_image_list.txt" \
     --source="docker.io" \

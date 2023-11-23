@@ -9,10 +9,12 @@ The `hangar save validate` command (subcommand of `hangar save`) is used for ens
 Verify the saved images according to image list file after executing the [save](save#quick-start) command:
 
 ```bash
+#!/bin/bash
+
 hangar save validate \
-    --file example_image_list.txt \
-    --source=docker.io \
-    --destination=save_example.zip \
+    --file="example_image_list.txt" \
+    --source="docker.io" \
+    --destination="save_example.zip" \
     --arch=amd64,arm64 \
     --os=linux \
     --jobs=4

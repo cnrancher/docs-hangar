@@ -9,10 +9,12 @@ title: "Save Validate 命令"
 在执行完 [save](save#快速上手) 命令后，使用以下命令验证已保存的压缩包文件：
 
 ```bash
+#!/bin/bash
+
 hangar save validate \
-    --file example_image_list.txt \
-    --source=docker.io \
-    --destination=save_example.zip \
+    --file="example_image_list.txt" \
+    --source="docker.io" \
+    --destination="save_example.zip" \
     --arch=amd64,arm64 \
     --os=linux \
     --jobs=4

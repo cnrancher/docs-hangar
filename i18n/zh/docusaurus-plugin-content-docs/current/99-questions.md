@@ -36,11 +36,11 @@ Hangar 使用 `${HOME}/.cache/hangar_cache` 暂存下载的容器镜像 Blobs �
 
     关于压缩文件的更多信息，请参考 [load](load/load) 和 [压缩文件格式](load/archive) 页面。
 
-2. 报错：`manifest unknown`
+1. 报错：`manifest unknown`
 
     待拷贝的镜像不存在。请使用 `hangar inspect --raw docker://<IMAGE>` 检查镜像是否存在。
 
-3. 报错：`unsupported MIME type`
+1. 报错：`unsupported MIME type`
 
     容器镜像的 `mediaType` 不被支持。
 
@@ -52,7 +52,13 @@ Hangar 使用 `${HOME}/.cache/hangar_cache` 暂存下载的容器镜像 Blobs �
     - `application/vnd.oci.image.manifest.v1+json`
     - `application/vnd.oci.image.index.v1+json`
 
-4. 警告：`no avaiable image for specified arch and os`
+1. 报错：`open /etc/containers/policy.json: no such file or directory`
+
+    Policy 配置文件 `/etc/containers/policy.json` 不存在。可在 [default-policy.json](https://github.com/cnrancher/hangar/blob/main/default-policy.json) 获取默认的 Policy 策略配置文件。
+
+    除此之外可使用 `--insecure-policy` 参数跳过 Policy 检测。
+
+1. 警告：`no avaiable image for specified arch and os`
 
     待拷贝的镜像与 `--arch` 和 `--os` 参数指定的架构 & OS 信息不符时会出现此警告信息。
 

@@ -9,10 +9,12 @@ The `hangar mirror validate` command (subcommand of `hangar mirror`) is used for
 Verify the mirrored images according to image list file after executing the [mirror](mirror#quick-start) command:
 
 ```bash
+#!/bin/bash
+
 hangar mirror validate \
-    --file=example_image_list.txt \
-    --source=[SOURCE_REGISTRY_URL] \
-    --destination=[DESTINATION_REGISTRY_URL] \
+    --file="example_image_list.txt" \
+    --source=SOURCE_REGISTRY_URL \
+    --destination=DESTINATION_REGISTRY_URL \
     --arch=amd64,arm64 \
     --os=linux \
     --jobs=4

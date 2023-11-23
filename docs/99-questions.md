@@ -36,11 +36,11 @@ See [archive](save/archive) page.
 
     See [hangar archive](save/archive) for more information of the new archive format.
 
-2. Error: `manifest unknown`
+1. Error: `manifest unknown`
 
     The image to be copy does not exists. you can use `hangar inspect --raw docker://<IMAGE>` to check whether the image exists or not.
 
-3. Error: `unsupported MIME type`
+1. Error: `unsupported MIME type`
 
     The `mediaType` of the image manifest is not supported.
 
@@ -52,7 +52,13 @@ See [archive](save/archive) page.
     - `application/vnd.oci.image.manifest.v1+json`
     - `application/vnd.oci.image.index.v1+json`
 
-4. Warning: `no avaiable image for specified arch and os`
+1. Error: `open /etc/containers/policy.json: no such file or directory`
+
+    The policy config file `/etc/containers/policy.json` does not exists, you can obtain a default policy file at [default-policy.json](https://github.com/cnrancher/hangar/blob/main/default-policy.json).
+
+    Or you can execute hangar with `--insecure-policy` option.
+
+1. Warning: `no avaiable image for specified arch and os`
 
     The architecture / OS of the image to be copied does not match the architecture & OS specified by the `--arch` and `--os` parameter.
 

@@ -10,14 +10,22 @@ and the `load` command can be used in Air-Gapped (offline) installation scenario
 Use following command to load multiple container images from archive file created by [save](../save/save#quick-start) command to the *destination registry server* parallelly.
 
 ```bash
+#!/bin/bash
+
 hangar load \
-    --file=example_image_list.txt \
-    --source=save_example.zip \
+    --file="example_image_list.txt" \
+    --source="save_example.zip" \
     --destination=DESTINATION_REGISTRY_URL \
     --arch=amd64,arm64 \
     --os=linux \
     --jobs=4
 ```
+
+## Harbor 2.X
+
+Hangar will try to create **Harbor Project** automatically on `load` command if the destination registry is harbor.
+
+You need to create **Harbor Project** manually if Hangar can't create the project automatically, or the image will fail to copy.
 
 ## Usage
 
@@ -64,12 +72,6 @@ Global Flags:
 Use "hangar load [command] --help" for more information about a command.
 ```
 
-## Harbor 2.X
-
-Hangar will try to create **Harbor Project** automatically on `load` command if the destination registry is harbor.
-
-You need to create **Harbor Project** manually if Hangar can't create the project automatically, or the image will fail to copy.
-
 ## Load from different architecture archives
 
 This feature allows you to sequentially load container images from multiple archive files containing different architectures.
@@ -111,7 +113,7 @@ Here is an example:
         {
           "mediaType": "application/vnd.docker.distribution.manifest.v2+json",
           "size": 1235,
-          "digest":     "sha256:7dcde3f4d7eec9ccd22f2f6873a1f0b10be189405dcbfbaac417487e4fb44c4b",
+          "digest": "sha256:7dcde3f4d7eec9ccd22f2f6873a1f0b10be189405dcbfbaac417487e4fb44c4b",
           "platform": {
             "architecture": "amd64",
             "os": "linux"
@@ -138,7 +140,7 @@ Here is an example:
         {
           "mediaType": "application/vnd.docker.distribution.manifest.v2+json",
           "size": 1230,
-          "digest":     "sha256:66f1a9ae96f5a18068fcbd53e0171c78b40adffa3d70f565341eb453a34bb099",
+          "digest": "sha256:66f1a9ae96f5a18068fcbd53e0171c78b40adffa3d70f565341eb453a34bb099",
           "platform": {
             "architecture": "arm64",
             "os": "linux",
@@ -148,7 +150,7 @@ Here is an example:
         {
           "mediaType": "application/vnd.docker.distribution.manifest.v2+json",
           "size": 1235,
-          "digest":     "sha256:7dcde3f4d7eec9ccd22f2f6873a1f0b10be189405dcbfbaac417487e4fb44c4b",
+          "digest": "sha256:7dcde3f4d7eec9ccd22f2f6873a1f0b10be189405dcbfbaac417487e4fb44c4b",
           "platform": {
             "architecture": "amd64",
             "os": "linux"

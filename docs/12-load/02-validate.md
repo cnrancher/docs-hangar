@@ -9,9 +9,11 @@ The `hangar load validate` command (subcommand of `hangar load`) is used for ens
 Verify the loaded images according to image list file after executing the [load](load#quick-start) command:
 
 ```bash
+#!/bin/bash
+
 hangar load validate \
-    --file=example_image_list.txt \
-    --source=save_example.zip \
+    --file="example_image_list.txt" \
+    --source="save_example.zip" \
     --destination=DESTINATION_REGISTRY_URL \
     --arch=amd64,arm64 \
     --os=linux \

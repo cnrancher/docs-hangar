@@ -2,7 +2,7 @@
 title: "获取镜像的 Manifest"
 ---
 
-`hangar inspect` 命令可获取镜像仓库中镜像的 Manifest（此命令与 [skopeo inspect](https://github.com/containers/skopeo/blob/main/docs/skopeo-inspect.1.md)命令功能类似）。
+`hangar inspect` 命令可获取镜像仓库中镜像的 Manifest（此命令与 [skopeo inspect](https://github.com/containers/skopeo/blob/main/docs/skopeo-inspect.1.md) 功能类似）。
 
 ## 快速上手
 
@@ -12,7 +12,7 @@ title: "获取镜像的 Manifest"
 hangar inspect --raw docker://nginx:latest
 ```
 
-使用 `--config` 参数查看容器 DockerHub 的 `nginx` 镜像的 Config 原始文件：
+使用 `--config` 参数查看 DockerHub 仓库中的 `nginx` 容器镜像的 Config 原始文件：
 
 ```bash
 hangar inspect --config docker://nginx:latest

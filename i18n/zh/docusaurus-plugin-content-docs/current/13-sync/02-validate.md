@@ -2,13 +2,15 @@
 title: "Sync Validate 命令"
 ---
 
-`hangar sync validate` 命令（`hangar save` 的子命令） 与 `save validate` 命令相似，用于验证 `sync` 命令正确的将容器镜像附加到压缩包中。
+`hangar sync validate` 命令（`hangar save` 的子命令） 与 `save validate` 命令相似，用于验证 `sync` 命令正确是否的将容器镜像附加到压缩包中。
 
 ## 快速上手
 
 在执行 [sync](sync#快速上手) 命令后，可执行以下命令进行验证:
 
 ```bash
+#!/bin/bash
+
 hangar sync validate \
     --file="extra_image_list.txt" \
     --source="docker.io" \
