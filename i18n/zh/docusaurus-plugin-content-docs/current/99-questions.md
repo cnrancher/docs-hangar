@@ -19,7 +19,7 @@ Hangar 使用 `${HOME}/.cache/hangar_cache` 暂存下载的容器镜像 Blobs �
 
 ## Harbor 2.X 镜像仓库
 
-若*目标镜像仓库*为 Harbor，Hangar `load` 命令将尝试自动为目标镜像仓库创建 **Harbor Project**。
+若*目标镜像仓库*为 Harbor，Hangar `load` 命令将尝试自动为目标镜像仓库创建私有的 **Harbor Project**。
 
 若 Hangar 无法自动创建 **Harbor Project**，请手动创建。
 

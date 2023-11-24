@@ -19,7 +19,7 @@ You need to delete `${HOME}/.cache/hangar_cache` directory manually if you force
 
 ## Harbor 2.X registry
 
-Hangar will try to create **Harbor Project** automatically for [load](load/load) command if the destination registry is harbor.
+Hangar will try to create private **Harbor Project** automatically for [load](load/load) command if the destination registry is harbor.
 
 You need to create **Harbor Project** manually if Hangar can't create the project automatically, or the image will fail to copy.
 

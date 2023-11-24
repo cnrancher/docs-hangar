@@ -87,7 +87,7 @@ const config = {
                             value: "<hr class='dropdown-separator'>",
                         },
                         {
-                            to: "https://github.com/cnrancher/docs-hangar/i18n/",
+                            to: "https://github.com/cnrancher/docs-hangar/tree/main/i18n/",
                             label: "Help us translate",
                         },
                     ],

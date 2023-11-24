@@ -23,7 +23,7 @@ hangar load \
 
 ## Harbor 2.X
 
-Hangar will try to create **Harbor Project** automatically on `load` command if the destination registry is harbor.
+Hangar will try to create private **Harbor Project** automatically on `load` command if the destination registry is harbor.
 
 You need to create **Harbor Project** manually if Hangar can't create the project automatically, or the image will fail to copy.
 

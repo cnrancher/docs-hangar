@@ -23,7 +23,7 @@ hangar load \
 
 ## Harbor 2.X
 
-若*目标镜像仓库*为 Harbor，Hangar `load` 命令将尝试自动为目标镜像仓库创建 **Harbor Project**。
+若*目标镜像仓库*为 Harbor，Hangar `load` 命令将尝试自动为目标镜像仓库创建私有 **Harbor Project**。
 
 若 Hangar 无法自动创建 **Harbor Project**，请手动创建。
 
