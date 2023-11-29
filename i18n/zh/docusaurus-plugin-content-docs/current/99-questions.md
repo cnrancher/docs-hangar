@@ -53,7 +53,7 @@ Hangar 使用 `${HOME}/.cache/hangar_cache` 暂存下载的容器镜像 Blobs �
 
 1. 报错：`open /etc/containers/policy.json: no such file or directory`
 
-    Policy 配置文件 `/etc/containers/policy.json` 不存在。可在 [default-policy.json](https://github.com/cnrancher/hangar/blob/main/default-policy.json) 获取默认的 Policy 策略配置文件。
+    Policy 配置文件 `/etc/containers/policy.json` 不存在。可在 [default-policy.json](https://github.com/cnrancher/hangar/blob/main/package/default-policy.json) 获取默认的 Policy 策略配置文件。
 
     除此之外可使用 `--insecure-policy` 参数跳过 Policy 检测。
 

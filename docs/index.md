@@ -50,8 +50,7 @@ The configuration file of hangar is compatible with [containers/image](https://g
 
 - `/etc/containers/policy.json`: The default trust policy file, use `--insecure-policy` option to skip policy check.
 
-    The default policy file can be obtained at [default-policy.json](https://github.com/containers/skopeo/blob/main/default-policy.json).
-<!-- TODO: Update the default policy file lint to hangar project -->
+    The default policy file can be obtained at [default-policy.json](https://github.com/cnrancher/hangar/blob/main/package/default-policy.json).
 
 ## Commands
 

@@ -53,7 +53,7 @@ See [archive](save/archive) page.
 
 1. Error: `open /etc/containers/policy.json: no such file or directory`
 
-    The policy config file `/etc/containers/policy.json` does not exists, you can obtain a default policy file at [default-policy.json](https://github.com/cnrancher/hangar/blob/main/default-policy.json).
+    The policy config file `/etc/containers/policy.json` does not exists, you can obtain a default policy file at [default-policy.json](https://github.com/cnrancher/hangar/blob/main/package/default-policy.json).
 
     Or you can execute hangar with `--insecure-policy` option.
 

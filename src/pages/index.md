@@ -10,7 +10,7 @@ Hangar is a **simple** and **easy-to-use** command line utility for mirroring mu
 - Hangar supports to copy container images parallelly to improve performance.
 - Save and load images with archive files to allow the setup of registry server in Air-Gapped installation.
 
-It provides the following functions：
+Hangar provides following functions：
 
 - Mirror container images between image registries (see [mirror](/docs/mirror/mirror) command).
 - Save container images into an archive file, and then upload them to the image registry server (see [save](/docs/save/save) and [load](/docs/load/load) commands). Designed to use for Air-Gapped (offline) installation.

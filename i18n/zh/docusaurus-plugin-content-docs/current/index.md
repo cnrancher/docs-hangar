@@ -50,7 +50,7 @@ Hangar 使用与 [containers/image](https://github.com/containers/image/tree/mai
 
 - `/etc/containers/policy.json`: 默认的 Policy 配置文件。可使用 `--insecure-policy` 参数跳过策略检查步骤。
 
-    默认的 Policy 配置文件可在 [default-policy.json](https://github.com/cnrancher/hangar/blob/main/default-policy.json) 获取。
+    默认的 Policy 配置文件可在 [default-policy.json](https://github.com/cnrancher/hangar/blob/main/package/default-policy.json) 获取。
 
 ## 命令
 
