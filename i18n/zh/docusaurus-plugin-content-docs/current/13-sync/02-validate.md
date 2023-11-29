@@ -2,7 +2,7 @@
 title: "Sync Validate 命令"
 ---
 
-`hangar sync validate` 命令（`hangar save` 的子命令） 与 `save validate` 命令相似，用于验证 `sync` 命令正确是否的将容器镜像附加到压缩包中。
+`hangar sync validate` 命令（`hangar sync` 的子命令） 与 `save validate` 命令相似，用于验证 `sync` 命令正确是否的将容器镜像附加到压缩包中。
 
 ## 快速上手
 

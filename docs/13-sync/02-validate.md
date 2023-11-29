@@ -2,7 +2,7 @@
 title: "Sync Validate Command"
 ---
 
-The `hangar sync validate` command (subcommand of `hangar save`) is similar to `save validate` command. It is used for ensuring the extra images were added into archive file.
+The `hangar sync validate` command (subcommand of `hangar sync`) is similar to `save validate` command. It is used for ensuring the extra images were added into archive file.
 
 ## Quick Start
 
