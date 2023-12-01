@@ -2,5 +2,25 @@
   "version.label": {
     "message": "v1.6",
     "description": "The label for version v1.6"
+  },
+  "sidebar.docs.category.Mirror": {
+    "message": "Mirror",
+    "description": "The label for category Mirror in sidebar docs"
+  },
+  "sidebar.docs.category.Save": {
+    "message": "Save",
+    "description": "The label for category Save in sidebar docs"
+  },
+  "sidebar.docs.category.Load": {
+    "message": "Load",
+    "description": "The label for category Load in sidebar docs"
+  },
+  "sidebar.docs.category.高级用法": {
+    "message": "高级用法",
+    "description": "The label for category 高级用法 in sidebar docs"
+  },
+  "sidebar.docs.category.开发调试": {
+    "message": "开发调试",
+    "description": "The label for category 开发调试 in sidebar docs"
   }
 }
