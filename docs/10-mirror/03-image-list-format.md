@@ -4,7 +4,7 @@ title: "Image List Formats"
 
 `hangar mirror` command supports two different kinds of image list formats:
 
-1. The default format (available for `mirror/save/load/sync` subcommands):
+1. `Default` format (available for `mirror/save/load/sync` subcommands):
 
     ```text title="Default format example"
     # <REGISTRY>/<PROJECT>/<NAME>:<TAG>
@@ -14,7 +14,7 @@ title: "Image List Formats"
     cnrancher/hangar:v1.7.0
     ```
 
-1. "Mirror" format (only available for `mirror` subcommand):
+1. `Mirror` format (only available for `mirror` subcommand):
 
     Each line contains **"[source image] [destination image] [TAG]"**, separated with white space `' '`:
 
@@ -27,7 +27,9 @@ title: "Image List Formats"
     quay.io/skopeo/stable example.io/library/mirrored-skopeo      latest
     ```
 
-    The "mirror" format is used for rename the copied destination image name,
+    The `mirror` format is used for rename the copied destination image name,
     and it allows to mirror multiple images to different registry servers and projects.
+
+    You can use [convert-list](../advanced-usage/convert-list) command to convert the image list file from `Default` format into `Mirror` format.
 
 The line begin with `//` or `#` will be treated as comment.

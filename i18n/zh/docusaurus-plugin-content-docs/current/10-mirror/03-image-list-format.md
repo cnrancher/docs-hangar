@@ -4,7 +4,7 @@ title: "镜像列表格式"
 
 `hangar mirror` 命令支持两种不同的镜像列表格式：
 
-1. 默认（Default）镜像列表格式（此格式适用于 `mirror/save/load/sync` 命令）：
+1. 默认（`Default`）镜像列表格式（此格式适用于 `mirror/save/load/sync` 命令）：
 
     ```text title="默认镜像列表格式"
     # <REGISTRY>/<PROJECT>/<NAME>:<TAG>
@@ -14,7 +14,7 @@ title: "镜像列表格式"
     cnrancher/hangar:v1.7.0
     ```
 
-1. “Mirror” 格式（仅适用于 `mirror` 命令）：
+1. `Mirror` 格式（仅适用于 `mirror` 命令）：
 
     每行包含 **"[源镜像] [目标镜像] [TAG]"**，使用空格 `' '` 分隔。
 
@@ -27,6 +27,8 @@ title: "镜像列表格式"
     quay.io/skopeo/stable example.io/library/mirrored-skopeo      latest
     ```
 
-    “Mirror” 格式适用于需要重命名目标镜像的场景，除此之外此格式的镜像列表可以在不同的镜像仓库之间拷贝容器镜像。
+    `Mirror` 格式适用于需要重命名目标镜像的场景，除此之外此格式的镜像列表可以在不同的镜像仓库之间拷贝容器镜像。
+
+    可使用 [convert-list](../advanced-usage/convert-list) 命令将 `Default` 格式的镜像列表转换为 `Mirror` 格式。
 
 镜像列表中以 `//` 或 `#` 起始的行将被忽略。

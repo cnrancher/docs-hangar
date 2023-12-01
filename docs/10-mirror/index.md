@@ -1,6 +1,5 @@
 ---
 title: "Mirror"
-slug: 'xxx'
 ---
 
 ```mdx-code-block
