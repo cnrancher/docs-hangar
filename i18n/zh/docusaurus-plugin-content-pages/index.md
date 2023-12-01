@@ -1,4 +1,6 @@
-![](/images/logo.png)
+---
+title: "Hangar - 快速批量拷贝容器镜像"
+---
 
 # Hangar
 

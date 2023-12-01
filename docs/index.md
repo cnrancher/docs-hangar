@@ -3,8 +3,6 @@ title: "Hangar Tutorial"
 sidebar_position: 0
 ---
 
-![](/images/logo.png)
-
 # Hangar Tutorial
 
 ## Getting Started

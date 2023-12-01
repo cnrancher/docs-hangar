@@ -3,8 +3,6 @@ title: "Hangar 使用指引"
 sidebar_position: 0
 ---
 
-![](/images/logo.png)
-
 # Hangar 使用指引
 
 ## 快速上手

@@ -1,4 +1,6 @@
-![](/images/logo.png)
+---
+title: "Hangar - Copy container images fastly"
+---
 
 # Hangar
 

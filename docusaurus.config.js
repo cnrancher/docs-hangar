@@ -35,7 +35,7 @@ const config = {
         },
     },
     themeConfig: {
-        image: "images/logo.png",
+        // image: "",
         colorMode: {
             defaultMode: "dark",
             // Use user preference instead of default mode.
@@ -46,11 +46,11 @@ const config = {
         navbar: {
             hideOnScroll: false,
             title: "Hangar",
-            logo: {
-                alt: "Hangar Logo",
-                src: "images/logo-square.png",
-                srcDark: "images/logo-square.png",
-            },
+            // logo: {
+            //     alt: "Hangar Logo",
+            //     src: "",
+            //     srcDark: "",
+            // },
             items: [
                 {
                     type: "doc",
