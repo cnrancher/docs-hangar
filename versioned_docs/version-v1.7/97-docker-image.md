@@ -1,5 +1,5 @@
 ---
-title: "Hangar docker image"
+title: "Hangar Docker Image"
 ---
 
 Hangar docker images support both `amd64` and `arm64` architectures.

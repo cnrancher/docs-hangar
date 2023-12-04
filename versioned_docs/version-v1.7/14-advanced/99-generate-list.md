@@ -25,7 +25,7 @@ Please download the official `rancher-images.txt` image list file on Rancher Git
 
 ## Usage
 
-```txt
+```txt title="hangar generate-list --help"
 'generate-list' generates an image-list from KDM data and Chart repositories used by Rancher.
 
 Generate image list by just specifying Rancher version:
@@ -63,10 +63,9 @@ Global Flags:
 
 ### Customize KDM data file and Chart repositories
 
-When executing this tool, if only the `--rancher` parameter is specified, hangar will obtain KDM data and
-clone chart repos to generate image list automatically.
+When executing this tool, if only the `--rancher` parameter is specified, hangar will obtain KDM data and clone chart repos to generate image list automatically.
 
-In addition, you can customize the KDM data.json file and Chart repository directory when generating the image-list by using `--chart`, `--system-chart`, `--kdm` options.
+In addition, you can customize the KDM `data.json` file and Chart repository directory when generating the image-list by using `--chart`, `--system-chart`, `--kdm` options.
 
 > You can use multiple `--chart` and `--system-chart` parameters to specify multiple chart repos.
 
