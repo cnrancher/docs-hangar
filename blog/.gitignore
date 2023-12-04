@@ -1,2 +1,1 @@
-# Keep the 'blog' folder exists to avoid warning message when executing the
-# `npm start` command.
+# Keep the 'blog' folder exists to avoid warning message when build.

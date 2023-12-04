@@ -4,8 +4,8 @@ title: Versions
 
 ## Versions
 
-- [v1.7.0](/docs/next)
-- [v1.6.0](/docs/)
+- [v1.7.0](/v1.7/)
+- [v1.6.0](/v1.6/)
 
 ## Old versions
 

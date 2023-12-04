@@ -14,14 +14,14 @@ Hangar 是一个灵活且易用的容器镜像拷贝工具，支持多架构 & �
 
 Hangar 提供了以下功能：
 
-- 在镜像仓库（Registry）之间 Mirror 容器镜像（参考 [Mirror](/docs/mirror/mirror) 命令）。
-- 从镜像仓库中下载容器镜像至压缩包中（参考 [Save](/docs/save/save) 命令），之后将压缩包中的镜像上传至镜像仓库服务器中（参考 [Load](/docs/load/load) 命令），适用于离线部署（Air-Gap）镜像仓库。
-- 验证已拷贝的容器镜像，确保容器镜像均被正确的拷贝（参考 [Validate](/docs/advanced-usage/validate) 命令）。
-- 其他用于处理镜像列表文件以及处理压缩包的高级命令（参考 [高级用法](/docs/advanced-usage)）。
+- 在镜像仓库（Registry）之间 Mirror 容器镜像（参考 [Mirror](/v1.7/mirror/mirror) 命令）。
+- 从镜像仓库中下载容器镜像至压缩包中（参考 [Save](/v1.7/save/save) 命令），之后将压缩包中的镜像上传至镜像仓库服务器中（参考 [Load](/v1.7/load/load) 命令），适用于离线部署（Air-Gap）镜像仓库。
+- 验证已拷贝的容器镜像，确保容器镜像均被正确的拷贝（参考 [Validate](/v1.7/advanced/validate) 命令）。
+- 其他用于处理镜像列表文件以及处理压缩包的高级命令（参考 [高级用法](/v1.7/advanced)）。
 
 ## 使用文档
 
-Hangar 详细使用文档可在本站的 [使用文档](/zh/docs/) 页面获取。
+Hangar 详细使用文档可在本站的 [使用文档](/zh/v1.7/) 页面获取。
 
 ## 依赖
 

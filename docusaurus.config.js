@@ -14,7 +14,7 @@ const config = {
     // GitHub pages deployment config.
     organizationName: "cnrancher",
     projectName: "docs-hangar",
-    onBrokenLinks: "log",
+    onBrokenLinks: "throw",
     onBrokenMarkdownLinks: "throw",
     onDuplicateRoutes: "warn",
     i18n: {
@@ -28,7 +28,7 @@ const config = {
                 htmlLang: "en",
                 label: "English",
             },
-            zh: {
+            "zh": {
                 htmlLang: "	zh-Hans",
                 label: "简体中文",
             },
@@ -74,7 +74,7 @@ const config = {
                         },
                         {
                             to: "/versions",
-                            label: "All versions",
+                            label: "All Versions",
                         },
                     ],
                 },
@@ -87,8 +87,8 @@ const config = {
                             value: "<hr class='dropdown-separator'>",
                         },
                         {
-                            to: "https://github.com/cnrancher/docs-hangar/tree/main/i18n/",
-                            label: "Help us translate",
+                            href: "https://github.com/cnrancher/docs-hangar/tree/main/i18n/",
+                            label: "Help Us Translate",
                         },
                     ],
                 },
@@ -114,18 +114,21 @@ const config = {
             "@docusaurus/preset-classic",
             {
                 docs: {
-                    routeBasePath: "docs",
+                    routeBasePath: "/",
                     sidebarPath: require.resolve("./sidebars.js"),
                     showLastUpdateTime: true,
                     editUrl: "https://github.com/cnrancher/docs-hangar/edit/main/",
                     lastVersion: "v1.6",
+                    includeCurrentVersion: false,
                     versions: {
-                        "current": {
-                            label: "v1.7 (preview)",
+                        "v1.7": {
+                            label: "v1.7 (Preview)",
+                            path: "v1.7",
                             banner: "unreleased",
                         },
                         "v1.6": {
                             label: "v1.6",
+                            path: "v1.6",
                             banner: "none",
                         },
                     },

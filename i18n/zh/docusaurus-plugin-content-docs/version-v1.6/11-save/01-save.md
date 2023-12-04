@@ -2,7 +2,7 @@
 title: "Save 命令"
 ---
 
-Save 命令将镜像列表中的镜像保存至本地文件中，供 [Load](../load/load) 命令使用。
+Save 命令将镜像列表中的镜像保存至本地文件中，供 [Load](/v1.6/load/load) 命令使用。
 
 ## 镜像列表格式
 
@@ -113,7 +113,7 @@ Hangar 在执行 Save 时，首先将镜像列表中的镜像的 `blobs` 使用 
 
 创建完压缩包后，Hangar 不会自动删除 `saved-image-cache` 文件夹，请手动删除此文件夹以节省硬盘空间。
 
-> 可使用 [sync](../advanced-usage/sync) 以及 [compress](../advanced-usage/compress) 命令对 cache 文件夹添加镜像/执行压缩操作。
+> 可使用 [sync](../advanced/sync) 以及 [compress](../advanced/compress) 命令对 cache 文件夹添加镜像/执行压缩操作。
 
 ## 分卷压缩
 

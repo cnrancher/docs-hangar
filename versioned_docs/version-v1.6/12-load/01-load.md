@@ -4,7 +4,7 @@ title: "Load Command"
 
 # Load
 
-The Load command uploads the saved file created by the [save](../save/save) command into the destination registry server, and creates manifest list for imported images.
+The Load command uploads the saved file created by the [save](/v1.6/save/save) command into the destination registry server, and creates manifest list for imported images.
 
 ## Quick Start
 

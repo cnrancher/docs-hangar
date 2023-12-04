@@ -8,13 +8,13 @@ sidebar_position: 0
 - [mirror](mirror/mirror): Mirror container images between image registries.
 - [save](save/save): Download the container image to the local file and generate a compressed package.
 - [load](load/load): Load the file created by [save](save/save) command onto the private registry.
-- [convert-list](advanced-usage/convert-list): Convert image list from `rancher-images.txt` to format used by [mirror](mirror/mirror) command.
+- [convert-list](advanced/convert-list): Convert image list from `rancher-images.txt` to format used by [mirror](mirror/mirror) command.
 - [mirror-validate](mirror/validate): Validate the mirrored image.
 - [load-validate](load/validate): Validate the loaded image.
-- [sync](advanced-usage/sync): Sync extra images into image cache folder.
-- [compress](advanced-usage/compress): Compress the image cache folder.
-- [decompress](advanced-usage/decompress): Decompress tarball created by [save](save/save) command.
-- [generate-list](advanced-usage/generate-list): Generate an image-list by KDM data and Chart repositories.
+- [sync](advanced/sync): Sync extra images into image cache folder.
+- [compress](advanced/compress): Compress the image cache folder.
+- [decompress](advanced/decompress): Decompress tarball created by [save](save/save) command.
+- [generate-list](advanced/generate-list): Generate an image-list by KDM data and Chart repositories.
 
 ## Supported Registries
 
