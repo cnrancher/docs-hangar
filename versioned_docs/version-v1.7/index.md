@@ -7,32 +7,37 @@ sidebar_position: 0
 
 ## Getting Started
 
+1. Setup a private image [registry](https://distribution.github.io/distribution/).
+    ```bash
+    docker run -d -p 5000:5000 --name registry registry:2
+    ```
 1. Run hangar in `cnrancher/hangar` docker image:
     ```bash
-    docker run -it -v $(pwd):/hangar cnrancher/hangar:latest
+    docker run -it -v $(pwd):/hangar --network=host cnrancher/hangar:latest
     ```
-1. Create an image list file for mirror images between registry servers:
+1. Create an example image list file for mirror images from Docker Hub to your private image registry:
 
     ```txt title="example_image_list.txt"
     cnrancher/hangar:latest
     cnrancher/hangar:v1.7.0
     ```
 
-    Use following command to mirror images from docker hub public registry to your *destination registry server*:
+    Use Hangar [mirror](/v1.7/mirror/mirror) command to mirror images from Docker Hub public registry to your *destination registry server*:
 
     ```bash
     hangar mirror \
         -f example_image_list.txt \
-        -s docker.io \
-        -d [DESTINATION_REGISTRY_URL] \
+        -s 'docker.io' \
+        -d '127.0.0.1:5000' \
         --arch amd64,arm64 \
-        --os linux
+        --os linux \
+        --tls-verify=false
     ```
 
-1. You can use the [inspect](advanced/inspect) command to inspect the copied image manifest in destination registry:
+1. You can use the [inspect](advanced/inspect) command to inspect the copied image manifest in the destination registry:
 
     ```sh
-    hangar inspect docker://[DESTINATION_REGISTRY_URL]/cnrancher/hangar:latest --raw
+    hangar inspect docker://127.0.0.1:5000/cnrancher/hangar:latest --raw
     {
       "mediaType": "application/vnd.docker.distribution.manifest.list.v2+json",
       "schemaVersion": 2,

@@ -7,32 +7,37 @@ sidebar_position: 0
 
 ## 快速上手
 
+1. 在本地搭建私有 [Registry](https://distribution.github.io/distribution/) 镜像仓库。
+    ```bash
+    docker run -d -p 5000:5000 --name registry registry:2
+    ```
 1. 使用 Docker 镜像 `cnrancher/hangar` 运行 Hangar：
     ```bash
-    docker run -it -v $(pwd):/hangar cnrancher/hangar:latest
+    docker run -it -v $(pwd):/hangar --network=host cnrancher/hangar:latest
     ```
-1. 创建镜像列表文件，用于在镜像仓库之间拷贝容器镜像：
+1. 创建样例镜像列表文件，用于将 Docker Hub 中的镜像拷贝（Mirror）至私有镜像仓库：
 
     ```txt title="example_image_list.txt"
     cnrancher/hangar:latest
     cnrancher/hangar:v1.7.0
     ```
 
-    使用以下命令从 Docker Hub 公开镜像仓库中拷贝容器镜像至*目标镜像仓库*。
+    使用 Hangar [Mirror](/v1.7/mirror/mirror) 命令从 Docker Hub 公开镜像仓库中拷贝容器镜像至*目标镜像仓库*。
 
     ```bash
     hangar mirror \
         -f example_image_list.txt \
-        -s docker.io \
-        -d [DESTINATION_REGISTRY_URL] \
+        -s 'docker.io' \
+        -d '127.0.0.1:5000' \
         --arch amd64,arm64 \
-        --os linux
+        --os linux \
+        --tls-verify=false
     ```
 
-1. 您可使用 [inspect](/v1.7/advanced/inspect) 命令查看已拷贝的容器镜像 Manifest 索引：
+1. 您可使用 [Inspect](/v1.7/advanced/inspect) 命令查看已拷贝的容器镜像 Manifest 索引：
 
     ```sh
-    hangar inspect docker://[DESTINATION_REGISTRY_URL]/cnrancher/hangar:latest --raw
+    hangar inspect docker://127.0.0.1:5000/cnrancher/hangar:latest --raw
     {
       "mediaType": "application/vnd.docker.distribution.manifest.list.v2+json",
       "schemaVersion": 2,
