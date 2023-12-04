@@ -56,7 +56,7 @@ Hangar 由 Go 语言编写。
     git clone https://github.com/hangar.git && cd hangar
     ```
 
-1. 执行脚本构建 Hangar。
+1. 执行脚本构建 Hangar：
 
     ```bash
     ./scripts/build.sh

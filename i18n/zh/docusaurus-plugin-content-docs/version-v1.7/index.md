@@ -29,7 +29,7 @@ sidebar_position: 0
         --os linux
     ```
 
-1. 你可以使用 [inspect](/v1.7/advanced/inspect) 命令查看已拷贝的容器镜像 Manifest 索引：
+1. 您可使用 [inspect](/v1.7/advanced/inspect) 命令查看已拷贝的容器镜像 Manifest 索引：
 
     ```sh
     hangar inspect docker://[DESTINATION_REGISTRY_URL]/cnrancher/hangar:latest --raw

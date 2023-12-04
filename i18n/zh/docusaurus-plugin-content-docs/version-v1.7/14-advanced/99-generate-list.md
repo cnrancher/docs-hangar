@@ -4,12 +4,6 @@ title: "generate-list 命令"
 
 `hangar generate-list` 命令用于生成 Rancher 镜像列表。
 
-:::warning
-
-`generate-list` 命令仅适用于测试场景，请在 Rancher GitHub [Release](https://github.com/rancher/rancher/releases) 页面下载对应版本的 `rancher-images.txt` 镜像列表！
-
-:::
-
 ## 快速上手
 
 根据 Rancher 版本号，获取最新的 KDM 数据，并自动克隆 Chart 仓库到本地，生成镜像列表：
@@ -18,19 +12,29 @@ title: "generate-list 命令"
 hangar generate-list --rancher="v2.7.0-ent"
 ```
 
-> 以 `-ent` 结尾的 Rancher 版本号表示 RPM GC 版本。
+> 以 `-ent` 结尾的 Rancher 版本号表示 Rancher Prime Manager GC 版本。
 
 此工具生成的镜像列表仅包含 KDM 和 Chart 仓库中与 Rancher 版本相匹配的镜像。因本工具筛选镜像的逻辑与
 Rancher 生成的 `rancher-images.txt` 有差异，会与构建物中下载的镜像列表存在出入。
 
+:::warning
+
 **此工具生成镜像列表时需要访问 GitHub 仓库等资源，请在良好的网络环境中使用此工具。**
+
+:::
+
+:::warning
+
+Hangar 的 `generate-list` 仅根据 Rancher 的 Helm Chart 仓库和 KDM（Kontainer Driver Metadata）信息生成镜像列表，Hangar 生成的镜像列表会与 Rancher 生成镜像列表存在一定出入，如需要完整镜像列表，请在 Rancher GitHub [Release](https://github.com/rancher/rancher/releases) 页面下载对应版本的 `rancher-images.txt` 镜像列表！
+
+:::
 
 ## Parameters
 
 命令行参数：
 
 ```sh
-# 使用 --rancher 参数，指定 Rancher 版本号，以 `-ent` 结尾为 RPM GC 版本
+# 使用 --rancher 参数，指定 Rancher 版本号，以 `-ent` 结尾为 Rancher Prime Manager GC 版本
 # 若只指定 Rancher 版本号，该工具将自动根据 Rancher 版本号下载对应的 KDM 数据，
 # 并克隆 charts 仓库到本地，从中生成镜像列表文件
 hangar generate-list --rancher="v2.7.0"
