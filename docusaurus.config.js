@@ -29,7 +29,7 @@ const config = {
                 label: "English",
             },
             zh: {
-                htmlLang: "	zh-Hans",
+                htmlLang: "zh-Hans",
                 label: "简体中文",
             },
         },
