@@ -13,7 +13,7 @@ Dependencies:
 
 ## Hangar cache directory
 
-Hangar uses `${HOME}/.cache/hangar_cache` to store temporary image blob files.
+Hangar uses `${HOME}/.cache/hangar_cache` to store temporary image blob files when saving / loading images into archive file.
 
 You need to delete `${HOME}/.cache/hangar_cache` directory manually if you force killed hangar when copying images.
 
@@ -21,25 +21,23 @@ You need to delete `${HOME}/.cache/hangar_cache` directory manually if you force
 
 Hangar will try to create private **Harbor Project** automatically for [load](/v1.7/load/load) command if the destination registry is harbor.
 
-You need to create **Harbor Project** manually if Hangar can't create the project automatically, or the image will fail to copy.
+You need to create **Harbor Project** manually if hangar can't create the project automatically, or the image will fail to copy.
 
 ## Why using `zip` archive format?
 
-See [archive](/v1.7/save/archive) page.
+See [hangar archive](/v1.7/save/archive) for more information of the new archive format.
+
+Since hangar uses the `zip` format archive file after version `v1.7.0`.
+
+**The archive file created by older versions of hangar (`tar.gz`) are no longer compatible with new versions (`zip`).**
 
 ## Common Errors and Solutions
 
-1. Since hangar uses the `zip` format archive file after version `v1.7.0`.
-
-    The archive file created by older versions of hangar (`tar.gz`) are no longer compatible with new versions (`zip`).
-
-    See [hangar archive](/v1.7/save/archive) for more information of the new archive format.
-
-1. Error: `manifest unknown`
+### Error: `manifest unknown`
 
     The image to be copy does not exists. you can use `hangar inspect --raw docker://<IMAGE>` to check whether the image exists or not.
 
-1. Error: `unsupported MIME type`
+### Error: `unsupported MIME type`
 
     The `mediaType` of the image manifest is not supported.
 
@@ -51,13 +49,13 @@ See [archive](/v1.7/save/archive) page.
     - `application/vnd.oci.image.manifest.v1+json`
     - `application/vnd.oci.image.index.v1+json`
 
-1. Error: `open /etc/containers/policy.json: no such file or directory`
+### Error: `open /etc/containers/policy.json: no such file or directory`
 
     The policy config file `/etc/containers/policy.json` does not exists, you can obtain a default policy file at [default-policy.json](https://github.com/cnrancher/hangar/blob/main/package/default-policy.json).
 
     Or you can execute hangar with `--insecure-policy` option.
 
-1. Warning: `no avaiable image for specified arch and os`
+### Warning: `no avaiable image for specified arch and os`
 
     The architecture / OS of the image to be copied does not match the architecture & OS specified by the `--arch` and `--os` parameter.
 
@@ -65,10 +63,10 @@ See [archive](/v1.7/save/archive) page.
 
     This warning message will not affect the image copy process. When this warning message shows, it is only used to inform that this container image has not been copied.
 
-1. Error when copy images to Harbor 2.X registry: `authentication required`
+### Error when copy images to Harbor 2.X registry: `authentication required`
 
     Check whether the Harbor Project exists. You need to create Harbor Project manually when running `mirror` command.
 
-1. Error: `server gave HTTP response to HTTPS client`
+### Error: `server gave HTTP response to HTTPS client`
 
     Add `--tls-verify=false` option if registry server is using self-signed certificate or HTTP.
