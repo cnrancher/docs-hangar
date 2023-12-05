@@ -6,7 +6,7 @@ The `hangar mirror validate` command (subcommand of `hangar mirror`) is used for
 
 ## Quick Start
 
-Verify the mirrored images according to image list file after executing the [mirror](/v1.7/mirror/mirror#quick-start) command:
+Verify the mirrored images according to image list file after executing the [mirror](/docs/v1.7/mirror/mirror#quick-start) command:
 
 ```bash
 #!/bin/bash

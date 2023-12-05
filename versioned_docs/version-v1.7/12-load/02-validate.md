@@ -6,7 +6,7 @@ The `hangar load validate` command (subcommand of `hangar load`) is used for ens
 
 ## Quick Start
 
-Verify the loaded images according to image list file after executing the [load](/v1.7/load/load#quick-start) command:
+Verify the loaded images according to image list file after executing the [load](/docs/v1.7/load/load#quick-start) command:
 
 ```bash
 #!/bin/bash

@@ -7,7 +7,7 @@ slug: "/mirror/mirror"
 
 ## Image List Format
 
-> The image list format used by `mirror` and `mirror-validate` command are different from `rancher-images.txt`. You can use [convert-list](/v1.6/advanced/convert-list) command to convert the image list format.
+> The image list format used by `mirror` and `mirror-validate` command are different from `rancher-images.txt`. You can use [convert-list](/docs/v1.6/advanced/convert-list) command to convert the image list format.
 
 Each line contains **"[source image] [destination image] [TAG]"**, separated by spaces:
 

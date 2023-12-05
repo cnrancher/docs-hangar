@@ -6,7 +6,7 @@ The `hangar archive ls` command supports listing the images in the archive file.
 
 ## Quick Start
 
-Use following command to list images in archive file created by [save](/v1.7/save/save) command:
+Use following command to list images in archive file created by [save](/docs/v1.7/save/save) command:
 
 ```bash
 #!/bin/bash

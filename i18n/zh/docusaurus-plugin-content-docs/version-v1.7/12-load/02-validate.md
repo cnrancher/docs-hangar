@@ -6,7 +6,7 @@ title: "Load Validate 命令"
 
 ## 快速上手
 
-使用以下命令，验证 [load](/v1.7/load/load#快速上手) 命令将容器镜像上传至镜像仓库:
+使用以下命令，验证 [load](/docs/v1.7/load/load#快速上手) 命令将容器镜像上传至镜像仓库:
 
 ```bash
 #!/bin/bash

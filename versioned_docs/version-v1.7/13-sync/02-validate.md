@@ -6,7 +6,7 @@ The `hangar sync validate` command (subcommand of `hangar sync`) is similar to `
 
 ## Quick Start
 
-Verify the synced (appended) images according to image list file after executing the [sync](/v1.7/sync/sync#quick-start) command:
+Verify the synced (appended) images according to image list file after executing the [sync](/docs/v1.7/sync/sync#quick-start) command:
 
 ```bash
 #!/bin/bash

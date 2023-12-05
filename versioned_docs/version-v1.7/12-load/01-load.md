@@ -2,12 +2,12 @@
 title: "Load Command"
 ---
 
-The `hangar load` command loads images from zip archive file created by [save](/v1.7/save/save) command to registry server, it allows to upload container images to registry server without a public internet connection,
+The `hangar load` command loads images from zip archive file created by [save](/docs/v1.7/save/save) command to registry server, it allows to upload container images to registry server without a public internet connection,
 and the `load` command can be used in Air-Gapped (offline) installation scenarios.
 
 ## Quick Start
 
-Use following command to load multiple container images from archive file created by [save](/v1.7/save/save#quick-start) command to the *destination registry server* parallelly.
+Use following command to load multiple container images from archive file created by [save](/docs/v1.7/save/save#quick-start) command to the *destination registry server* parallelly.
 
 ```bash
 #!/bin/bash

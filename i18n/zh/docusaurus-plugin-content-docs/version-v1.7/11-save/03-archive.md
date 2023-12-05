@@ -12,9 +12,9 @@ title: "压缩文件格式"
 
 :::
 
-您可以使用 [load](/v1.7/load/load) 命令将压缩包中的镜像上传至镜像仓库中。
+您可以使用 [load](/docs/v1.7/load/load) 命令将压缩包中的镜像上传至镜像仓库中。
 
-除此之外，您还可以使用 [archive ls](/v1.7/advanced/archive-ls) 命令，查看压缩包中储存的镜像信息。
+除此之外，您还可以使用 [archive ls](/docs/v1.7/advanced/archive-ls) 命令，查看压缩包中储存的镜像信息。
 
 ## 为什么使用 zip 格式？
 
@@ -25,6 +25,6 @@ title: "压缩文件格式"
 ## 与 `docker save` 的区别
 
 Hangar 创建的压缩包文件与 `docker save` 或其他工具（例如 `podman`）创建的压缩包并不兼容。
-目前 Hangar [load](/v1.7/load/load) 命令仅支持将压缩包中的容器镜像上传至镜像仓库中，不支持将容器镜像导出至任何容器运行时（Docker Daemon、CRI-O 以及 Containerd Daemon）中。
+目前 Hangar [load](/docs/v1.7/load/load) 命令仅支持将压缩包中的容器镜像上传至镜像仓库中，不支持将容器镜像导出至任何容器运行时（Docker Daemon、CRI-O 以及 Containerd Daemon）中。
 
 Hangar 压缩包的文件体积与其他工具导出的容器镜像压缩包体积几乎一致（甚至更小），除此之外 Hangar 的压缩包可以存储多架构 & 多平台的容器镜像。

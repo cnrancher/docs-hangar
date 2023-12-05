@@ -2,15 +2,15 @@
 title: Sync 命令
 ---
 
-`sync` 命令将额外的容器镜像保存在未压缩的 [Save](/v1.6/save/save) 缓存文件夹中。
+`sync` 命令将额外的容器镜像保存在未压缩的 [Save](/docs/v1.6/save/save) 缓存文件夹中。
 
 ## 开发背景
 
-Sync 命令以及 Compress、Decompress 命令为 Hangar 的高级特性，主要用于辅助 [Save](/v1.6/save/save) 命令在保存镜像的 Blobs 时存在部分镜像下载失败的情况。
+Sync 命令以及 Compress、Decompress 命令为 Hangar 的高级特性，主要用于辅助 [Save](/docs/v1.6/save/save) 命令在保存镜像的 Blobs 时存在部分镜像下载失败的情况。
 
-在 [Hangar Save](/v1.6/save/save) 保存镜像的 Blobs 至缓存文件夹时，有些镜像可能因网络或其他原因下载失败，重新执行 [Hangar Save](/v1.6/save/save) 命令会删除掉之前已有的缓存文件，并重新按照镜像列表下载镜像 Blobs 至缓存文件夹中，会浪费更多的时间，因此 Hangar 的 Sync 命令用于只将 Save 失败的镜像附加到 `saved-image-cache` 缓存文件夹中。
+在 [Hangar Save](/docs/v1.6/save/save) 保存镜像的 Blobs 至缓存文件夹时，有些镜像可能因网络或其他原因下载失败，重新执行 [Hangar Save](/docs/v1.6/save/save) 命令会删除掉之前已有的缓存文件，并重新按照镜像列表下载镜像 Blobs 至缓存文件夹中，会浪费更多的时间，因此 Hangar 的 Sync 命令用于只将 Save 失败的镜像附加到 `saved-image-cache` 缓存文件夹中。
 
-除此之外，Hangar 的 [Decompress](/v1.6/advanced/decompress) 命令单独提供了解压 Hangar 创建的压缩包文件的功能，与 Load 命令的解压压缩包功能一致，支持 `gzip`, `zstd` 压缩格式和分片压缩功能。 Hangar 的 [Compress](/v1.6/advanced/compress) 命令单独提供了压缩 Hangar 创建的缓存文件夹功能，与 Save 命令的创建压缩包的功能一致，支持将缓存文件夹创建为 `gzip`, `zstd` 格式的压缩包文件，且支持分片压缩功能。
+除此之外，Hangar 的 [Decompress](/docs/v1.6/advanced/decompress) 命令单独提供了解压 Hangar 创建的压缩包文件的功能，与 Load 命令的解压压缩包功能一致，支持 `gzip`, `zstd` 压缩格式和分片压缩功能。 Hangar 的 [Compress](/docs/v1.6/advanced/compress) 命令单独提供了压缩 Hangar 创建的缓存文件夹功能，与 Save 命令的创建压缩包的功能一致，支持将缓存文件夹创建为 `gzip`, `zstd` 格式的压缩包文件，且支持分片压缩功能。
 
 将 Sync 和 Compress 命令结合使用的例子如下：
 
@@ -81,4 +81,4 @@ hangar sync -f ./list.txt -d [DIRECTORY] --debug
 
 ## Others
 
-在使用 Sync 将镜像补充至缓存文件夹后，可使用 [compress](/v1.6/advanced/compress) 命令压缩缓存文件夹，生成压缩包。
+在使用 Sync 将镜像补充至缓存文件夹后，可使用 [compress](/docs/v1.6/advanced/compress) 命令压缩缓存文件夹，生成压缩包。

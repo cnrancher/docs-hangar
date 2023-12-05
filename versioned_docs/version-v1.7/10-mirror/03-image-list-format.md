@@ -30,6 +30,6 @@ title: "Image List Formats"
     The `mirror` format is used for rename the copied destination image name,
     and it allows to mirror multiple images to different registry servers and projects.
 
-    You can use hangar [convert-list](/v1.7/advanced/convert-list) command to convert the image list file from `Default` format into `Mirror` format.
+    You can use hangar [convert-list](/docs/v1.7/advanced/convert-list) command to convert the image list file from `Default` format into `Mirror` format.
 
 The line begin with `//` or `#` will be treated as comment.

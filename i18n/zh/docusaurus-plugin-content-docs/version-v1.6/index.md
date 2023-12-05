@@ -5,16 +5,16 @@ sidebar_position: 0
 
 ## 命令
 
-- [mirror](/v1.6/mirror/mirror): 根据列表文件，将容器镜像拷贝至私有镜像仓库。
-- [save](/v1.6/save/save): 根据列表文件，将容器镜像保存至本地文件（压缩包或未压缩的文件夹中）。
-- [load](/v1.6/load/load): 将 [save](/v1.6/save/save) 命令保存的镜像文件加载至私有仓库。
-- [convert-list](/v1.6/advanced/convert-list): 将 `rancher-images.txt` 格式的镜像列表转换为 [mirror](/v1.6/mirror/mirror) 命令所使用的镜像列表格式。
-- [mirror-validate](/v1.6/mirror/validate): 对已 Mirror 的镜像校验。
-- [load-validate](/v1.6/load/validate): 对已 Load 的镜像校验。
-- [sync](/v1.6/advanced/sync): 将额外的镜像保存在 Save 命令创建的缓存文件夹中。
-- [compress](/v1.6/advanced/compress): 压缩镜像的缓存文件夹。
-- [decompress](/v1.6/advanced/decompress): 解压 Save/Compress 命令创建的镜像压缩文件。
-- [generate-list](/v1.6/advanced/generate-list): 根据 KDM 和 Chart 仓库生成一份镜像列表文件。
+- [mirror](/docs/v1.6/mirror/mirror): 根据列表文件，将容器镜像拷贝至私有镜像仓库。
+- [save](/docs/v1.6/save/save): 根据列表文件，将容器镜像保存至本地文件（压缩包或未压缩的文件夹中）。
+- [load](/docs/v1.6/load/load): 将 [save](/docs/v1.6/save/save) 命令保存的镜像文件加载至私有仓库。
+- [convert-list](/docs/v1.6/advanced/convert-list): 将 `rancher-images.txt` 格式的镜像列表转换为 [mirror](/docs/v1.6/mirror/mirror) 命令所使用的镜像列表格式。
+- [mirror-validate](/docs/v1.6/mirror/validate): 对已 Mirror 的镜像校验。
+- [load-validate](/docs/v1.6/load/validate): 对已 Load 的镜像校验。
+- [sync](/docs/v1.6/advanced/sync): 将额外的镜像保存在 Save 命令创建的缓存文件夹中。
+- [compress](/docs/v1.6/advanced/compress): 压缩镜像的缓存文件夹。
+- [decompress](/docs/v1.6/advanced/decompress): 解压 Save/Compress 命令创建的镜像压缩文件。
+- [generate-list](/docs/v1.6/advanced/generate-list): 根据 KDM 和 Chart 仓库生成一份镜像列表文件。
 
 ## 镜像仓库种类
 
@@ -29,7 +29,7 @@ Hangar 的 Mirror / Save / Load 相关命令支持的镜像仓库种类：
 
 推荐在容器中运行 Hangar 工具：`cnrancher/hangar:latest`；
 
-有关 `hangar` 的 Docker 镜像的使用方式请参考 [docker-images 页面](/v1.6/docker-images)。
+有关 `hangar` 的 Docker 镜像的使用方式请参考 [docker-images 页面](/docs/v1.6/docker-images)。
 
 ----
 
@@ -59,14 +59,14 @@ Hangar 的 Mirror / Save / Load 相关命令支持的镜像仓库种类：
 
 ## 测试脚本
 
-请参考 [测试文档](/v1.6/dev/test)。
+请参考 [测试文档](/docs/v1.6/dev/test)。
 
 ## 常见问题
 
-常见报错信息及解释：[常见问题](/v1.6/questions)
+常见报错信息及解释：[常见问题](/docs/v1.6/questions)
 
 ## Build
 
 > 可在 Hangar [Release 页面](https://github.com/cnrancher/hangar/releases) 获取已构建的稳定版本。
 
-构建可执行文件请参考 [构建 Hangar](/v1.6/dev/build)。
+构建可执行文件请参考 [构建 Hangar](/docs/v1.6/dev/build)。

@@ -29,6 +29,6 @@ title: "镜像列表格式"
 
     `Mirror` 格式适用于需要重命名目标镜像的场景，除此之外此格式的镜像列表可以在不同的镜像仓库之间拷贝容器镜像。
 
-    可使用 [convert-list](/v1.7/advanced/convert-list) 命令将 `Default` 格式的镜像列表转换为 `Mirror` 格式。
+    可使用 [convert-list](/docs/v1.7/advanced/convert-list) 命令将 `Default` 格式的镜像列表转换为 `Mirror` 格式。
 
 镜像列表中以 `//` 或 `#` 起始的行将被忽略。

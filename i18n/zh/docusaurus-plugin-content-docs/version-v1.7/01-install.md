@@ -24,7 +24,7 @@ title: 安装指南
     podman run -it -v $(pwd):/hangar cnrancher/hangar:latest
     ```
 
-有关 Hangar Docker 镜像的更多使用介绍，请参考 [Hangar Docker 镜像](/v1.7/docker-image) 页面。
+有关 Hangar Docker 镜像的更多使用介绍，请参考 [Hangar Docker 镜像](/docs/v1.7/docker-image) 页面。
 
 ## 安装到 Linux 系统
 
@@ -42,4 +42,4 @@ yay -S hangar-bin
 
 ## 从源代码中构建 Hangar
 
-参考 [编译 Hangar](/v1.7/dev/build) 页面，手动构建 Hangar 可执行文件并安装到系统中。
+参考 [编译 Hangar](/docs/v1.7/dev/build) 页面，手动构建 Hangar 可执行文件并安装到系统中。

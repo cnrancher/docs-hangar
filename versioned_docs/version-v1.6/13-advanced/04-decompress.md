@@ -2,7 +2,7 @@
 title: "Decompress Command"
 ---
 
-Decompress the compressed tarball created by [save](/v1.6/save/save) command.
+Decompress the compressed tarball created by [save](/docs/v1.6/save/save) command.
 
 ## QuickStart
 

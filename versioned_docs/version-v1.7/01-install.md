@@ -24,7 +24,7 @@ You can run Hangar by using [Hangar Docker Image](#hangar-docker-image) inside t
     podman run -it -v $(pwd):/hangar cnrancher/hangar:latest
     ```
 
-For more information about Hangar Docker Image, see [Hangar Docker Image](/v1.7/docker-image) page.
+For more information about Hangar Docker Image, see [Hangar Docker Image](/docs/v1.7/docker-image) page.
 
 ## Installing on Linux
 
@@ -42,4 +42,4 @@ yay -S hangar-bin
 
 ## Building from Source
 
-See [Build Hangar](/v1.7/dev/build) to build and install Hangar on your system manually.
+See [Build Hangar](/docs/v1.7/dev/build) to build and install Hangar on your system manually.

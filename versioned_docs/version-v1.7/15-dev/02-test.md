@@ -17,7 +17,7 @@ Use following commands to run hangar validation tests in a container.
 
 To run validation tests on your local machine:
 
-1. Build hangar on your local machine by following [Building without a container](/v1.7/dev/build#building-without-a-container).
+1. Build hangar on your local machine by following [Building without a container](/docs/v1.7/dev/build#building-without-a-container).
 1. Install python dependencies:
 
     ```sh

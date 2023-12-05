@@ -2,13 +2,13 @@
 title: "Sync Command"
 ---
 
-The `hangar sync` command is similar to the [save](/v1.7/save/save) command, it allows you to sync (append) extra images into the archive file without re-downloading all images.
+The `hangar sync` command is similar to the [save](/docs/v1.7/save/save) command, it allows you to sync (append) extra images into the archive file without re-downloading all images.
 
-If some images fail to download when running the [save](/v1.7/save/save) command, you can use the `sync` command to try to re-download the failed images to the archive file without re-downloading all images.
+If some images fail to download when running the [save](/docs/v1.7/save/save) command, you can use the `sync` command to try to re-download the failed images to the archive file without re-downloading all images.
 
 ## Quick Start
 
-Use following command to append new container images to the existing archive file created by [save](/v1.7/save/save#quick-start) command parallelly:
+Use following command to append new container images to the existing archive file created by [save](/docs/v1.7/save/save#quick-start) command parallelly:
 
 ```bash
 #!/bin/bash

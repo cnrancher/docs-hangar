@@ -9,7 +9,7 @@ title: "常见问题"
 1. Hangar 使用了 [containers/images](https://github.com/containers/image) API 执行容器镜像拷贝相关操作。<br />
     因 [containers/signature](https://github.com/containers/signature) API 使用了 C 库，因此在编译 Hangar 时需要启用 `CGO`，编译后的可执行文件存在动态链接库。
 1. Hangar 使用 [Helm](https://github.com/helm/helm) API 用于在 Helm Chart 中生成镜像列表。
-1. Hangar 使用 [cobra](https://github.com/spf13/cobra) 处理命令行交互，生成 [命令行补全脚本](/v1.7/advanced/completion)。
+1. Hangar 使用 [cobra](https://github.com/spf13/cobra) 处理命令行交互，生成 [命令行补全脚本](/docs/v1.7/advanced/completion)。
 
 ## Hangar 缓存文件夹
 
@@ -25,7 +25,7 @@ title: "常见问题"
 
 ## 为什么使用 `zip` 压缩包格式？
 
-关于压缩文件的更多信息，请参考 [load](/v1.7/load/load) 和 [压缩文件格式](/v1.7/save/archive) 页面。
+关于压缩文件的更多信息，请参考 [load](/docs/v1.7/load/load) 和 [压缩文件格式](/docs/v1.7/save/archive) 页面。
 
 **旧版本的 Hangar 创建的压缩包格式（`tar.gz`）将无法与新版本（`zip`）格式相兼容。**
 

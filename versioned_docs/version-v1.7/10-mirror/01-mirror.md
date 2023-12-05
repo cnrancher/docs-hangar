@@ -16,7 +16,7 @@ Use following command to mirror multiple images between image registry servers p
     # Add more images here...
     ```
 
-    > Hangar `mirror` command supports two kinds of image list file formats, the image list file in this example is in `default` format. See [Image List Formats](/v1.7/mirror/image-list-format) for image list format specification.
+    > Hangar `mirror` command supports two kinds of image list file formats, the image list file in this example is in `default` format. See [Image List Formats](/docs/v1.7/mirror/image-list-format) for image list format specification.
 
 1. Run following command to mirror **amd64 & arm64, linux** container images by image list file from *SOURCE REGISTRY* to *DESTINATION REGISTRY* parallelly.
 
@@ -32,7 +32,7 @@ Use following command to mirror multiple images between image registry servers p
         --jobs=4
     ```
 
-1. Use [inspect](/v1.7/advanced/inspect) command to view the copied image manifest.
+1. Use [inspect](/docs/v1.7/advanced/inspect) command to view the copied image manifest.
 
     ```bash
     hangar inspect --raw docker://DESTINATION_REGISTRY_URL/cnrancher/hangar:latest
@@ -40,7 +40,7 @@ Use following command to mirror multiple images between image registry servers p
 
 ## Image List Format
 
-`hangar mirror` command supports two different kinds of image list formats, see [Image List Formats](/v1.7/mirror/image-list-format) for image list format specification.
+`hangar mirror` command supports two different kinds of image list formats, see [Image List Formats](/docs/v1.7/mirror/image-list-format) for image list format specification.
 
 ## Usage
 

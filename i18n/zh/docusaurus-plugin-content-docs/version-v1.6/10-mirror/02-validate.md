@@ -8,7 +8,7 @@ title: "Mirror Validate 命令"
 
 在执行 `mirror` 命令后，对已 Mirror 过的镜像进行验证，确保镜像已经被 Mirror 到目标仓库，验证失败的镜像列表会保存在 `mirror-validate-failed.txt` 文件中。
 
-**输入的镜像列表格式应当等同于 [Mirror](/v1.6/mirror/mirror) 命令所支持的镜像列表格式。**
+**输入的镜像列表格式应当等同于 [Mirror](/docs/v1.6/mirror/mirror) 命令所支持的镜像列表格式。**
 
 ```sh
 hangar mirror-validate -f ./list.txt -j 10

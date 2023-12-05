@@ -22,7 +22,7 @@ sidebar_position: 0
     cnrancher/hangar:v1.7.0
     ```
 
-    Use hangar [mirror](/v1.7/mirror/mirror) command to mirror images from Docker Hub:
+    Use hangar [mirror](/docs/v1.7/mirror/mirror) command to mirror images from Docker Hub:
 
     ```bash
     hangar mirror \
@@ -57,9 +57,9 @@ sidebar_position: 0
 
 ## Best Practice
 
-You can refer to the [Installation Guide](/v1.7/install) to install hangar on your system.
+You can refer to the [Installation Guide](/docs/v1.7/install) to install hangar on your system.
 
-For more detailed usage example of hangar to setup a private image registry server, see [Hangar Best Practice](/v1.7/bestpractice).
+For more detailed usage example of hangar to setup a private image registry server, see [Hangar Best Practice](/docs/v1.7/bestpractice).
 
 ## Configuration
 

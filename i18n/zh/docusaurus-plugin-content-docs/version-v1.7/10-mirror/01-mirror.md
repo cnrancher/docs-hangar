@@ -16,7 +16,7 @@ title: "Mirror 命令"
     # Add more images here...
     ```
 
-    > Hangar `mirror` 命令支持两种镜像列表格式，本例中的镜像列表为 `Default` 格式，请参考 [镜像列表格式](/v1.7/mirror/image-list-format) 页面获取镜像列表格式的详细定义。
+    > Hangar `mirror` 命令支持两种镜像列表格式，本例中的镜像列表为 `Default` 格式，请参考 [镜像列表格式](/docs/v1.7/mirror/image-list-format) 页面获取镜像列表格式的详细定义。
 
 1. 执行以下命令，将镜像列表中的 **amd64 & arm64, linux** 容器镜像从 *源镜像仓库* 拷贝至 *目标镜像仓库* 中。
 
@@ -32,7 +32,7 @@ title: "Mirror 命令"
         --jobs=4
     ```
 
-1. 使用 [Inspect](/v1.7/advanced/inspect) 命令，查看已拷贝的镜像 Manifest。
+1. 使用 [Inspect](/docs/v1.7/advanced/inspect) 命令，查看已拷贝的镜像 Manifest。
 
     ```bash
     hangar inspect --raw docker://DESTINATION_REGISTRY_URL/cnrancher/hangar:latest
@@ -40,7 +40,7 @@ title: "Mirror 命令"
 
 ## 镜像列表格式
 
-`hangar mirror` 支持两种不同的镜像列表格式，请参考 [镜像列表格式](/v1.7/mirror/image-list-format) 页面获取镜像列表格式的详细定义。
+`hangar mirror` 支持两种不同的镜像列表格式，请参考 [镜像列表格式](/docs/v1.7/mirror/image-list-format) 页面获取镜像列表格式的详细定义。
 
 ## 使用方法
 

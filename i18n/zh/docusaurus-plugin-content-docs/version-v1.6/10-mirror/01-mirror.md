@@ -4,7 +4,7 @@ title: Mirror 命令
 
 ## 镜像列表格式
 
-> `mirror` 命令和 `mirror-validate` 命令所输入的镜像列表格式与 `rancher-images.txt` 格式不一致，若需要将 `rancher-images.txt` 转换为 Mirror 命令所使用的镜像列表格式，请使用 [convert-list](/v1.6/advanced/convert-list) 命令。
+> `mirror` 命令和 `mirror-validate` 命令所输入的镜像列表格式与 `rancher-images.txt` 格式不一致，若需要将 `rancher-images.txt` 转换为 Mirror 命令所使用的镜像列表格式，请使用 [convert-list](/docs/v1.6/advanced/convert-list) 命令。
 
 每一行包含 **“源镜像 目标镜像 TAG”**，以空格分隔，例如：
 

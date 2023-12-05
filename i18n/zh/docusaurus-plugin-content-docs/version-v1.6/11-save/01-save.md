@@ -2,7 +2,7 @@
 title: "Save 命令"
 ---
 
-Save 命令将镜像列表中的镜像保存至本地文件中，供 [Load](/v1.6/load/load) 命令使用。
+Save 命令将镜像列表中的镜像保存至本地文件中，供 [Load](/docs/v1.6/load/load) 命令使用。
 
 ## 镜像列表格式
 

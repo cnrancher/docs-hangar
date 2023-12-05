@@ -2,7 +2,7 @@
 title: "Save Command"
 ---
 
-Save images from registry server into local file (compressed tarball or directory) and can be used by [load](/v1.6/load/load) command.
+Save images from registry server into local file (compressed tarball or directory) and can be used by [load](/docs/v1.6/load/load) command.
 
 ## Image List Format
 

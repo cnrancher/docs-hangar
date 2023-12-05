@@ -2,13 +2,13 @@
 title: "Sync Command"
 ---
 
-The sync command syncs the extra container images into the cache folder created by [Save](/v1.6/save/save) command.
+The sync command syncs the extra container images into the cache folder created by [Save](/docs/v1.6/save/save) command.
 
 ## Background
 
-There may some images failed to save when running Save command, the save failed image list will output into `save-failed.txt`. You can use Sync command to re-save these images into `saved-image-cache` folder and use [Compress](/v1.6/advanced/compress) to re-compress the tarball.
+There may some images failed to save when running Save command, the save failed image list will output into `save-failed.txt`. You can use Sync command to re-save these images into `saved-image-cache` folder and use [Compress](/docs/v1.6/advanced/compress) to re-compress the tarball.
 
-Besides, the [decompress](/v1.6/advanced/decompress) command supports to decompress the tarball created by hangar same as the decompress part of [hangar load](/v1.6/load/load) command.
+Besides, the [decompress](/docs/v1.6/advanced/decompress) command supports to decompress the tarball created by hangar same as the decompress part of [hangar load](/docs/v1.6/load/load) command.
 
 ## QuickStart
 
@@ -47,4 +47,4 @@ Global Flags:
 
 ## Others
 
-After syncing images into cache folder, you can use [compress](/v1.6/advanced/compress) command to create tarball.
+After syncing images into cache folder, you can use [compress](/docs/v1.6/advanced/compress) command to create tarball.

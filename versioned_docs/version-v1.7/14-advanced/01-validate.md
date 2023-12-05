@@ -2,13 +2,13 @@
 title: "Validate commands"
 ---
 
-Hangar [mirror](/v1.7/mirror/mirror)/[save](/v1.7/save/save)/[load](/v1.7/load/load)/[sync](/v1.7/sync/sync) commands supports `validate` subcommands for validating the copied image.
+Hangar [mirror](/docs/v1.7/mirror/mirror)/[save](/docs/v1.7/save/save)/[load](/docs/v1.7/load/load)/[sync](/docs/v1.7/sync/sync) commands supports `validate` subcommands for validating the copied image.
 
 Get the `validate` command document of each command in the form below.
 
 | Command | Validate |
 |:-------:|:--------:|
-| [mirror](/v1.7/mirror/mirror) | [mirror validate](/v1.7/mirror/validate) |
-| [save](/v1.7/save/save) | [save validate](/v1.7/save/validate) |
-| [load](/v1.7/load/load) | [load validate](/v1.7/load/validate) |
-| [sync](/v1.7/sync/sync) | [sync validate](/v1.7/sync/validate) |
+| [mirror](/docs/v1.7/mirror/mirror) | [mirror validate](/docs/v1.7/mirror/validate) |
+| [save](/docs/v1.7/save/save) | [save validate](/docs/v1.7/save/validate) |
+| [load](/docs/v1.7/load/load) | [load validate](/docs/v1.7/load/validate) |
+| [sync](/docs/v1.7/sync/sync) | [sync validate](/docs/v1.7/sync/validate) |

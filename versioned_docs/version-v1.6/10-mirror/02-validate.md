@@ -9,7 +9,7 @@ The `mirror-validate` subcommand is for validating the mirrored container images
 After mirror images, verify the mirrored images to ensure that the images have been mirrored to the destination registry,
 the validate failed images will output into `mirror-validate-failed.txt`.
 
-**The input image list format should be same as the format used by the [Mirror](/v1.6/mirror/mirror) command.**
+**The input image list format should be same as the format used by the [Mirror](/docs/v1.6/mirror/mirror) command.**
 
 ```sh
 hangar mirror-validate -f ./list.txt -j 10

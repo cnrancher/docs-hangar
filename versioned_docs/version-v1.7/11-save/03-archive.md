@@ -12,9 +12,9 @@ You can use Hangar `v1.6` to load the old `tar.gz` format archive file.
 
 :::
 
-You can use [load](/v1.7/load/load) command to load images from archive file to registry server.
+You can use [load](/docs/v1.7/load/load) command to load images from archive file to registry server.
 
-And you can also use [archive ls](/v1.7/advanced/archive-ls) command to view images stored in the archive file.
+And you can also use [archive ls](/docs/v1.7/advanced/archive-ls) command to view images stored in the archive file.
 
 ## Why using zip format?
 
@@ -26,7 +26,7 @@ Therefore, this will cause Hangar to no longer support `tar.gz` format compresse
 ## Different with `docker save`
 
 The archive file created by Hangar is not compatible with `docker save` or other tools (`podman`) archive files,
-and currently the Hangar [load](/v1.7/load/load) command only supports to upload container images to registry server.
+and currently the Hangar [load](/docs/v1.7/load/load) command only supports to upload container images to registry server.
 It does not support export container images from archive file to docker daemon, CRI-O and containerd daemon protocol.
 
 The file size of the archive file created by Hangar is similar (or much smaller) than archive files created by other tools.

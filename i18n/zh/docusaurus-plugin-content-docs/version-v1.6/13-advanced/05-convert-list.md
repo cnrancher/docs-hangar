@@ -2,7 +2,7 @@
 title: convert-list 命令
 ---
 
-`convert-list` 命令将 `rancher-images.txt` 格式的镜像列表文件转换为 [Mirror](/v1.6/mirror/mirror) 命令所使用的镜像列表文件。
+`convert-list` 命令将 `rancher-images.txt` 格式的镜像列表文件转换为 [Mirror](/docs/v1.6/mirror/mirror) 命令所使用的镜像列表文件。
 
 ## QuickStart
 

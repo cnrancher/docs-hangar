@@ -22,7 +22,7 @@ sidebar_position: 0
     cnrancher/hangar:v1.7.0
     ```
 
-    使用 Hangar [Mirror](/v1.7/mirror/mirror) 命令从 Docker Hub 拷贝镜像至私有镜像仓库。
+    使用 Hangar [Mirror](/docs/v1.7/mirror/mirror) 命令从 Docker Hub 拷贝镜像至私有镜像仓库。
 
     ```bash
     hangar mirror \
@@ -42,7 +42,7 @@ sidebar_position: 0
 
     :::
 
-1. 您可使用 [Inspect](/v1.7/advanced/inspect) 命令查看已拷贝的容器镜像 Manifest 索引：
+1. 您可使用 [Inspect](/docs/v1.7/advanced/inspect) 命令查看已拷贝的容器镜像 Manifest 索引：
 
     ```sh
     hangar inspect docker://127.0.0.1:5000/cnrancher/hangar:latest --raw --tls-verify=false
@@ -57,9 +57,9 @@ sidebar_position: 0
 
 ## 最佳实践
 
-您可以参考 [安装指南](/v1.7/install) 页面安装 Hangar 至您的系统中。
+您可以参考 [安装指南](/docs/v1.7/install) 页面安装 Hangar 至您的系统中。
 
-请访问 [Hangar 最佳实践](/v1.7/bestpractice) 页面，获取更多 Hangar 搭建私有镜像仓库的例子。
+请访问 [Hangar 最佳实践](/docs/v1.7/bestpractice) 页面，获取更多 Hangar 搭建私有镜像仓库的例子。
 
 ## 配置文件
 
@@ -71,13 +71,13 @@ Hangar 使用与 [containers/image](https://github.com/containers/image/tree/mai
 
 ## 命令
 
-- [mirror](/v1.7/mirror/mirror): 在镜像仓库之间拷贝容器镜像。
-- [save](/v1.7/save/save): 将容器镜像从镜像仓库下载至压缩归档文件中。
-- [load](/v1.7/load/load): 将容器镜像从压缩归档文件上传到镜像仓库中。
-- [sync](/v1.7/sync/sync): 向压缩归档文件中增添容器镜像。
-- [validate](/v1.7/advanced/validate): 此命令为 `mirror/save/load/sync` 的子命令，用于验证容器镜像是否拷贝正确。
+- [mirror](/docs/v1.7/mirror/mirror): 在镜像仓库之间拷贝容器镜像。
+- [save](/docs/v1.7/save/save): 将容器镜像从镜像仓库下载至压缩归档文件中。
+- [load](/docs/v1.7/load/load): 将容器镜像从压缩归档文件上传到镜像仓库中。
+- [sync](/docs/v1.7/sync/sync): 向压缩归档文件中增添容器镜像。
+- [validate](/docs/v1.7/advanced/validate): 此命令为 `mirror/save/load/sync` 的子命令，用于验证容器镜像是否拷贝正确。
 
-除此之外，Hangar 提供了一些高级指令，可参考 [高级用法](/v1.7/advanced) 页面。
+除此之外，Hangar 提供了一些高级指令，可参考 [高级用法](/docs/v1.7/advanced) 页面。
 
 ## 支持的镜像仓库种类
 
@@ -99,4 +99,4 @@ Hangar 兼容 API V2 容器镜像仓库，例如：
 
 ## Q&A
 
-有关常见问题及报错，请参考 [常见问题](/v1.7/questions) 页面。
+有关常见问题及报错，请参考 [常见问题](/docs/v1.7/questions) 页面。

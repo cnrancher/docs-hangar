@@ -6,7 +6,7 @@ title: "Save Validate 命令"
 
 ## 快速上手
 
-在执行完 [save](/v1.7/save/save#快速上手) 命令后，使用以下命令验证已保存的压缩包文件：
+在执行完 [save](/docs/v1.7/save/save#快速上手) 命令后，使用以下命令验证已保存的压缩包文件：
 
 ```bash
 #!/bin/bash

@@ -2,7 +2,7 @@
 title: "转换镜像列表格式"
 ---
 
-`hangar convert-list` 命令支持将镜像列表从 `Default` 格式转换为 `Mirror` 格式（参考 [镜像列表格式](/v1.7/mirror/image-list-format)）。
+`hangar convert-list` 命令支持将镜像列表从 `Default` 格式转换为 `Mirror` 格式（参考 [镜像列表格式](/docs/v1.7/mirror/image-list-format)）。
 
 :::note
 

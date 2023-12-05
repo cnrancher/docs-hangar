@@ -2,9 +2,9 @@
 title: Decompress 命令
 ---
 
-Decompress 命令用来解压 [Save](/v1.6/save/save) 命令或 [Compress](/v1.6/advanced/compress) 生成的压缩包文件。
+Decompress 命令用来解压 [Save](/docs/v1.6/save/save) 命令或 [Compress](/docs/v1.6/advanced/compress) 生成的压缩包文件。
 
-有关 Compress 和 Decompress 命令的开发背景可参考 [Sync文档](/v1.6/advanced/sync#开发背景)。
+有关 Compress 和 Decompress 命令的开发背景可参考 [Sync文档](/docs/v1.6/advanced/sync#开发背景)。
 
 ## QuickStart
 

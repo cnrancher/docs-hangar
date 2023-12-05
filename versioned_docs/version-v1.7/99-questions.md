@@ -9,7 +9,7 @@ Dependencies:
 1. Hangar uses [containers/images](https://github.com/containers/image) dependecy to perform image copy operations.<br />
     Since the [containers/signature](https://github.com/containers/signature) API uses C libraries, so CGO was enabled when building hangar binary, and the built binary file has dynamic link libraries.
 1. Hangar uses [Helm](https://github.com/helm/helm) library for generating image list from Helm Chart.
-1. Hangar uses [cobra](https://github.com/spf13/cobra) library to handle commands and generate [shell completion scripts](/v1.7/advanced/completion).
+1. Hangar uses [cobra](https://github.com/spf13/cobra) library to handle commands and generate [shell completion scripts](/docs/v1.7/advanced/completion).
 
 ## Hangar cache directory
 
@@ -19,13 +19,13 @@ You need to delete `${HOME}/.cache/hangar_cache` directory manually if you force
 
 ## Harbor 2.X registry
 
-Hangar will try to create private **Harbor Project** automatically for [load](/v1.7/load/load) command if the destination registry is harbor.
+Hangar will try to create private **Harbor Project** automatically for [load](/docs/v1.7/load/load) command if the destination registry is harbor.
 
 You need to create **Harbor Project** manually if hangar can't create the project automatically, or the image will fail to copy.
 
 ## Why using `zip` archive format?
 
-See [hangar archive](/v1.7/save/archive) for more information of the new archive format.
+See [hangar archive](/docs/v1.7/save/archive) for more information of the new archive format.
 
 Since hangar uses the `zip` format archive file after version `v1.7.0`.
 

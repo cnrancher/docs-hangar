@@ -4,7 +4,7 @@ title: Compress 命令
 
 Compress 命令用来压缩 Save 命令生成的未压缩的 `saved-image-cache` 缓存文件夹。
 
-Compress 命令通常与 Sync 命令一起使用，可参考 Sync 文档的 [开发背景](/v1.6/advanced/sync#开发背景)。
+Compress 命令通常与 Sync 命令一起使用，可参考 Sync 文档的 [开发背景](/docs/v1.6/advanced/sync#开发背景)。
 
 ## QuickStart
 
@@ -14,13 +14,13 @@ Compress 命令通常与 Sync 命令一起使用，可参考 Sync 文档的 [开
 hangar compress -f ./saved-image-cache
 ```
 
-可使用 `--format` 参数指定压缩文件格式（用法等同于 [Save](/v1.6/save/save) 命令的 `--compress`）：
+可使用 `--format` 参数指定压缩文件格式（用法等同于 [Save](/docs/v1.6/save/save) 命令的 `--compress`）：
 
 ```sh
 hangar compress -f ./saved-image-cache --format=zstd
 ```
 
-可使用 `--part` 和 `--part-size` 参数启用分片压缩功能（参数的用法等同于 [Save](/v1.6/save/save) 命令）
+可使用 `--part` 和 `--part-size` 参数启用分片压缩功能（参数的用法等同于 [Save](/docs/v1.6/save/save) 命令）
 
 ```sh
 # 将压缩文件以 4G 为单位进行分割

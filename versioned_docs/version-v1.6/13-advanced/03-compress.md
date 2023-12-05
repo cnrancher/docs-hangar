@@ -12,7 +12,7 @@ Compress the `saved-image-cache` folder to `tar.gz` format tarball file.
 hangar compress -f ./saved-image-cache
 ```
 
-You can use `--format` parameter to specify the compress format (same as `--compress` parameter in [Save](/v1.6/save/save) command).
+You can use `--format` parameter to specify the compress format (same as `--compress` parameter in [Save](/docs/v1.6/save/save) command).
 
 ```sh
 hangar compress -f ./saved-image-cache --format=zstd

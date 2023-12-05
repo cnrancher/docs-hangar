@@ -2,7 +2,7 @@
 title: "Save Command"
 ---
 
-The `hangar save` command is similar to the [mirror](/v1.7/mirror/mirror) command. It allows you to copy multiple container images into an archive file for [load](/v1.7/load/load) command use.
+The `hangar save` command is similar to the [mirror](/docs/v1.7/mirror/mirror) command. It allows you to copy multiple container images into an archive file for [load](/docs/v1.7/load/load) command use.
 
 ## Quick Start
 
@@ -38,7 +38,7 @@ Hangar uses the `zip` format archive file since version `v1.7.0`.
 
 **It should be noted that archive file created by older versions of hangar (`tar.gz`) are not compatible with new versions.**
 
-For more information about hangar archive usage, see [load](/v1.7/load/load) and [archive](/v1.7/save/archive) page.
+For more information about hangar archive usage, see [load](/docs/v1.7/load/load) and [archive](/docs/v1.7/save/archive) page.
 
 ## Usage
 

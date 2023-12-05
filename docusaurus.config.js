@@ -114,7 +114,7 @@ const config = {
             "@docusaurus/preset-classic",
             {
                 docs: {
-                    routeBasePath: "/",
+                    routeBasePath: "/docs",
                     sidebarPath: require.resolve("./sidebars.js"),
                     showLastUpdateTime: true,
                     editUrl: "https://github.com/cnrancher/docs-hangar/edit/main/",

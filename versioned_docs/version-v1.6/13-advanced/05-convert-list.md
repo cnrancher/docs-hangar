@@ -2,11 +2,11 @@
 title: "convert-list Command"
 ---
 
-The `convert-list` command converts the format of image list file `rancher-images.txt` to the list file used by the [Mirror](/v1.6/mirror/mirror) command.
+The `convert-list` command converts the format of image list file `rancher-images.txt` to the list file used by the [Mirror](/docs/v1.6/mirror/mirror) command.
 
 ## Quick Start
 
-Convert the list format from `rancher-images.txt` into the format used for the [mirror](/v1.6/mirror/mirror) command, and set the destination registry to `custom.private.io`:
+Convert the list format from `rancher-images.txt` into the format used for the [mirror](/docs/v1.6/mirror/mirror) command, and set the destination registry to `custom.private.io`:
 
 ```sh
 hangar convert-list -i rancher-images.txt -d custom.private.io
