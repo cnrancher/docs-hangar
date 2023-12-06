@@ -31,6 +31,12 @@ Since hangar uses the `zip` format archive file after version `v1.7.0`.
 
 **The archive file created by older versions of hangar (`tar.gz`) are no longer compatible with new versions (`zip`).**
 
+## Will the image digest changed after copying by hangar?
+
+Starting from `v1.7.0`, hangar will try to do not change the copied image digest.
+
+Only when the source image is deprecated [Docker manifest Version2 Schema1](https://distribution.github.io/distribution/spec/deprecated-schema-v1/) (`application/vnd.docker.distribution.manifest.v1+json`), hangar will update its manifest `mediaType` to [Docker manifest Version2 Schema2](https://distribution.github.io/distribution/spec/manifest-v2-2/) (`application/vnd.docker.distribution.manifest.v2+json`) when copying the container image, and the copied image digest will be changed.
+
 ## Common Errors and Solutions
 
 ### Error: `manifest unknown`

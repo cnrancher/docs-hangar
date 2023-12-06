@@ -29,6 +29,12 @@ title: "常见问题"
 
 **旧版本的 Hangar 创建的压缩包格式（`tar.gz`）将无法与新版本（`zip`）格式相兼容。**
 
+## Hangar 拷贝过的镜像 Digest 会被改变么？
+
+自 Hangar `v1.7.0` 起，Hangar 会尽可能的确保拷贝容器镜像时，不改变其 Digest。
+
+只有在待拷贝的镜像格式是已弃用的 [Docker manifest Version2 Schema1](https://distribution.github.io/distribution/spec/deprecated-schema-v1/)（`application/vnd.docker.distribution.manifest.v1+json`）时，Hangar 会在拷贝镜像时将其 `mediaType` 更新为 [Docker manifest Version2 Schema2](https://distribution.github.io/distribution/spec/manifest-v2-2/) (`application/vnd.docker.distribution.manifest.v2+json`)，此时拷贝后的镜像 Digest 会与源镜像不一致。
+
 ## 常见报错及处理方法
 
 ### 报错：`manifest unknown`
