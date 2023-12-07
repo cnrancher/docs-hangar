@@ -7,19 +7,35 @@ title: "Load 命令"
 
 ## 快速上手
 
-使用以下命令将压缩包中存储的镜像批量上传至**目标镜像仓库**中：
+1. 使用以下命令将压缩包中存储的镜像批量上传至**目标镜像仓库**中：
 
-```bash
-#!/bin/bash
+    ```bash
+    #!/bin/bash
 
-hangar load \
-    --file="example_image_list.txt" \
-    --source="save_example.zip" \
-    --destination=DESTINATION_REGISTRY_URL \
-    --arch=amd64,arm64 \
-    --os=linux \
-    --jobs=4
-```
+    hangar load \
+        --file="example_image_list.txt" \
+        --source="save_example.zip" \
+        --destination=DESTINATION_REGISTRY_URL \
+        --arch=amd64,arm64 \
+        --os=linux \
+        --jobs=4
+    ```
+
+1. 如果某些镜像在上传时出错失败，这些失败的镜像列表将保存在 `load-failed.txt`。
+
+    您可使用 `--failed` 参数指定输出的上传失败的镜像列表文件名。之后使用 `--file` 参数，指定上传镜像时的列表文件，重新上传失败的镜像至镜像仓库中。
+
+    ```bash
+    #!/bin/bash
+
+    hangar load \
+        --file="load-failed.txt" \
+        --source="save_example.zip" \
+        --destination=DESTINATION_REGISTRY_URL \
+        --arch=amd64,arm64 \
+        --os=linux \
+        --jobs=4
+    ```
 
 ## Harbor 2.X
 
@@ -158,4 +174,69 @@ Hangar 的此特性允许依次从包含不同架构的容器镜像压缩包中�
         }
       ]
     }
+    ```
+
+## 在上传镜像时自定义镜像的 Project 以及镜像列表的 Registry URL
+
+Hangar 的 `load` 命令提供了一些高级参数，用于自定义 *目标镜像* 的 Project 以及源镜像列表的 Registry URL。
+
+您可以在上传镜像时，使用 `--project` 参数自定义所有目标镜像的 Project。
+
+以下是一个例子：
+
+- 本例中，`save_example.zip` 压缩包文件中存储的镜像含有不同的 Project（`library` 和 `cnrancher`）。
+
+    ```shell-session
+    $ hangar archive ls -f save_example.zip
+    [15:58:34] [INFO] Created time: 2023-11-31 00:00:00 +0800 CST
+    [15:58:34] [INFO] Index version: v1.2.0
+    [15:58:34] [INFO] Images:
+       1 | docker.io/library/nginx:latest | arm64,amd64 | linux
+       2 | docker.io/cnrancher/hangar:latest | amd64,arm64 | linux
+    ```
+
+- 将压缩包中的所有镜像上传至 Docker Hub 的 `example` 用户。
+
+    ```shell-session
+    $ hangar load -s "save_example.zip" -d "docker.io" --project="example"
+    [16:00:00] [INFO] Arch List: [amd64,arm64]
+    [16:00:26] [INFO] OS List: [linux]
+    [16:00:32] [INFO] [IMG:2] Loading [docker.io/cnrancher/hangar:latest] => [docker.io/example/hangar:latest]
+    [16:00:32] [INFO] [IMG:1] Loading [docker.io/library/nginx:latest] => [docker.io/example/nginx:latest]
+    ......
+    ```
+
+----
+
+您可使用 `--source-registry` 参数，自定义上传镜像时镜像列表中的 Registry URL。
+
+以下是一个例子：
+
+- 本例中，`save_example.zip` 压缩包中镜像的 Registry URL 是 `127.0.0.1:5000`。
+
+    ```shell-session
+    $ hangar archive ls -f save_example.zip
+    [15:58:34] [INFO] Created time: 2023-11-31 00:00:00 +0800 CST
+    [15:58:34] [INFO] Index version: v1.2.0
+    [15:58:34] [INFO] Images:
+       1 | 127.0.0.1:5000/library/nginx:latest | arm64,amd64 | linux
+       2 | 127.0.0.1:5000/cnrancher/hangar:latest | amd64,arm64 | linux
+    ```
+
+- 镜像列表文件中，镜像的 Registry URL 为 `docker.io`。
+
+    ```txt title="example.txt"
+    docker.io/library/nginx:latest
+    docker.io/library/hangar:latest
+    ```
+
+- 当执行 `load` 命令并指定了上述镜像列表时，您需要添加 `--source-registry='127.0.0.1:5000'` 参数。
+
+    ```shell-session
+    $ hangar load -f "example.txt" -s "save_example.zip" --source-registry="127.0.0.1:5000" -d "REGISTRY_URL"
+    [16:00:00] [INFO] Arch List: [amd64,arm64]
+    [16:00:00] [INFO] OS List: [linux]
+    [16:00:00] [INFO] [IMG:2] Loading [127.0.0.1:5000/cnrancher/hangar:latest] => [REGISTRY_URL/cnrancher/hangar:latest]
+    [16:00:00] [INFO] [IMG:1] Loading [127.0.0.1:5000/library/nginx:latest] => [REGISTRY_URL/library/nginx:latest]
+    ......
     ```

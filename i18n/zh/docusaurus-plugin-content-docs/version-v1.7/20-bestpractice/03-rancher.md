@@ -183,7 +183,9 @@ title: "Rancher 离线安装"
     ./install.sh
     ```
 
-    在安装 K3s 后，您可执行以下命令，从私有镜像仓库中拉取镜像，以确保 `registries.yaml` 配置正确：
+    在安装 Rancher 之前，您还需要安装 [kubectl](https://kubernetes.io/docs/reference/kubectl/) 和 [helm](https://helm.sh/docs/intro/install/) 工具。
+
+1. 在安装 K3s 后，您可执行以下命令，从私有镜像仓库中拉取镜像，以确保 `registries.yaml` 配置正确：
 
     ```sh
     k3s crictl pull registry.example.com:5000/rancher/mirrored-pause:3.6

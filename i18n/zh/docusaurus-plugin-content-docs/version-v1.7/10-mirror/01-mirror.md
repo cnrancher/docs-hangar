@@ -84,3 +84,27 @@ Global Flags:
 
 Use "hangar mirror [command] --help" for more information about a command.
 ```
+
+## Mirror 镜像时自定义 Project
+
+Hangar 的 `mirror` 命令提供一些高级参数，可以用于自定义 *源镜像* 和 *目标镜像* 的 Project（Namespace）。
+
+您可使用 `--source-project` 参数，自定义所有 *源镜像* 的 Project，并使用 `--destination-project` 参数，自定义所有 *目标镜像* 的 Project。
+
+以下是一个例子：
+
+- 本例中使用 `Default` 格式的镜像列表，包含了一些 Docker Hub 镜像，这些镜像的 Project 不一致（`library` 和 `cnrancher`）。
+
+    ```txt title="example.txt"
+    docker.io/library/nginx:latest
+    docker.io/cnrancher/hangar:latest
+    ```
+
+- 使用 `--destination-project` 参数，将这些镜像拷贝至另一个 Docker Hub 用户。
+
+    ```shell-session
+    $ hangar mirror -f "example.txt" --destination-project="USERNAME"
+    [17:00:00] [INFO] [IMG:1] Copying [docker.io/library/nginx:latest] => [docker.io/USERNAME/nginx:latest]
+    [17:00:00] [INFO] [IMG:2] Copying [docker.io/cnrancher/hangar:latest] => [docker.io/USERNAME/hangar:latest]
+    ......
+    ```

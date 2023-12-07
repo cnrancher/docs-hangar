@@ -84,3 +84,27 @@ Global Flags:
 
 Use "hangar mirror [command] --help" for more information about a command.
 ```
+
+## Override project name when mirror images
+
+Hangar `mirror` command provides some advanced options to customize the project name (namespace) of the *SOURCE IMAGE* and *DESTINATION IMAGE*.
+
+You can use the `--source-project` option to override all source image projects and `--destination-project` option to override all destination image projects in the image list file.
+
+Here is an example:
+
+- The example `Default` format image list file contains images on Docker Hub with different projects (`library` and `cnrancher`).
+
+    ```txt title="example.txt"
+    docker.io/library/nginx:latest
+    docker.io/cnrancher/hangar:latest
+    ```
+
+- Use the `--destination-project` option to mirror these images to another user on Docker Hub.
+
+    ```shell-session
+    $ hangar mirror -f "example.txt" --destination-project="USERNAME"
+    [17:00:00] [INFO] [IMG:1] Copying [docker.io/library/nginx:latest] => [docker.io/USERNAME/nginx:latest]
+    [17:00:00] [INFO] [IMG:2] Copying [docker.io/cnrancher/hangar:latest] => [docker.io/USERNAME/hangar:latest]
+    ......
+    ```

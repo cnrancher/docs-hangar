@@ -183,7 +183,9 @@ You can follow the Rancher [Air-Gapped Helm CLI Install](https://ranchermanager.
     ./install.sh
     ```
 
-    You can execute following command to pull images from the private image registry server to ensure that the `registries.yaml` config is working properly:
+    You also need to install [kubectl](https://kubernetes.io/docs/reference/kubectl/) and [helm](https://helm.sh/docs/intro/install/) command line tools before installing Rancher.
+
+1. You can execute following command to pull images from the private image registry server to ensure that the `registries.yaml` config is working properly:
 
     ```sh
     k3s crictl pull registry.example.com:5000/rancher/mirrored-pause:3.6

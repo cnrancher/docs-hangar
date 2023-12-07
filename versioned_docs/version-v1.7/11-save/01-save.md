@@ -32,6 +32,10 @@ Use following command to save multiple container images from registry server int
 
     The images will saved into `saved_example.zip`.
 
+3. If error occured when saving some images, the save failed images will output to `save-failed.txt` by default.
+
+    You can use the `--failed` option to specify the output file of the save failed images, and then use hangar [sync](/v1.7/sync/sync) command to re-download the save failed images in `save-failed.txt` to the archive file without re-creating the whole archive file again.
+
 ## Archive File
 
 Hangar uses the `zip` format archive file since version `v1.7.0`.

@@ -33,12 +33,19 @@ You can use `cnrancher/hangar` docker image as base image to integrate hangar wi
 ```bash
 #!/bin/bash
 
-docker run -v $(pwd):/hangar cnrancher/hangar:${VERSION} mirror \
+# Login to the destination registry server
+# (and source registry server if needed) before copy images.
+hangar login [DESTINATION_REGISTRY_URL] \
+    --username="${USERNAME}" \
+    --password="${PASSWORD}"
+
+hangar mirror \
     --file="/hangar/list.txt" \
     --source="docker.io" \
     --destination="[DESTINATION_REGISTRY_URL]" \
     --jobs=8 \
-    --failed="/hangar/mirror-failed.txt"
+    --failed="/hangar/mirror-failed.txt" \
+    --skip-login
 
 # Check mirror-failed.txt
 if [[ -e "mirror-failed.txt" ]]; then
@@ -48,12 +55,13 @@ if [[ -e "mirror-failed.txt" ]]; then
 fi
 
 # Validate the mirrored images (optional)
-docker run -v $(pwd):/hangar cnrancher/hangar:${VERSION} mirror validate \
+hangar mirror validate \
     --file="/hangar/list.txt" \
     --source="docker.io" \
     --destination="[DESTINATION_REGISTRY_URL]" \
     --jobs=8 \
-    --failed="/hangar/mirror-validate-failed.txt"
+    --failed="/hangar/mirror-validate-failed.txt" \
+    --skip-login
 
 # Check mirror-validate-failed.txt
 if [[ -e "mirror-validate-failed.txt" ]]; then

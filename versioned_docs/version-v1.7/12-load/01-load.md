@@ -7,19 +7,35 @@ and the `load` command can be used in Air-Gapped (offline) installation scenario
 
 ## Quick Start
 
-Use following command to load multiple container images from archive file created by [save](/docs/v1.7/save/save#quick-start) command to the *destination registry server* parallelly.
+1. Use following command to load multiple container images from archive file created by [save](/docs/v1.7/save/save#quick-start) command to the *destination registry server* parallelly.
 
-```bash
-#!/bin/bash
+    ```bash
+    #!/bin/bash
 
-hangar load \
-    --file="example_image_list.txt" \
-    --source="save_example.zip" \
-    --destination=DESTINATION_REGISTRY_URL \
-    --arch=amd64,arm64 \
-    --os=linux \
-    --jobs=4
-```
+    hangar load \
+        --file="example_image_list.txt" \
+        --source="save_example.zip" \
+        --destination=DESTINATION_REGISTRY_URL \
+        --arch=amd64,arm64 \
+        --os=linux \
+        --jobs=4
+    ```
+
+1. If error occured when loading some images from the archive file, the load failed images will output to `load-failed.txt` by default.
+
+    You can use the `--failed` option to specify the output file of the load failed images, and then use the `--file` option of `hangar load` command to upload only these failed images from the archive file.
+
+    ```bash
+    #!/bin/bash
+
+    hangar load \
+        --file="load-failed.txt" \
+        --source="save_example.zip" \
+        --destination=DESTINATION_REGISTRY_URL \
+        --arch=amd64,arm64 \
+        --os=linux \
+        --jobs=4
+    ```
 
 ## Harbor 2.X
 
@@ -158,4 +174,69 @@ Here is an example:
         }
       ]
     }
+    ```
+
+## Override the project name or source registry URL when loading images
+
+Hangar `load` command provides some advanced options to customize the project name or source registry URL of the image list file when loading images.
+
+You can use the `--project` option to override all destination image projects when loading images.
+
+Here is an example:
+
+- The images in example `save_example.zip` archive file contains different projects (`library` and `cnrancher`).
+
+    ```shell-session
+    $ hangar archive ls -f save_example.zip
+    [15:58:34] [INFO] Created time: 2023-11-31 00:00:00 +0800 CST
+    [15:58:34] [INFO] Index version: v1.2.0
+    [15:58:34] [INFO] Images:
+       1 | docker.io/library/nginx:latest | arm64,amd64 | linux
+       2 | docker.io/cnrancher/hangar:latest | amd64,arm64 | linux
+    ```
+
+- Load all images in the archive file to the Docker Hub `example` user.
+
+    ```shell-session
+    $ hangar load -s "save_example.zip" -d "docker.io" --project="example"
+    [16:00:00] [INFO] Arch List: [amd64,arm64]
+    [16:00:26] [INFO] OS List: [linux]
+    [16:00:32] [INFO] [IMG:2] Loading [docker.io/cnrancher/hangar:latest] => [docker.io/example/hangar:latest]
+    [16:00:32] [INFO] [IMG:1] Loading [docker.io/library/nginx:latest] => [docker.io/example/nginx:latest]
+    ......
+    ```
+
+----
+
+You can use the `--source-registry` option to override the registry URL of the image list file when loading images from archive file with an image list file specified.
+
+Here is an example:
+
+- The registry URL of images in the example `save_example.zip` file is `127.0.0.1:5000`.
+
+    ```shell-session
+    $ hangar archive ls -f save_example.zip
+    [15:58:34] [INFO] Created time: 2023-11-31 00:00:00 +0800 CST
+    [15:58:34] [INFO] Index version: v1.2.0
+    [15:58:34] [INFO] Images:
+       1 | 127.0.0.1:5000/library/nginx:latest | arm64,amd64 | linux
+       2 | 127.0.0.1:5000/cnrancher/hangar:latest | amd64,arm64 | linux
+    ```
+
+- The registry URL of images in the example image list file is `docker.io`.
+
+    ```txt title="example.txt"
+    docker.io/library/nginx:latest
+    docker.io/library/hangar:latest
+    ```
+
+- You need to add `--source-registry='127.0.0.1:5000'` option when loading images from the archive file with the `example.txt` image list file specified.
+
+    ```shell-session
+    $ hangar load -f "example.txt" -s "save_example.zip" --source-registry="127.0.0.1:5000" -d "REGISTRY_URL"
+    [16:00:00] [INFO] Arch List: [amd64,arm64]
+    [16:00:00] [INFO] OS List: [linux]
+    [16:00:00] [INFO] [IMG:2] Loading [127.0.0.1:5000/cnrancher/hangar:latest] => [REGISTRY_URL/cnrancher/hangar:latest]
+    [16:00:00] [INFO] [IMG:1] Loading [127.0.0.1:5000/library/nginx:latest] => [REGISTRY_URL/library/nginx:latest]
+    ......
     ```
