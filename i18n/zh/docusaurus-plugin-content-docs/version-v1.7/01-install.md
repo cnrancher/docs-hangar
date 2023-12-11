@@ -30,10 +30,10 @@ title: 安装指南
 
 ### Arch Linux
 
-Hangar 可在 Arch Linux [AUR](https://aur.archlinux.org/packages/hangar-bin) 仓库获取：
+您可在 Arch Linux [AUR](https://aur.archlinux.org/packages/hangar-git) 仓库获取 `PKGBUILD`，在本地编译并安装 Hangar：
 
 ```sh
-yay -S hangar-bin
+yay hangar-git
 ```
 
 ### openSUSE

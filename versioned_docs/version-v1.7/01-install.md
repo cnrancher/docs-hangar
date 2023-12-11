@@ -30,10 +30,10 @@ For more information about Hangar Docker Image, see [Hangar Docker Image](/docs/
 
 ### Arch Linux
 
-Hangar is available on Arch Linux [AUR](https://aur.archlinux.org/packages/hangar-bin) repository:
+You can obtain the `PKGBUILD` to build and install the latest Hangar binary file from the Arch Linux [AUR](https://aur.archlinux.org/packages/hangar-git) repository:
 
 ```sh
-yay -S hangar-bin
+yay hangar-git
 ```
 
 ### openSUSE
