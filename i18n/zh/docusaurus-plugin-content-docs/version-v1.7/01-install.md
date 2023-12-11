@@ -38,7 +38,14 @@ yay -S hangar-bin
 
 ### openSUSE
 
-> Still working in progress.
+Hangar 可在 [Open Build Service](https://build.opensuse.org/package/show/home:StarryWang/Hangar) 获取：
+
+```sh
+# openSUSE Tumbleweed
+sudo zypper ar https://download.opensuse.org/repositories/home:StarryWang/openSUSE_Tumbleweed/home:StarryWang.repo
+sudo zypper ref
+sudo zypper in hangar
+```
 
 ## 从源代码中构建 Hangar
 
