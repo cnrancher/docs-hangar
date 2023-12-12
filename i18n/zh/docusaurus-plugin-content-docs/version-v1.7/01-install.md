@@ -30,15 +30,35 @@ title: 安装指南
 
 ### Arch Linux
 
-您可在 Arch Linux [AUR](https://aur.archlinux.org/packages/hangar-git) 仓库获取 `PKGBUILD`，在本地编译并安装 Hangar：
+您可在 Arch Linux [AUR](https://aur.archlinux.org/packages/hangar) 仓库获取 `PKGBUILD`，在本地编译并安装 Hangar。
 
-```sh
-yay hangar-git
-```
+- 使用 [yay](https://github.com/Jguer/yay) AUR Helper 安装 Hangar：
+
+    ```sh
+    # 从最新的 stable release tag 构建并安装 Hangar。
+    yay hangar
+
+    # 从最新的上游 git main 分支源码构建并安装 Hangar。
+    yay hangar-git
+    ```
+
+- 除此之外，您可以添加 [Open Build Service](https://download.opensuse.org/repositories/home:/StarryWang/Arch/x86_64/) 仓库以安装预构建的 Hangar 安装包。
+
+    1. 编辑 `/etc/pacman.conf` 添加自定义软件源：
+        ```txt title="/etc/pacman.conf"
+        [home_StarryWang_Arch]
+        SigLevel = Never
+        Server = https://download.opensuse.org/repositories/home:/StarryWang/Arch/$arch
+        ```
+    1. 安装 Hangar：
+        ```sh
+        sudo pacman -Sy
+        sudo pacman -S hangar
+        ```
 
 ### openSUSE
 
-Hangar 可在 [Open Build Service](https://build.opensuse.org/package/show/home:StarryWang/Hangar) 获取：
+Hangar 可在 [Open Build Service](https://build.opensuse.org/package/show/home:StarryWang/Hangar) 获取。
 
 ```sh
 # openSUSE Tumbleweed

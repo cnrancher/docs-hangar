@@ -30,15 +30,35 @@ For more information about Hangar Docker Image, see [Hangar Docker Image](/docs/
 
 ### Arch Linux
 
-You can obtain the `PKGBUILD` to build and install the latest Hangar binary file from the Arch Linux [AUR](https://aur.archlinux.org/packages/hangar-git) repository:
+You can obtain the `PKGBUILD` to build and install the latest Hangar binary file from the Arch Linux [AUR](https://aur.archlinux.org/packages/hangar) repository.
 
-```sh
-yay hangar-git
-```
+- Install `hangar` by using the [yay](https://github.com/Jguer/yay) AUR helper:
+
+    ```sh
+    # Build and install from the latest stable release tag.
+    yay hangar
+
+    # Build and install from the latest upstream main git branch.
+    yay hangar-git
+    ```
+
+- Or you can add the [Open Build Service](https://download.opensuse.org/repositories/home:/StarryWang/Arch/x86_64/) repository to install prebuilt hangar package.
+
+    1. Add custom repository in `/etc/pacman.conf`:
+        ```txt title="/etc/pacman.conf"
+        [home_StarryWang_Arch]
+        SigLevel = Never
+        Server = https://download.opensuse.org/repositories/home:/StarryWang/Arch/$arch
+        ```
+    1. Install hangar:
+        ```sh
+        sudo pacman -Sy
+        sudo pacman -S hangar
+        ```
 
 ### openSUSE
 
-Hangar is available on [Open Build Service](https://build.opensuse.org/package/show/home:StarryWang/Hangar):
+Hangar is available on [Open Build Service](https://build.opensuse.org/package/show/home:StarryWang/Hangar).
 
 ```sh
 # openSUSE Tumbleweed
