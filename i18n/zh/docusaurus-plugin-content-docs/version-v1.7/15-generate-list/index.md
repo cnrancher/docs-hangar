@@ -16,7 +16,7 @@ hangar generate-list --rancher="v2.8.0-ent"
 
 > 以 `-ent` 结尾的 Rancher 版本号表示 Rancher Prime Manager GC 版本。
 
-生成的镜像列表文件名为 `v2.8.0-ent-images.txt`，支持的集群版本列表为 `v2.8.0-versions.txt`。
+生成的镜像列表文件名为 `v2.8.0-ent-images.txt`，支持的集群版本列表为 `v2.8.0-ent-versions.txt`。
 
 Hangar 的 `generate-list` 命令主要用于当 Rancher 的 KDM 数据和 Helm Chart 仓库存在更新时，获取并同步这些更新的镜像至私有镜像仓库中。
 
