@@ -14,10 +14,12 @@
     "write-heading-ids": "docusaurus write-heading-ids"
   },
   "dependencies": {
-    "@docusaurus/core": "^3.0.1",
-    "@docusaurus/plugin-content-docs": "^3.0.1",
-    "@docusaurus/plugin-content-pages": "^3.0.1",
-    "@docusaurus/preset-classic": "^3.0.1",
+    "@docusaurus/core": "latest",
+    "@docusaurus/module-type-aliases": "latest",
+    "@docusaurus/plugin-content-docs": "latest",
+    "@docusaurus/plugin-content-pages": "latest",
+    "@docusaurus/preset-classic": "latest",
+    "@docusaurus/types": "latest",
     "@easyops-cn/docusaurus-search-local": "^0.37.4",
     "@mdx-js/react": "^3.0.0",
     "clsx": "^1.2.1",

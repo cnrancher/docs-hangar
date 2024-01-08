@@ -42,7 +42,7 @@ Hangar uses the `zip` format archive file since version `v1.7.0`.
 
 **It should be noted that archive file created by older versions of hangar (`tar.gz`) are not compatible with new versions.**
 
-For more information about hangar archive usage, see [load](/docs/v1.7/load/load) and [archive](/docs/v1.7/save/archive) page.
+For more information about hangar archive usage, see [load](/docs/v1.7/load/load) and [archive](/docs/v1.7/archive) page.
 
 ## Usage
 

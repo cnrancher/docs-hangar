@@ -42,7 +42,7 @@ title: "Save 命令"
 
 **旧版本的 Hangar 创建的压缩包格式（`tar.gz`）将无法与新版本（`zip`）格式相兼容。**
 
-关于压缩文件的更多信息，请参考 [load](/docs/v1.7/load/load) 命令和 [压缩文件格式](/docs/v1.7/save/archive) 页面。
+关于压缩文件的更多信息，请参考 [load](/docs/v1.7/load/load) 命令和 [压缩文件格式](/docs/v1.7/archive/specification) 页面。
 
 ## 使用方法
 

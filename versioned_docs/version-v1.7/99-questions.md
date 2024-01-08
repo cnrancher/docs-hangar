@@ -25,7 +25,7 @@ You need to create **Harbor Project** manually if hangar can't create the projec
 
 ## Why using `zip` archive format?
 
-See [hangar archive](/docs/v1.7/save/archive) for more information of the new archive format.
+See [hangar archive](/docs/v1.7/archive/specification) for more information of the new archive format.
 
 Since hangar uses the `zip` format archive file after version `v1.7.0`.
 

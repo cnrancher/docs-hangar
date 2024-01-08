@@ -14,7 +14,7 @@ title: "压缩文件格式"
 
 您可以使用 [load](/docs/v1.7/load/load) 命令将压缩包中的镜像上传至镜像仓库中。
 
-除此之外，您还可以使用 [archive ls](/docs/v1.7/advanced/archive-ls) 命令，查看压缩包中储存的镜像信息。
+除此之外，您还可以使用 [archive ls](/docs/v1.7/archive/ls) 命令，查看压缩包中储存的镜像信息。
 
 ## 为什么使用 zip 格式？
 

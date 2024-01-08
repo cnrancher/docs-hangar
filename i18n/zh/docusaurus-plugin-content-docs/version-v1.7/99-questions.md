@@ -25,7 +25,7 @@ title: "常见问题"
 
 ## 为什么使用 `zip` 压缩包格式？
 
-关于压缩文件的更多信息，请参考 [load](/docs/v1.7/load/load) 和 [压缩文件格式](/docs/v1.7/save/archive) 页面。
+关于压缩文件的更多信息，请参考 [load](/docs/v1.7/load/load) 和 [压缩文件格式](/docs/v1.7/archive/specification) 页面。
 
 **旧版本的 Hangar 创建的压缩包格式（`tar.gz`）将无法与新版本（`zip`）格式相兼容。**
 

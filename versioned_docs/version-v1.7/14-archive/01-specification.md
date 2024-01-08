@@ -1,5 +1,5 @@
 ---
-title: "Archive File"
+title: "Archive File Format"
 ---
 
 Hangar uses the `zip` format archive file since version `v1.7.0`.
