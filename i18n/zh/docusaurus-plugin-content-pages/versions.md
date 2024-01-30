@@ -4,10 +4,12 @@ title: 版本信息
 
 ## 版本信息
 
-| 版本     | 使用文档             | 发布通知 |
-|:-------:|:-------------------:|:-------------:
-| v1.7.0  | [v1.7](/docs/v1.7/) | https://github.com/cnrancher/hangar/releases/tag/v1.7.0 |
-| v1.6.0  | [v1.6](/docs/v1.6/) | https://github.com/cnrancher/hangar/releases/tag/v1.6.0 |
+| 版本    | 发布通知 |
+|:-------:|:-------------:
+| v1.7.1  | https://github.com/cnrancher/hangar/releases/tag/v1.7.1 |
+| v1.7.0  | https://github.com/cnrancher/hangar/releases/tag/v1.7.0 |
+| v1.6.1  | https://github.com/cnrancher/hangar/releases/tag/v1.6.1 |
+| v1.6.0  | https://github.com/cnrancher/hangar/releases/tag/v1.6.0 |
 
 ## 历史版本
 

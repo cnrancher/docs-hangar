@@ -5,6 +5,14 @@ title: "Load Command"
 The `hangar load` command loads images from zip archive file created by [save](/docs/v1.7/save/save) command to registry server, it allows to upload container images to registry server without a public internet connection,
 and the `load` command can be used in Air-Gapped (offline) installation scenarios.
 
+:::note
+
+Hangar chaned to use the [zip archive format](/docs/v1.7/archive/specification) from version `v1.7.0`.
+
+You can still use the [hangar v1.6.X](/docs/v1.6/load/load) to load the `tar.gz` format tarball.
+
+:::
+
 ## Quick Start
 
 1. Use following command to load multiple container images from archive file created by [save](/docs/v1.7/save/save#quick-start) command to the *destination registry server* parallelly.

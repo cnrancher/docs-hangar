@@ -10,14 +10,14 @@ docker pull cnrancher/hangar:${VERSION}
 
 # 获取帮助信息
 ## 默认情况下 entrypoint 为 hangar 可执行文件
-docker run cnrancher/hangar:${VERSION} --help
+docker run cnrancher/hangar:${VERSION} hangar --help
 ```
 
 设定 `entrypoint` 为 `bash`, 将本地目录挂载到容器中，可在容器内执行 Mirror / Load / Save。
 
 ```console
-$ docker run --entrypoint bash -v $(pwd):/images -it cnrancher/hangar:${VERSION}
-a455e1202691:/images # hangar -h
+$ docker run --entrypoint bash -v $(pwd):/hangar -it cnrancher/hangar:${VERSION}
+a455e1202691:/hangar # hangar -h
 Usage:	hangar COMMAND [OPTIONS]
 ......
 ```
@@ -40,16 +40,17 @@ Example:
 ```bash
 #!/bin/bash
 
-docker run -v $(pwd):/images \
+docker run -v $(pwd):/hangar \
     -e SOURCE_REGISTRY="" \
     -e SOURCE_USERNAME="" \
     -e SOURCE_PASSWORD="" \
     -e DEST_REGISTRY="" \
     -e DEST_USERNAME="" \
     -e DEST_PASSWORD="" \
-    cnrancher/hangar:${VERSION} mirror \
-    -f /images/list.txt \
-    -o /images/mirror-failed.txt
+    cnrancher/hangar:${VERSION} \
+    hangar mirror \
+    -f /hangar/list.txt \
+    -o /hangar/mirror-failed.txt
 
 # check mirror-failed.txt
 cat mirror-failed.txt

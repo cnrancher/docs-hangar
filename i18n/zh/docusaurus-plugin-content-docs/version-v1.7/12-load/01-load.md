@@ -5,6 +5,15 @@ title: "Load 命令"
 `hangar load` 命令用于将 [save](/docs/v1.7/save/save) 命令创建的压缩包中的镜像上传至镜像仓库服务器中。
 您可以在没有公网连接的环境上传容器镜像至私有仓库，`load` 命令支持用于离线环境（Air-Gap）场景部署私有镜像仓库。
 
+:::note
+
+Hangar 自 `v1.7.0` 开始使用 [zip 压缩包格式](/docs/v1.7/archive/specification)。
+
+若需要加载 `tar.gz` 格式的镜像包文件，请使用 [Hangar v1.6.X](/docs/v1.6/load/load)。
+
+:::
+
+
 ## 快速上手
 
 1. 使用以下命令将压缩包中存储的镜像批量上传至**目标镜像仓库**中：

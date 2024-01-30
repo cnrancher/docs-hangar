@@ -8,13 +8,16 @@ title: "压缩文件格式"
 
 **旧版本的 Hangar 创建的压缩包格式（`tar.gz`）将无法与新版本（`zip`）格式相兼容。**
 
-您可使用 Hangar `v1.6.X` 加载 `tar.gz` 格式的压缩包文件。
+您可使用 [Hangar v1.6.X](/docs/v1.6/load/load) 加载 `tar.gz` 格式的压缩包文件。
 
 :::
 
 您可以使用 [load](/docs/v1.7/load/load) 命令将压缩包中的镜像上传至镜像仓库中。
 
-除此之外，您还可以使用 [archive ls](/docs/v1.7/archive/ls) 命令，查看压缩包中储存的镜像信息。
+除此之外，您还可以使用 [hangar archive](/docs/v1.7/archive/) 命令，对镜像包文件进行处理：
+- [hangar archive ls](/docs/v1.7/archive/ls) 命令：查看镜像包中存储的镜像信息。
+- [hangar archive merge](/docs/v1.7/archive/merge) 命令：整合多个镜像包文件至一个新的镜像包文件。
+- [hangar archive export](/docs/v1.7/archive/export) 命令：从镜像包文件中导出部分镜像至一个新的镜像包文件。
 
 ## 为什么使用 zip 格式？
 

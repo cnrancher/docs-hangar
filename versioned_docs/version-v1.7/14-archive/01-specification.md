@@ -8,13 +8,16 @@ Hangar uses the `zip` format archive file since version `v1.7.0`.
 
 **The archive file created by older versions of hangar (`tar.gz`) are no longer compatible with new versions (`zip`).**
 
-You can use Hangar `v1.6` to load the old `tar.gz` format archive file.
+You can use [hangar v1.6](/docs/v1.6/load/load) to load the old `tar.gz` format archive file.
 
 :::
 
 You can use [load](/docs/v1.7/load/load) command to load images from archive file to registry server.
 
-And you can also use [archive ls](/docs/v1.7/archive/ls) command to view images stored in the archive file.
+And you can also use the [hangar archive](/docs/v1.7/archive/) command to operate with the archive file.
+- [hangar archive ls](/docs/v1.7/archive/ls): List the images in the archive file.
+- [hangar archive merge](/docs/v1.7/archive/merge): Merge multiple archive files into a new archive file.
+- [hangar archive export](/docs/v1.7/archive/export): Export images from archive file.
 
 ## Why using zip format?
 
