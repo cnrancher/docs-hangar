@@ -14,26 +14,32 @@ Hangar 的 Docker 镜像支持 `amd64` 和 `arm64` 架构。
 docker pull cnrancher/hangar:${VERSION}
 ```
 
-运行 Hangar 命令：
+在容器中运行 Hangar：
 
 ```bash
-docker run cnrancher/hangar:${VERSION} hangar --help
+docker run -v $(pwd):/hangar -it cnrancher/hangar:latest
 ```
 
-将本地文件夹映射到容器镜像中，之后在容器镜像中执行 `mirror/save/load/sync` 等命令。
+因 Entrypoint 为 bash，可通过 bash 的 `-c` 参数指定执行的 Hangar 命令。
 
 ```bash
-docker run -v $(pwd):/hangar -it cnrancher/hangar:${VERSION}
+docker run cnrancher/hangar -c "hangar help"
 ```
 
 ## 将 Hangar 集成至 CI
 
 您可以将 `cnrancher/hangar` Docker 镜像作为基础镜像使用在 CI 中，以下是一份样例脚本：
 
-```bash
+```bash  title="mirror.sh"
 #!/bin/bash
 
-docker run -v $(pwd):/hangar cnrancher/hangar:${VERSION} mirror \
+# Login to the destination registry server
+# (and source registry server if needed) before copy images.
+hangar login [DESTINATION_REGISTRY_URL] \
+    --username="${USERNAME}" \
+    --password="${PASSWORD}"
+
+hangar mirror \
     --file="/hangar/list.txt" \
     --source="docker.io" \
     --destination="[DESTINATION_REGISTRY_URL]" \
@@ -48,7 +54,7 @@ if [[ -e "mirror-failed.txt" ]]; then
 fi
 
 # Validate the mirrored images (optional)
-docker run -v $(pwd):/hangar cnrancher/hangar:${VERSION} mirror validate \
+hangar mirror validate \
     --file="/hangar/list.txt" \
     --source="docker.io" \
     --destination="[DESTINATION_REGISTRY_URL]" \

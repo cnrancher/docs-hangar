@@ -14,23 +14,23 @@ Starting form `v1.7.0`, the entrypoint of hangar image was changed to `bash` ins
 docker pull cnrancher/hangar:${VERSION}
 ```
 
-Execute hangar commands:
+Execute hangar commands in the container:
 
 ```bash
-docker run cnrancher/hangar:${VERSION} hangar --help
+docker run -v $(pwd):/hangar -it cnrancher/hangar:latest
 ```
 
-Mount the local directory into the container, and execute `mirror/load/save/sync` commands inside the container image:
+Use the `-c` option of the bash to execute the hangar commands.
 
 ```bash
-docker run -v $(pwd):/hangar -it cnrancher/hangar:${VERSION}
+docker run cnrancher/hangar -c "hangar help"
 ```
 
 ## Integrate Hangar with CI
 
 You can use `cnrancher/hangar` docker image as base image to integrate hangar with CI, here is an example script:
 
-```bash
+```bash  title="mirror.sh"
 #!/bin/bash
 
 # Login to the destination registry server
@@ -50,6 +50,7 @@ hangar mirror \
 # Check mirror-failed.txt
 if [[ -e "mirror-failed.txt" ]]; then
     echo "There are some images failed to copy:"
+
     cat mirror-failed.txt
     exit 1
 fi
