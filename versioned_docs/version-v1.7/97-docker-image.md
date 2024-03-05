@@ -4,12 +4,6 @@ title: "Hangar Docker Image"
 
 Hangar docker images support both `amd64` and `arm64` architectures.
 
-:::note
-
-Starting form `v1.7.0`, the entrypoint of hangar image was changed to `bash` instead of `hangar` executable binary file.
-
-:::
-
 ```bash
 docker pull cnrancher/hangar:${VERSION}
 ```
@@ -20,10 +14,14 @@ Execute hangar commands in the container:
 docker run -v $(pwd):/hangar -it cnrancher/hangar:latest
 ```
 
-Use the `-c` option of the bash to execute the hangar commands.
+::: note
+
+Starting from hangar `v1.7.2`, the entrypoint of the hangar docker image was changed to [entrypoint.sh](https://github.com/cnrancher/hangar/blob/v1.7.2/package/entrypoint.sh).
+
+:::
 
 ```bash
-docker run cnrancher/hangar -c "hangar help"
+docker run cnrancher/hangar:latest hangar help
 ```
 
 ## Integrate Hangar with CI

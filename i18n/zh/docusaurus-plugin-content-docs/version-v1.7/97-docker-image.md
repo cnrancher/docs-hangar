@@ -4,12 +4,6 @@ title: "Hangar Docker 镜像"
 
 Hangar 的 Docker 镜像支持 `amd64` 和 `arm64` 架构。
 
-:::note
-
-自 Hangar `v1.7.0` 起，Hangar Docker 镜像的 Entrypoint 改为 `bash`，而非 `hangar` 可执行文件。
-
-:::
-
 ```bash
 docker pull cnrancher/hangar:${VERSION}
 ```
@@ -20,10 +14,14 @@ docker pull cnrancher/hangar:${VERSION}
 docker run -v $(pwd):/hangar -it cnrancher/hangar:latest
 ```
 
-因 Entrypoint 为 bash，可通过 bash 的 `-c` 参数指定执行的 Hangar 命令。
+::: note
+
+自 Hangar `v1.7.2` 起，Hangar Docker 镜像的 Entrypoint 调整为 [entrypoint.sh](https://github.com/cnrancher/hangar/blob/v1.7.2/package/entrypoint.sh)。
+
+:::
 
 ```bash
-docker run cnrancher/hangar -c "hangar help"
+docker run cnrancher/hangar:latest hangar help
 ```
 
 ## 将 Hangar 集成至 CI
