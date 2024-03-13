@@ -14,15 +14,11 @@ docker pull cnrancher/hangar:${VERSION}
 docker run -v $(pwd):/hangar -it cnrancher/hangar:latest
 ```
 
-::: note
+:::note
 
 自 Hangar `v1.7.2` 起，Hangar Docker 镜像的 Entrypoint 调整为 [entrypoint.sh](https://github.com/cnrancher/hangar/blob/v1.7.2/package/entrypoint.sh)。
 
 :::
-
-```bash
-docker run cnrancher/hangar:latest hangar help
-```
 
 ## 将 Hangar 集成至 CI
 

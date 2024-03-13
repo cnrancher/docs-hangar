@@ -14,15 +14,11 @@ Execute hangar commands in the container:
 docker run -v $(pwd):/hangar -it cnrancher/hangar:latest
 ```
 
-::: note
+:::note
 
 Starting from hangar `v1.7.2`, the entrypoint of the hangar docker image was changed to [entrypoint.sh](https://github.com/cnrancher/hangar/blob/v1.7.2/package/entrypoint.sh).
 
 :::
-
-```bash
-docker run cnrancher/hangar:latest hangar help
-```
 
 ## Integrate Hangar with CI
 
