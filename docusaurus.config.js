@@ -122,7 +122,7 @@ const config = {
                     includeCurrentVersion: false,
                     versions: {
                         "v1.8": {
-                            label: "v1.8",
+                            label: "v1.8 (preview)",
                             path: "v1.8",
                             // banner: "none",
                         },
