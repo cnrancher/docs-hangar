@@ -6,7 +6,7 @@ title: "Sync Validate 命令"
 
 ## 快速上手
 
-在执行 [sync](/docs/v1.7/sync#快速上手) 命令后，可执行以下命令进行验证:
+在执行 [sync](/docs/v1.7/sync/sync#快速上手) 命令后，可执行以下命令进行验证:
 
 ```bash
 #!/bin/bash
