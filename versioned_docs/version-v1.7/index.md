@@ -7,22 +7,24 @@ sidebar_position: 0
 
 ## Getting Started
 
-1. Setup a private container image [registry](https://distribution.github.io/distribution/about/deploying/) server.
+Follow this instruction to setup a demo [distribution registry server](https://distribution.github.io/distribution/about/deploying/) and use Hangar to copy images.
+
+1. Setup a demo [registry](https://distribution.github.io/distribution/about/deploying/) server.
     ```bash
-    docker run -d -p 5000:5000 --name registry registry:2
+    docker run -d -p 5000:5000 --restart=always --name registry registry:2
     ```
-1. Run hangar in `cnrancher/hangar` docker image:
+1. Run Hangar inside the container image:
     ```bash
     docker run -it -v $(pwd):/hangar --network=host cnrancher/hangar:latest
     ```
-1. Create an example image list file for mirror images from [Docker Hub](https://hub.docker.com) to your private image registry:
+1. Create an image list file for copy images from the [Docker Hub](https://hub.docker.com) to the demo registry server:
 
     ```txt title="example_image_list.txt"
     cnrancher/hangar:latest
     cnrancher/hangar:v1.7.0
     ```
 
-    Use hangar [mirror](/docs/v1.7/mirror/mirror) command to mirror images from Docker Hub:
+    Use Hangar [mirror](/docs/v1.7/mirror/mirror) command to copy images from Docker Hub:
 
     ```bash
     hangar mirror \
@@ -38,11 +40,11 @@ sidebar_position: 0
 
     By default, the registry server can be login with any username and password.
 
-    You can configure the authentication config of the registry server by refer to [Distribution Registry Token Authentication](https://distribution.github.io/distribution/spec/auth/) and setup the [HTTPS certificate](https://distribution.github.io/distribution/about/deploying/#get-a-certificate) to use in production.
+    You can configure the authentication config of the registry server by refer to [Distribution Registry Token Authentication](https://distribution.github.io/distribution/spec/auth/).
 
     :::
 
-1. You can use the hangar [inspect](advanced/inspect) command to inspect the copied image manifest in the destination registry:
+1. Use the hangar [inspect](advanced/inspect) command to inspect the copied image manifest index:
 
     ```sh
     hangar inspect docker://127.0.0.1:5000/cnrancher/hangar:latest --raw --tls-verify=false
@@ -59,11 +61,11 @@ sidebar_position: 0
 
 You can refer to the [Installation Guide](/docs/v1.7/install) to install hangar on your system.
 
-For more detailed usage example of hangar to setup a private image registry server, see [Hangar Best Practice](/docs/v1.7/bestpractice).
+For more detailed usage example of hangar to setup a private image registry server with Kubernetes clusters, see [Hangar Best Practice](/docs/v1.7/bestpractice).
 
 ## Configuration
 
-The configuration file of hangar is compatible with [containers/image](https://github.com/containers/image/tree/main/docs) configuration files.
+The configuration file of Hangar is compatible with the [containers/image](https://github.com/containers/image/tree/main/docs) configuration files.
 
 - `/etc/containers/policy.json`: The default trust policy file, use `--insecure-policy` option to skip policy check.
 
@@ -75,9 +77,9 @@ The configuration file of hangar is compatible with [containers/image](https://g
 - [save](save/save): Save container images from registry server into archive file.
 - [load](load/load): Load container images from archive file to registry server.
 - [sync](sync/sync): Sync (append) extra images into archive file.
-- [validate](advanced/validate): Subcommands of `mirror/save/load/sync` commands for validating the copied images.
-
-Hanagr also provides some extra commands for advanced usage, see [advanced](advanced).
+- [archive](sync/sync): Operations for the Hangar archive file.
+- [generate-list](generate-list/): Generate image list file for Rancher.
+Hanagr also provides some extra commands for advanced usage, see [advanced usage](advanced).
 
 ## Supported Registries
 

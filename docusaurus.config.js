@@ -8,7 +8,7 @@
 const config = {
     title: "Hangar",
     tagline: "",
-    favicon: "favicon.ico",
+    favicon: "favicon.png",
     url: "https://hangar.cnrancher.com",
     baseUrl: "/",
     // GitHub pages deployment config.
@@ -121,6 +121,11 @@ const config = {
                     lastVersion: "v1.7",
                     includeCurrentVersion: false,
                     versions: {
+                        "v1.8": {
+                            label: "v1.8",
+                            path: "v1.8",
+                            // banner: "none",
+                        },
                         "v1.7": {
                             label: "v1.7",
                             path: "v1.7",

@@ -7,22 +7,24 @@ sidebar_position: 0
 
 ## 快速上手
 
-1. 在本地搭建私有 [Registry](https://distribution.github.io/distribution/about/deploying/) 镜像仓库。
+参照以下指引，搭建一个 Demo [Registry](ttps://distribution.github.io/distribution/about/deploying/) 镜像仓库，使用 Hangar 拷贝容器镜像。
+
+1. 搭建 Demo [Registry](https://distribution.github.io/distribution/about/deploying/) 镜像仓库。
     ```bash
-    docker run -d -p 5000:5000 --name registry registry:2
+    docker run -d -p 5000:5000 --restart=always --name registry registry:2
     ```
-1. 使用 Docker 镜像 `cnrancher/hangar` 运行 Hangar：
+1. 在容器中运行 Hangar：
     ```bash
     docker run -it -v $(pwd):/hangar --network=host cnrancher/hangar:latest
     ```
-1. 创建样例镜像列表文件，用于将 [Docker Hub](https://hub.docker.com) 中的镜像拷贝（Mirror）至私有镜像仓库：
+1. 创建镜像列表文件，用于将 [Docker Hub](https://hub.docker.com) 镜像拷贝（Mirror）至 Demo 镜像仓库：
 
     ```txt title="example_image_list.txt"
     cnrancher/hangar:latest
     cnrancher/hangar:v1.7.0
     ```
 
-    使用 Hangar [Mirror](/docs/v1.7/mirror/mirror) 命令从 Docker Hub 拷贝镜像至私有镜像仓库。
+    使用 Hangar [Mirror](/docs/v1.7/mirror/mirror) 命令从 Docker Hub 拷贝镜像。
 
     ```bash
     hangar mirror \
@@ -36,9 +38,9 @@ sidebar_position: 0
 
     :::note
 
-    默认情况下，Registry 可以使用任意的用户名和密码登录。
+    默认情况下，Demo Registry 镜像仓库可使用任意的用户名和密码登录。
 
-    您可以参考 [Distribution Registry Token Authentication](https://distribution.github.io/distribution/spec/auth/) 配置 Registry 的认证信息，并参考 [HTTPS certificate](https://distribution.github.io/distribution/about/deploying/#get-a-certificate) 配置 HTTPS。
+    您可以参照 [Distribution Registry Token Authentication](https://distribution.github.io/distribution/spec/auth/) 配置 Registry 的认证信息。
 
     :::
 
@@ -57,13 +59,13 @@ sidebar_position: 0
 
 ## 最佳实践
 
-您可以参考 [安装指南](/docs/v1.7/install) 页面安装 Hangar 至您的系统中。
+您可以参照 [安装指南](/docs/v1.7/install) 页面安装 Hangar 至您的系统中。
 
 请访问 [Hangar 最佳实践](/docs/v1.7/bestpractice) 页面，获取更多 Hangar 搭建私有镜像仓库的例子。
 
 ## 配置文件
 
-Hangar 使用与 [containers/image](https://github.com/containers/image/tree/main/docs) 相同的配置文件：
+Hangar 的配置文件与 [containers/image](https://github.com/containers/image/tree/main/docs) 相同：
 
 - `/etc/containers/policy.json`: 默认的 Policy 配置文件。可使用 `--insecure-policy` 参数跳过策略检查步骤。
 
@@ -75,9 +77,9 @@ Hangar 使用与 [containers/image](https://github.com/containers/image/tree/mai
 - [save](/docs/v1.7/save/save): 将容器镜像从镜像仓库下载至压缩归档文件中。
 - [load](/docs/v1.7/load/load): 将容器镜像从压缩归档文件上传到镜像仓库中。
 - [sync](/docs/v1.7/sync/sync): 向压缩归档文件中增添容器镜像。
-- [validate](/docs/v1.7/advanced/validate): 此命令为 `mirror/save/load/sync` 的子命令，用于验证容器镜像是否拷贝正确。
-
-除此之外，Hangar 提供了一些高级指令，可参考 [高级用法](/docs/v1.7/advanced) 页面。
+- [archive](sync/sync)：用于处理 Hangar 压缩包文件。
+- [generate-list](generate-list/)：用于生成 Rancher 镜像列表。
+除此之外，Hangar 提供了一些高级指令，可访问 [高级用法](/docs/v1.7/advanced) 页面获取更多信息。
 
 ## 支持的镜像仓库种类
 
@@ -99,4 +101,4 @@ Hangar 兼容 API V2 容器镜像仓库，例如：
 
 ## Q&A
 
-有关常见问题及报错，请参考 [常见问题](/docs/v1.7/questions) 页面。
+有关常见问题及报错，请参阅 [常见问题](/docs/v1.7/questions) 页面。
