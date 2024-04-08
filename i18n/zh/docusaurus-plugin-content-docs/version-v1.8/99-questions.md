@@ -82,6 +82,6 @@ Policy 配置文件 `/etc/containers/policy.json` 不存在。可在 [default-po
 
 您需要指定 [registries 配置文件](https://github.com/containers/image/blob/main/docs/containers-registries.d.5.md#individual-configuration-sections) 的 `use-sigstore-attachments` 为 `true`，以允许 Hangar 上传容器镜像的 Sigstore 签名。
 
-### Error: `Signature for identity ... is not accepted`
+### 报错：`Signature for identity ... is not accepted`
 
 请参阅[校验 Mirror 命令拷贝的容器镜像签名](/docs/v1.8/sign/validate#校验-mirror-命令拷贝的容器镜像签名)。

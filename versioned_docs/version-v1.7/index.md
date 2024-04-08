@@ -77,7 +77,7 @@ The configuration file of Hangar is compatible with the [containers/image](https
 - [save](save/save): Save container images from registry server into archive file.
 - [load](load/load): Load container images from archive file to registry server.
 - [sync](sync/sync): Sync (append) extra images into archive file.
-- [archive](sync/sync): Operations for the Hangar archive file.
+- [archive](archive/): Operations for the Hangar archive file.
 - [generate-list](generate-list/): Generate image list file for Rancher.
 Hanagr also provides some extra commands for advanced usage, see [advanced usage](advanced).
 

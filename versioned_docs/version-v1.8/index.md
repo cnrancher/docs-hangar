@@ -85,7 +85,7 @@ The configuration file of hangar is compatible with the [containers/image](https
 - [sync](sync/sync): Sync (append) extra images into archive file.
 - [sign](sign/sign): Sign container images with sigstore key-pair.
 - [scan](scan/scan): Scan container image vulnerabilities.
-- [archive](sync/sync): Operations for the Hangar archive file.
+- [archive](archive/): Operations for the Hangar archive file.
 - [generate-list](generate-list/): Generate image list file for Rancher.
 Hanagr also provides some extra commands for advanced usage, see [advanced usage](advanced).
 

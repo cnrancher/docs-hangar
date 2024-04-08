@@ -77,7 +77,7 @@ Hangar 的配置文件与 [containers/image](https://github.com/containers/image
 - [save](/docs/v1.7/save/save): 将容器镜像从镜像仓库下载至压缩归档文件中。
 - [load](/docs/v1.7/load/load): 将容器镜像从压缩归档文件上传到镜像仓库中。
 - [sync](/docs/v1.7/sync/sync): 向压缩归档文件中增添容器镜像。
-- [archive](sync/sync)：用于处理 Hangar 压缩包文件。
+- [archive](archive/)：用于处理 Hangar 压缩包文件。
 - [generate-list](generate-list/)：用于生成 Rancher 镜像列表。
 除此之外，Hangar 提供了一些高级指令，可访问 [高级用法](/docs/v1.7/advanced) 页面获取更多信息。
 
