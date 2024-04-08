@@ -63,31 +63,35 @@ Usage:
   hangar load [command]
 
 Examples:
-# Load images from SAVED_ARCHIVE.zip to REGISTRY SERVER.
+# Load images from SAVED_ARCHIVE.zip to REGISTRY server
+# and sign the loaded images by sigstore private key file.
 hangar load \
         --file IMAGE_LIST.txt \
         --source SAVED_ARCHIVE.zip \
         --destination REGISTRY_URL \
         --arch amd64,arm64 \
-        --os linux
+        --os linux \
+        --sigstore-private-key SIGSTORE.key
 
 Available Commands:
   validate    Validate the loaded images, ensure images were loaded to registry server
 
 Flags:
-  -a, --arch strings             architecture list of images (default [amd64,arm64])
-  -d, --destination string       destination registry url
-  -o, --failed string            file name of the load failed image list (default "load-failed.txt")
-  -f, --file string              image list file (optional: load all images from archive if not provided)
-  -h, --help                     help for load
-  -j, --jobs int                 worker number,copy images parallelly (1-20) (default 1)
-      --os strings               OS list of images (default [linux])
-      --project string           override all destination image projects
-      --skip-login               skip check the destination registry is logged in (used in shell script)
-  -s, --source string            saved archive filename
-      --source-registry string   override the source registry of image list
-      --timeout duration         timeout when save each images (default 10m0s)
-      --tls-verify               require HTTPS and verify certificates
+  -a, --arch strings                      architecture list of images (default [amd64,arm64])
+  -d, --destination string                destination registry url
+  -o, --failed string                     file name of the load failed image list (default "load-failed.txt")
+  -f, --file string                       image list file (optional: load all images from archive if not provided)
+  -h, --help                              help for load
+  -j, --jobs int                          worker number, copy images parallelly (1-20) (default 1)
+      --os strings                        OS list of images (default [linux])
+      --project string                    override all destination image projects
+      --sigstore-passphrase-file string   passphrase file of the sigstore private key
+      --sigstore-private-key string       sign images by sigstore private key when mirroring
+      --skip-login                        skip check the destination registry is logged in (used in shell script)
+  -s, --source string                     saved archive filename
+      --source-registry string            override the source registry of image list
+      --timeout duration                  timeout when save each images (default 10m0s)
+      --tls-verify                        require HTTPS and verify certificates
 
 Global Flags:
       --debug             enable debug output
@@ -248,3 +252,14 @@ Here is an example:
     [16:00:00] [INFO] [IMG:1] Loading [127.0.0.1:5000/library/nginx:latest] => [REGISTRY_URL/library/nginx:latest]
     ......
     ```
+
+## Sign images with sigstore private key when load
+
+Starting from `v1.8.0`, you can specify the sigstore private key by with `--sigstore-private-key` option to sign images when loading images from archive file.
+
+```bash
+hangar load \
+    --source "save_example.zip" \
+    --destination REGISTRY_URL \
+    --sigstore-private-key "sigstore.key"
+```

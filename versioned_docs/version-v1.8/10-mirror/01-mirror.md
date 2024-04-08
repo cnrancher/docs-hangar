@@ -112,3 +112,17 @@ Here is an example:
     [17:00:00] [INFO] [IMG:2] Copying [docker.io/cnrancher/hangar:latest] => [docker.io/USERNAME/hangar:latest]
     ......
     ```
+
+## Sign images with sigstore private key when copy
+
+Starting from `v1.8.0`, you can specify the sigstore private key by with `--sigstore-private-key` option to sign images when mirroring.
+
+```bash
+hangar mirror \
+    --file "example.txt" \
+    --source "SOURCE_REGISTRY" \
+    --destination "DESTINATION_REGISTRY" \
+    --sigstore-private-key "sigstore.key"
+```
+
+By default, the `mirror` command will copy the sigstore signature to the destination registry server if the source image is already signed. You can specify the `--remove-signatures` option to disable sigstore signature copy when mirroring container images.

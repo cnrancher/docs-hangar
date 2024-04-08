@@ -249,3 +249,14 @@ Hangar 的 `load` 命令提供了一些高级参数，用于自定义 *目标镜
     [16:00:00] [INFO] [IMG:1] Loading [127.0.0.1:5000/library/nginx:latest] => [REGISTRY_URL/library/nginx:latest]
     ......
     ```
+
+## 上传镜像时为容器镜像加签
+
+自 `v1.8.0` 起，可使用 `--sigstore-private-key` 参数指定 Sigstore 私钥，在拷贝镜像时对镜像进行加签。
+
+```bash
+hangar load \
+    --source "save_example.zip" \
+    --destination REGISTRY_URL \
+    --sigstore-private-key "sigstore.key"
+```

@@ -58,25 +58,29 @@ hangar mirror \
         --source SOURCE_REGISTRY \
         --destination DESTINATION_REGISTRY \
         --arch amd64,arm64 \
-        --os linux
+        --os linux \
+        --sigstore-private-key SIGSTORE.key
 
 Available Commands:
   validate    Ensure the images were mirrored correctly
 
 Flags:
-  -a, --arch strings                 architecture list of images (default [amd64,arm64])
-  -d, --destination string           specify the destination image registry
-      --destination-project string   override all destination image projects
-  -o, --failed string                file name of the mirror failed image list (default "mirror-failed.txt")
-  -f, --file string                  image list file
-  -h, --help                         help for mirror
-  -j, --jobs int                     worker number, copy images parallelly (1-20) (default 1)
-      --os strings                   OS list of images (default [linux])
-      --skip-login                   skip check the destination registry is logged in (used in shell script)
-  -s, --source string                override the source registry in image list
-      --source-project string        override all source image projects
-      --timeout duration             timeout when mirror each images (default 10m0s)
-      --tls-verify                   require HTTPS and verify certificates
+  -a, --arch strings                      architecture list of images (default [amd64,arm64])
+  -d, --destination string                specify the destination image registry
+      --destination-project string        override all destination image projects
+  -o, --failed string                     file name of the mirror failed image list (default "mirror-failed.txt")
+  -f, --file string                       image list file
+  -h, --help                              help for mirror
+  -j, --jobs int                          worker number, copy images parallelly (1-20) (default 1)
+      --os strings                        OS list of images (default [linux])
+      --remove-signatures                 do not copy image signatures when mirror images
+      --sigstore-passphrase-file string   passphrase file of the sigstore private key
+      --sigstore-private-key string       sign images by sigstore private key when mirror images
+      --skip-login                        skip check the destination registry is logged in (used in shell script)
+  -s, --source string                     override the source registry in image list
+      --source-project string             override all source image projects
+      --timeout duration                  timeout when mirror each images (default 10m0s)
+      --tls-verify                        require HTTPS and verify certificates
 
 Global Flags:
       --debug             enable debug output
@@ -108,3 +112,17 @@ Hangar 的 `mirror` 命令提供一些高级参数，可以用于自定义 *源�
     [17:00:00] [INFO] [IMG:2] Copying [docker.io/cnrancher/hangar:latest] => [docker.io/USERNAME/hangar:latest]
     ......
     ```
+
+## Mirror 镜像时为容器镜像加签
+
+自 `v1.8.0` 起，可使用 `--sigstore-private-key` 参数指定 Sigstore 私钥，在拷贝镜像时对镜像进行加签。
+
+```bash
+hangar mirror \
+    --file "example.txt" \
+    --source "SOURCE_REGISTRY" \
+    --destination "DESTINATION_REGISTRY" \
+    --sigstore-private-key "sigstore.key"
+```
+
+默认情况下，如果被拷贝的镜像已经含有 Sigstore 签名，Mirror 命令在拷贝镜像时会拷贝它。您可使用 `--remove-signatures` 参数禁用拷贝容器镜像时的 Sigstore 签名拷贝。
