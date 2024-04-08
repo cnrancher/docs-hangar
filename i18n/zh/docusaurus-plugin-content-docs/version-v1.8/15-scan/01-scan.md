@@ -1,12 +1,12 @@
 ---
-title: "Scan image vulnerabilities"
+title: 容器镜像漏洞扫描
 ---
 
-Hangar has built-in [trivy](https://aquasecurity.github.io/trivy/)’s container image scanning function. You can use `hangar scan` command for scanning multi-platform container image vulnerabilities.
+Hangar 内置了 [trivy](https://aquasecurity.github.io/trivy/) 的容器镜像扫描功能，您可使用 `hangar scan` 命令一键扫描多架构容器镜像漏洞。
 
-## Quick Start
+## 快速上手
 
-Use following command to scan image vulnerabilities.
+使用以下命令扫描容器镜像漏洞。
 
 ```bash
 #!/bin/bash
@@ -19,9 +19,9 @@ hangar scan \
     --jobs=4
 ```
 
-By default, the scan report is in `CSV` form format, you can customize the vulnerability scan report output `--format` option to `json` or `yaml` format, for usage of the `spdx-json` format, see [SBOM Output](#sbom-output) below.
+默认情况下，扫描结果会以 `CSV` 格式输出，您可以使用 `--format` 命令自定义漏洞扫描报告的输出格式为 `json` 或 `yaml`。有关 `spdx-json` 格式的介绍请参阅下方的 [SBOM 输出](#sbom-输出)。
 
-If other errors occured when scan images (e.g. network connection timeout or manifest unknow), the scan failed images will output to `scan-failed.txt`.
+如果在扫描容器镜像时遇到了其他错误（例如网络超时或镜像不存在），扫描失败的镜像列表将会输出至 `scan-failed.txt` 中。
 
 ## Usage
 
@@ -68,13 +68,13 @@ Global Flags:
       --insecure-policy   run Hangar without policy check
 ```
 
-## Scan in Air-Gapped mode
+## 在离线环境扫描容器镜像
 
-Follow these instructions to scan images in Air-Gapped environment.
+参照以下步骤，在离线环境扫描容器镜像。
 
-1. Use [mirror](/docs/v1.8/mirror/mirror) command to mirror trivy database images to private image registry, this step requires the network connection.
+1. 使用 [mirror](/docs/v1.8/mirror/mirror) 命令，将 Trivy 数据库镜像拷贝至私有镜像仓库中，此步骤需要在有网络连接的环境中执行。
 
-    Create a image list file to copy [trivy-db](https://github.com/aquasecurity/trivy-db/pkgs/container/trivy-db) and [trivy-java-db](https://github.com/aquasecurity/trivy-java-db/pkgs/container/trivy-java-db) images.
+    创建一份镜像列表，用于拷贝 [trivy-db](https://github.com/aquasecurity/trivy-db/pkgs/container/trivy-db) 和 [trivy-java-db](https://github.com/aquasecurity/trivy-java-db/pkgs/container/trivy-java-db) 镜像。
 
     ```txt title="database_images.txt"
     ghcr.io/aquasecurity/trivy-db:latest
@@ -90,7 +90,7 @@ Follow these instructions to scan images in Air-Gapped environment.
         --jobs=2
     ```
 
-1. Use `scan` command with `--offline-scan=true` and `--trivy-db-repo`, `--trivy-java-db-repo` options.
+1. 使用 `scan` 命令，指定 `--offline-scan=true`，`--trivy-db-repo` 和 `--trivy-java-db-repo` 参数，在离线环境扫描镜像。
 
     ```bash
     #!/bin/bash
@@ -104,17 +104,17 @@ Follow these instructions to scan images in Air-Gapped environment.
         --jobs=4
     ```
 
-## Scan in trivy client mode
+## 以 Trivy 客户端模式扫描容器镜像
 
-Trivy provides a [server-client mode](https://aquasecurity.github.io/trivy/v0.50/docs/references/modes/client-server/), Hangar can perform as a trivy client when scanning image.
+Trivy 提供了[客户端/服务器模式](https://aquasecurity.github.io/trivy/v0.50/docs/references/modes/client-server/)，Hangar 支持以 Trivy 客户端模式进行容器镜像扫描操作。
 
-1. Launch a [trivy server](https://aquasecurity.github.io/trivy/v0.50/docs/references/configuration/cli/trivy_server/).
+1. 启动 [Trivy Server](https://aquasecurity.github.io/trivy/v0.50/docs/references/configuration/cli/trivy_server/)。
 
     ```bash
     trivy server --listen "127.0.0.1:4954"
     ```
 
-1. Use Hangar to scan images in trivy client mode.
+1. 以 Trivy 客户端模式进行容器镜像扫描。
 
     ```bash
     hangar scan \
@@ -123,11 +123,11 @@ Trivy provides a [server-client mode](https://aquasecurity.github.io/trivy/v0.50
         --jobs=4
     ```
 
-## SBOM Output
+## SBOM 输出
 
-Hangar also supports to output container image [SBOM](https://cyclonedx.org/capabilities/sbom/) data in [SPDX](https://spdx.dev/) json format, you can specify the `--format` option to `spdx-json` to output the SPDX SBOM data of images in JSON format.
+Hangar 还支持以 [SPDX](https://spdx.dev/) JSON 格式输出容器镜像的 [SBOM](https://cyclonedx.org/capabilities/sbom/) 信息。您可以将 `--format` 参数设置为 `spdx-json` 以 JSON 格式 输出镜像的 SPDX SBOM 数据。
 
-When output format is set to `spdx-json`, the vulnerability scanning function will be disabled.
+当输出格式被设定为 `spdx-json` 时，容器镜像漏洞扫描将被禁用。
 
 ```bash
 hangar scan \

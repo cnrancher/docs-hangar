@@ -1,5 +1,5 @@
 ---
-title: Sign
+title: "Sync"
 ---
 
 ```mdx-code-block

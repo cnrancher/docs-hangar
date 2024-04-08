@@ -1,29 +1,29 @@
 ---
-title: "Sign images with sigstore key-pair"
+title: 容器镜像加签
 ---
 
-`hangar sign` command is for signing container images with sigstore key-pair.
+`hangar sign` 命令使用 Sigstore 私钥为容器镜像加签。
 
-## Quick Start
+## 快速上手
 
 :::note
 
-You need to ensure the `use-sigstore-attachments` of  [registries configuration](https://github.com/containers/image/blob/main/docs/containers-registries.d.5.md#individual-configuration-sections) is set to `true` to allow Hangar upload the sigstore signature to the registry server before signing images. You can obtain the example `/etc/containers/registries.d/default.yaml` registry configuration file from [here](https://github.com/cnrancher/hangar/blob/main/package/registries.d/default.yaml).
+您需要确保 [registries 配置文件](https://github.com/containers/image/blob/main/docs/containers-registries.d.5.md#individual-configuration-sections) 的 `use-sigstore-attachments` 设置为 `true` 以允许 Hangar 上传 Sigstore 签名至镜像仓库服务器中。您可以在 [此处](https://github.com/cnrancher/hangar/blob/main/package/registries.d/default.yaml) 获取到样例 `/etc/containers/registries.d/default.yaml` 配置文件。
 
 :::
 
-Use following command to sign images.
+使用以下命令为容器镜像加签。
 
-1. Prepare an image list file.
+1. 准备一份样例镜像列表。
 
     ```txt title="example_image_list.txt"
     cnrancher/hangar:v1.8.0
     cnrancher/hangar:latest
     ```
 
-    > You may need to use [mirror](/docs/v1.8/mirror/mirror) command to copy container images to the *DESTINATION REGISTRY SERVER* before signing images.
+    > 在加签之前，您可使用 [mirror](/docs/v1.8/mirror/mirror) 命令将容器镜像拷贝至 *私有镜像仓库* 中。
 
-1. Sign container images with sigstore private key.
+1. 使用 Sigstore 私钥对容器镜像加签。
 
     ```bash
     #!/bin/bash
@@ -37,9 +37,9 @@ Use following command to sign images.
         --jobs=4
     ```
 
-1. You can use [inspect](/docs/v1.8/advanced/inspect/) command to view the signed sigstore signature.
+1. 您可以使用 [inspect](/docs/v1.8/advanced/inspect/) 命令查看容器镜像的 Sigstore 签名。
 
-    Use inspect to get the image `sha256` digest, in this example is `sha256:25fd8fc1aefcc8ae46aae23daefcd7dcb97f676fa0bc72ba0cf7c1b75df4f22e`.
+    首先查看镜像的 SHA256 Digest，本例为 `sha256:25fd8fc1aefcc8ae46aae23daefcd7dcb97f676fa0bc72ba0cf7c1b75df4f22e`。
 
     ```bash
     #!/bin/bash
@@ -62,7 +62,7 @@ Use following command to sign images.
     }
     ```
 
-    Inspect the sigstore signature manifest by specifying the sigstore signature tag:
+    根据 Sigstore 镜像签名 TAG，查看 Sigstore 签名 Manifest：
 
     ```bash
     #!/bin/bash
@@ -97,9 +97,9 @@ Use following command to sign images.
     }
     ```
 
-1. Verify the signed image.
+1. 校验已加签的镜像。
 
-    The [sign validate](/docs/v1.8/sign/validate) command provides signature verify functions of the signed container image.
+    可使用 [sign validate](/docs/v1.8/sign/validate) 命令对已加签的容器镜像进行校验。
 
 ## Usage
 

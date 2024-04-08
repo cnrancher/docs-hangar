@@ -1,5 +1,5 @@
 ---
-title: Sign
+title: "最佳实践"
 ---
 
 ```mdx-code-block

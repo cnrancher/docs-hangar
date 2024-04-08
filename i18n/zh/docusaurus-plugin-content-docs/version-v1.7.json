@@ -26,5 +26,13 @@
   "sidebar.docs.category.开发调试": {
     "message": "开发调试",
     "description": "The label for category 开发调试 in sidebar docs"
+  },
+  "sidebar.docs.category.Archive": {
+    "message": "Archive",
+    "description": "The label for category Archive in sidebar docs"
+  },
+  "sidebar.docs.category.最佳实践": {
+    "message": "最佳实践",
+    "description": "The label for category 最佳实践 in sidebar docs"
   }
 }

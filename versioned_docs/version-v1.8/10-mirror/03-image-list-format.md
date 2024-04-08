@@ -4,14 +4,14 @@ title: "Image List Formats"
 
 `hangar mirror` command supports two different kinds of image list formats:
 
-1. `Default` format (available for `mirror/save/load/sync` subcommands):
+1. `Default` format (available for `mirror/save/load/sync/sign/scan/archive` subcommands):
 
     ```text title="Default format example"
     # <REGISTRY>/<PROJECT>/<NAME>:<TAG>
 
     docker.io/library/hello-world:latest
     hello-world:latest
-    cnrancher/hangar:v1.7.0
+    cnrancher/hangar:v1.8.0
     ```
 
 1. `Mirror` format (only available for `mirror` subcommand):
