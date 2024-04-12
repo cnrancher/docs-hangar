@@ -49,19 +49,24 @@ Usage:
   hangar generate-list [flags]
 
 Flags:
-  -y, --auto-yes                 answer yes automatically (used in shell script)
-      --chart strings            cloned chart repo path (URL not supported)
-      --dev                      switch to dev branch/URL of charts & KDM data
-  -h, --help                     help for generate-list
-      --kdm string               KDM file path or URL
-  -o, --output string            output linux image list file (default "[RANCHER_VERSION]-images.txt")
-      --output-source string     output the image list with image source if specified
-      --output-versions string   output Rancher supported k8s versions (default "[RANCHER_VERSION]-k8s-versions.txt")
-      --output-windows string    output the windows image list if specified
-      --rancher string           rancher version (semver with 'v' prefix) (use '-ent' suffix to distinguish with Rancher Prime Manager GC) (required)
-      --registry string          customize the registry URL of the generated image list
-      --system-chart strings     cloned system chart repo path (URL not supported)
-      --tls-verify               require HTTPS and verify certificates
+  -y, --auto-yes                     answer yes automatically (used in shell script)
+      --chart strings                cloned chart repo path (URL not supported)
+      --dev                          switch to dev branch/URL of charts & KDM data
+  -h, --help                         help for generate-list
+      --k3s-images string            output KDM K3s linux image list if specified
+      --kdm string                   KDM file path or URL
+      --kdm-remove-deprecated        remove deprecated k3s/rke2 k8s versions from KDM (default true)
+  -o, --output string                output linux image list file (default "[RANCHER_VERSION]-images.txt")
+      --output-source string         output the image list with image source if specified
+      --output-versions string       output Rancher supported k8s versions (default "[RANCHER_VERSION]-k8s-versions.txt")
+      --output-windows string        output the windows image list if specified
+      --rancher string               rancher version (semver with 'v' prefix) (use '-ent' suffix to distinguish with Rancher Prime Manager GC) (required)
+      --registry string              customize the registry URL of the generated image list
+      --rke-images string            output KDM RKE linux image list if specified
+      --rke2-images string           output KDM RKE2 linux image list if specified
+      --rke2-windows-images string   output KDM RKE2 Windows image list if specified
+      --system-chart strings         cloned system chart repo path (URL not supported)
+      --tls-verify                   require HTTPS and verify certificates
 
 Global Flags:
       --debug             enable debug output
@@ -84,4 +89,43 @@ hangar generate-list \
     --chart="./charts-2" \
     --system-chart="./system-charts-1" \
     --system-chart="./system-charts-2"
+```
+
+### KDM 镜像列表选项
+
+> 可在 `v1.7.3` 及后续版本使用。
+
+您可使用以下选项根据 KDM `data.json` 单独输出 RKE/RKE2/K3s 的镜像列表：
+- `--rke-images`
+- `--rke2-images`
+- `--k3s-images`
+- `--rke2-windows-images`
+
+例子：
+```bash
+hangar generate-list \
+    --rancher="v2.8.0" \
+    --rke-images="rke-images.txt" \
+    --k3s-images="k3s-images.txt" \
+    --rke2-images="rke2-images.txt" \
+    --rke2-windows-images="rke2-windows-images.txt"
+```
+
+默认情况下，Hangar 生成 RKE2/K3s 镜像列表时将移除已弃用的 K8s 版本，您可使用 `--kdm-remove-deprecated=false` 参数生成包含已弃用 K8s 版本的镜像列表。
+
+例子：
+```bash
+hangar generate-list \
+    --rancher="v2.8.0" \
+    --kdm-remove-deprecated=false
+
+# 现在生成的 `v2.8.0-versions.txt` 和 `v2.8.0-images.txt`
+# 将包含已弃用的低版本 K8s 镜像：
+
+cat v2.8.0-versions.txt
+# K3s Versions:
+# v1.25.13+k3s1
+# v1.25.15+k3s2
+# v1.25.16+k3s4
+# ...
 ```
