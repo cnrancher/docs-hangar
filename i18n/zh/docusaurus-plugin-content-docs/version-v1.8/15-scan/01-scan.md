@@ -120,6 +120,7 @@ Trivy 提供了[客户端/服务器模式](https://aquasecurity.github.io/trivy/
     hangar scan \
         --file="example_image_list.txt" \
         --server="127.0.0.1:4954" \
+        --tls-verify=false \
         --jobs=4
     ```
 

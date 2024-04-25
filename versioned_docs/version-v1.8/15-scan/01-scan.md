@@ -120,6 +120,7 @@ Trivy provides a [server-client mode](https://aquasecurity.github.io/trivy/v0.50
     hangar scan \
         --file="example_image_list.txt" \
         --server="127.0.0.1:4954" \
+        --tls-verify=false \
         --jobs=4
     ```
 

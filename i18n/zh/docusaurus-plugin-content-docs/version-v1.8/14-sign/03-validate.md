@@ -170,7 +170,7 @@ Global Flags:
     cosign verify \
         --key="./sigstore.pub" \
         --allow-http-registry=true \
-        ---insecure-ignore-tlog \
+        --insecure-ignore-tlog \
         REGISTRY_SERVER_URL/cnrancher/hangar@sha256:25fd8fc1aefcc8ae46aae23daefcd7dcb97f676fa0bc72ba0cf7c1b75df4f22e
     ```
 

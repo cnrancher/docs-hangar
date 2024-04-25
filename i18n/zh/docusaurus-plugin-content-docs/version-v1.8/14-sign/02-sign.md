@@ -115,7 +115,7 @@ Examples:
 hangar sign \
         --file IMAGE_LIST.txt \
         --sigstore-key SIGSTORE.key \
-        --sigstore-passphrase-file "/path/to/passphrase/file"
+        --sigstore-passphrase-file "/path/to/passphrase/file" \
         --arch amd64,arm64 \
         --os linux
 
@@ -134,7 +134,7 @@ Flags:
   -k, --sigstore-key string               sigstore private key file
       --sigstore-passphrase-file string   read the passphrase for the private key from file
       --skip-login                        skip check the registry is logged in (used in shell script)
-      --timeout duration                  timeout when mirror each images (default 10m0s)
+      --timeout duration                  timeout when sign each images (default 10m0s)
       --tls-verify                        require HTTPS and verify certificates
 
 Global Flags:
