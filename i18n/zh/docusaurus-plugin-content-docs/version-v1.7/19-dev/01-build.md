@@ -31,13 +31,13 @@ Hangar 由 Go 语言编写。
 
 1. 安装以下依赖：
 
-    - Golang >= `1.21.3`
+    - Golang >= `1.22.2`
 
     ```sh
     # Arch Linux
     sudo pacman -S base-devel gpgme device-mapper btrfs-progs
 
-    # Ubuntu
+    # Ubuntu/Debian
     sudo apt install libgpgme-dev libassuan-dev libbtrfs-dev libdevmapper-dev pkg-config
 
     # macOS

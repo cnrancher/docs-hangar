@@ -12,6 +12,12 @@ title: 容器镜像加签
 
 :::
 
+:::warning
+
+Hangar 暂不支持 Harbor 镜像仓库的镜像加签功能，请参阅 [issue#43](https://github.com/cnrancher/hangar/issues/43)。
+
+:::
+
 使用以下命令为容器镜像加签。
 
 1. 准备一份样例镜像列表。
