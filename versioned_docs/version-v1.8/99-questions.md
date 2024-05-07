@@ -76,6 +76,10 @@ This warning message will not affect the image copy process. When this warning m
 
 Check whether the Harbor Project exists. You need to create Harbor Project manually when running `mirror` command.
 
+### Error when copy images to Harbor 2.X registry: `unknown: http status code: 404, body: {"errors":[{"code":"MANIFEST_UNKNOWN","message":"manifest unknown"...`
+
+By refer to [issue](https://github.com/goharbor/harbor/issues/14902), run garbage collection manually to resolve this problem.
+
 ### Error: `server gave HTTP response to HTTPS client`
 
 Add `--tls-verify=false` option if registry server is using self-signed certificate or HTTP.

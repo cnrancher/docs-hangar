@@ -71,6 +71,10 @@ title: "常见问题"
 
     请检查镜像的 Harbor Project 是否已经创建，在执行 `hangar mirror` 命令时需要手动创建 Harbor Project。
 
+### 在向 Harbor 仓库拷贝镜像时遇到报错：`unknown: http status code: 404, body: {"errors":[{"code":"MANIFEST_UNKNOWN","message":"manifest unknown"...`
+
+请参阅此 [Issue](https://github.com/goharbor/harbor/issues/14902)，手动执行 Harbor 的 Garbage Collection，尝试修复此问题。
+
 ### 报错：`server gave HTTP response to HTTPS client`
 
     若镜像仓库使用自签名 HTTPS 证书或 HTTP，请添加 `--tls-verify=false` 参数。
