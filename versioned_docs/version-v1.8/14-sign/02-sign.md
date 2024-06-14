@@ -12,12 +12,6 @@ You need to ensure the `use-sigstore-attachments` of  [registries configuration]
 
 :::
 
-:::warning
-
-Hangar does not support sign image on Harbor registry server, for more info please refer to [issue#43](https://github.com/cnrancher/hangar/issues/43).
-
-:::
-
 Use following command to sign images.
 
 1. Prepare an image list file.
