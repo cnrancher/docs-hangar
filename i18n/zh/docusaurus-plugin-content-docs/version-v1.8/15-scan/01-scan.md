@@ -42,10 +42,10 @@ hangar scan \
 Flags:
   -a, --arch strings                architecture list of images (default [amd64,arm64])
   -y, --auto-yes                    answer yes automatically (used in shell script)
-      --cache string                trivy database cache directory (default "/home/starry-s/.cache/trivy")
+      --cache string                trivy database cache directory (default "/Users/stwang/Library/Caches/trivy")
   -o, --failed string               file name of the scan failed image list (default "scan-failed.txt")
   -f, --file string                 image list file
-      --format string               output report format (available: json/yaml/csv/spdx-json) (default "csv")
+      --format string               output report format (available: json/yaml/csv/spdx-csv/spdx-json) (default "csv")
   -h, --help                        help for scan
   -j, --jobs int                    worker number, scan images parallelly (1-20) (default 1)
       --offline-scan                scan in offline (air-gapped) mode
@@ -57,7 +57,7 @@ Flags:
   -s, --server string               trivy server URL (scan as a trivy client mode)
       --skip-db-update              skip updating trivy vulnerability database
       --skip-java-db-update         skip updating trivy java index database
-      --timeout duration            timeout when mirror each images (default 10m0s)
+      --timeout duration            timeout when scan each images (default 10m0s)
       --tls-verify                  require HTTPS and verify certificates (default true)
       --trivy-db-repo string        trivy vulnerability database repository (default "ghcr.io/aquasecurity/trivy-db")
       --trivy-java-db-repo string   trivy java database repository (default "ghcr.io/aquasecurity/trivy-java-db")
@@ -126,9 +126,9 @@ Trivy 提供了[客户端/服务器模式](https://aquasecurity.github.io/trivy/
 
 ## SBOM 输出
 
-Hangar 还支持以 [SPDX](https://spdx.dev/) JSON 格式输出容器镜像的 [SBOM](https://cyclonedx.org/capabilities/sbom/) 信息。您可以将 `--format` 参数设置为 `spdx-json` 以 JSON 格式 输出镜像的 SPDX SBOM 数据。
+Hangar 还支持以 [SPDX](https://spdx.dev/) 格式输出容器镜像的 [SBOM](https://cyclonedx.org/capabilities/sbom/) 信息。您可以将 `--format` 参数设置为 `spdx-json` 或 `spdx-csv` 以 JSON / CSV 格式 输出镜像的 SPDX SBOM 数据。
 
-当输出格式被设定为 `spdx-json` 时，容器镜像漏洞扫描将被禁用。
+当输出格式被设定为 `spdx-json`/`spdx-csv` 时，容器镜像漏洞扫描将被禁用。
 
 ```bash
 hangar scan \

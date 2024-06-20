@@ -42,10 +42,10 @@ hangar scan \
 Flags:
   -a, --arch strings                architecture list of images (default [amd64,arm64])
   -y, --auto-yes                    answer yes automatically (used in shell script)
-      --cache string                trivy database cache directory (default "/home/starry-s/.cache/trivy")
+      --cache string                trivy database cache directory (default "/Users/stwang/Library/Caches/trivy")
   -o, --failed string               file name of the scan failed image list (default "scan-failed.txt")
   -f, --file string                 image list file
-      --format string               output report format (available: json/yaml/csv/spdx-json) (default "csv")
+      --format string               output report format (available: json/yaml/csv/spdx-csv/spdx-json) (default "csv")
   -h, --help                        help for scan
   -j, --jobs int                    worker number, scan images parallelly (1-20) (default 1)
       --offline-scan                scan in offline (air-gapped) mode
@@ -57,7 +57,7 @@ Flags:
   -s, --server string               trivy server URL (scan as a trivy client mode)
       --skip-db-update              skip updating trivy vulnerability database
       --skip-java-db-update         skip updating trivy java index database
-      --timeout duration            timeout when mirror each images (default 10m0s)
+      --timeout duration            timeout when scan each images (default 10m0s)
       --tls-verify                  require HTTPS and verify certificates (default true)
       --trivy-db-repo string        trivy vulnerability database repository (default "ghcr.io/aquasecurity/trivy-db")
       --trivy-java-db-repo string   trivy java database repository (default "ghcr.io/aquasecurity/trivy-java-db")
@@ -126,9 +126,9 @@ Trivy provides a [server-client mode](https://aquasecurity.github.io/trivy/v0.50
 
 ## SBOM Output
 
-Hangar also supports to output container image [SBOM](https://cyclonedx.org/capabilities/sbom/) data in [SPDX](https://spdx.dev/) json format, you can specify the `--format` option to `spdx-json` to output the SPDX SBOM data of images in JSON format.
+Hangar also supports to output container image [SBOM](https://cyclonedx.org/capabilities/sbom/) data in [SPDX](https://spdx.dev/) json format, you can specify the `--format` option to `spdx-json` or `spdx-csv` to output the SPDX SBOM data of images in JSON/CSV format.
 
-When output format is set to `spdx-json`, the vulnerability scanning function will be disabled.
+When output format is set to `spdx-json`/`spdx-csv`, the vulnerability scanning function will be disabled.
 
 ```bash
 hangar scan \
