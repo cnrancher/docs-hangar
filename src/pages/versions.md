@@ -6,7 +6,7 @@ title: Versions
 
 | Version | Release Note |
 |:-------:|:-------------:
-| v1.8.4  | https://github.com/cnrancher/hangar/releases/tag/v1.8.4 |
+| v1.8.6  | https://github.com/cnrancher/hangar/releases/tag/v1.8.6 |
 | v1.8.3  | https://github.com/cnrancher/hangar/releases/tag/v1.8.3 |
 | v1.8.2  | https://github.com/cnrancher/hangar/releases/tag/v1.8.2 |
 | v1.8.1  | https://github.com/cnrancher/hangar/releases/tag/v1.8.1 |
