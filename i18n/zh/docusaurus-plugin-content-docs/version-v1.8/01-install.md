@@ -28,6 +28,16 @@ title: 安装指南
 
 ## 安装到 Linux 系统
 
+### 下载二进制文件
+
+自 `v1.8.7` 起，Hangar 可在 [GitHub Release 页面](https://github.com/cnrancher/hangar/releases)下载已编译的二进制文件。
+
+```bash
+wget https://github.com/cnrancher/hangar/releases/download/v1.8.7/hangar_Linux_x86_64.tar.gz
+tar zxvf ./hangar_Linux_x86_64.tar.gz
+cp hangar_Linux_x86_64/hangar /usr/local/bin/
+```
+
 ### Arch Linux
 
 您可在 Arch Linux [AUR](https://aur.archlinux.org/packages/hangar) 仓库获取 `PKGBUILD`，在本地编译并安装 Hangar。

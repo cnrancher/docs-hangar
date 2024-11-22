@@ -26,7 +26,17 @@ You can run Hangar by using the [Hangar Docker Image](#hangar-docker-image) insi
 
 For more information about Hangar Docker Image, see [Hangar Docker Image](/docs/v1.8/docker-image) page.
 
-## Installing on Linux
+## Install to system
+
+### Download the compiled binary
+
+Starting from `v1.8.7`，you can download the compiled binary file from Hangar [GitHub Release page](https://github.com/cnrancher/hangar/releases).
+
+```bash
+wget https://github.com/cnrancher/hangar/releases/download/v1.8.7/hangar_Linux_x86_64.tar.gz
+tar zxvf ./hangar_Linux_x86_64.tar.gz
+cp hangar_Linux_x86_64/hangar /usr/local/bin/
+```
 
 ### Arch Linux
 
