@@ -64,31 +64,37 @@ Usage:
   hangar load [command]
 
 Examples:
-# Load images from SAVED_ARCHIVE.zip to REGISTRY SERVER.
+# Load images from SAVED_ARCHIVE.zip to REGISTRY server
+# and sign the loaded images by sigstore private key file.
 hangar load \
         --file IMAGE_LIST.txt \
         --source SAVED_ARCHIVE.zip \
         --destination REGISTRY_URL \
         --arch amd64,arm64 \
-        --os linux
+        --os linux \
+        --sigstore-private-key SIGSTORE.key
 
 Available Commands:
   validate    Validate the loaded images, ensure images were loaded to registry server
 
 Flags:
-  -a, --arch strings             architecture list of images (default [amd64,arm64])
-  -d, --destination string       destination registry url
-  -o, --failed string            file name of the load failed image list (default "load-failed.txt")
-  -f, --file string              image list file (optional: load all images from archive if not provided)
-  -h, --help                     help for load
-  -j, --jobs int                 worker number,copy images parallelly (1-20) (default 1)
-      --os strings               OS list of images (default [linux])
-      --project string           override all destination image projects
-      --skip-login               skip check the destination registry is logged in (used in shell script)
-  -s, --source string            saved archive filename
-      --source-registry string   override the source registry of image list
-      --timeout duration         timeout when save each images (default 10m0s)
-      --tls-verify               require HTTPS and verify certificates
+  -a, --arch strings                      architecture list of images (default [amd64,arm64])
+  -d, --destination string                destination registry url
+  -o, --failed string                     file name of the load failed image list (default "load-failed.txt")
+  -f, --file string                       image list file (optional: load all images from archive if not provided)
+  -h, --help                              help for load
+  -j, --jobs int                          worker number, copy images parallelly (1-20) (default 1)
+      --os strings                        OS list of images (default [linux])
+      --overwrite                         overwrite exist manifest index in destination registry
+      --project string                    override all destination image projects
+      --provenance                        copy SLSA provenance (default true)
+      --sigstore-passphrase-file string   passphrase file of the sigstore private key
+      --sigstore-private-key string       sign images by sigstore private key when mirroring
+      --skip-login                        skip check the destination registry is logged in (used in shell script)
+  -s, --source string                     saved archive filename
+      --source-registry string            override the source registry of image list
+      --timeout duration                  timeout when save each images (default 10m0s)
+      --tls-verify                        require HTTPS and verify certificates
 
 Global Flags:
       --debug             enable debug output
@@ -185,6 +191,8 @@ Hangar 的此特性允许依次从包含不同架构的容器镜像压缩包中�
     }
     ```
 
+5. 如果镜像的 Manifest List 出现问题，您可使用 [`--overwrite` 参数](#覆盖已有的-manifest-index) 覆盖掉目标镜像仓库已有的 Manifest List，之后重新上传镜像至目标镜像仓库。
+
 ## 在上传镜像时自定义镜像的 Project 以及镜像列表的 Registry URL
 
 Hangar 的 `load` 命令提供了一些高级参数，用于自定义 *目标镜像* 的 Project 以及源镜像列表的 Registry URL。
@@ -260,3 +268,16 @@ hangar load \
     --destination REGISTRY_URL \
     --sigstore-private-key "sigstore.key"
 ```
+
+## 覆盖已有的 Manifest Index
+
+自 `v1.8.7` 起，可使用 `--overwrite` 参数覆盖掉目标镜像仓库已有的 Manifest 列表。
+
+```bash
+hangar load \
+    --source "save_example.zip" \
+    --destination REGISTRY_URL \
+    --overwrite=true
+```
+
+默认情况下，Hangar 会将新拷贝的镜像 Manifest 与目标镜像仓库已有的 Manifest List 相整合，如果目标镜像仓库的 Manifest List 出现问题，可使用 `--overwrite` 参数尝试修复。

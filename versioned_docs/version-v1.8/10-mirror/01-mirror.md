@@ -73,6 +73,8 @@ Flags:
   -h, --help                              help for mirror
   -j, --jobs int                          worker number, copy images parallelly (1-20) (default 1)
       --os strings                        OS list of images (default [linux])
+      --overwrite                         overwrite exist manifest index in destination registry
+      --provenance                        copy SLSA provenance (default true)
       --remove-signatures                 do not copy image signatures when mirror images
       --sigstore-passphrase-file string   passphrase file of the sigstore private key
       --sigstore-private-key string       sign images by sigstore private key when mirror images
@@ -126,3 +128,17 @@ hangar mirror \
 ```
 
 By default, the `mirror` command will copy the sigstore signature to the destination registry server if the source image is already signed. You can specify the `--remove-signatures` option to disable sigstore signature copy when mirroring container images.
+
+## Overwrite exist manifest index
+
+Starting from `v1.8.7`, you can use `--overwrite` option to overwrite existing manifest list in destination registry server when copy images.
+
+```bash
+hangar mirror \
+    --file "example.txt" \
+    --source "SOURCE_REGISTRY" \
+    --destination "DESTINATION_REGISTRY" \
+    --overwrite=true
+```
+
+By default, hangar will merge the new images into existing manifest list in destination registry server, if unexpected problem with the manifest list of the image copied to the destination registry, use the `--overwrite` option to fix it.

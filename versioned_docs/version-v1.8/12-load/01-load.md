@@ -84,7 +84,9 @@ Flags:
   -h, --help                              help for load
   -j, --jobs int                          worker number, copy images parallelly (1-20) (default 1)
       --os strings                        OS list of images (default [linux])
+      --overwrite                         overwrite exist manifest index in destination registry
       --project string                    override all destination image projects
+      --provenance                        copy SLSA provenance (default true)
       --sigstore-passphrase-file string   passphrase file of the sigstore private key
       --sigstore-private-key string       sign images by sigstore private key when mirroring
       --skip-login                        skip check the destination registry is logged in (used in shell script)
@@ -188,6 +190,8 @@ Here is an example:
     }
     ```
 
+5. If there are some unexpected error with the merged manifest list, use [`--overwrite` option](#overwrite-exist-manifest-index) of the `load` command to reload the manifest list.
+
 ## Override the project name or source registry URL when loading images
 
 Hangar `load` command provides some advanced options to customize the project name or source registry URL of the image list file when loading images.
@@ -263,3 +267,16 @@ hangar load \
     --destination REGISTRY_URL \
     --sigstore-private-key "sigstore.key"
 ```
+
+## Overwrite exist manifest index
+
+Starting from `v1.8.7`, you can use `--overwrite` option to overwrite existing manifest list in destination registry server when copy images.
+
+```bash
+hangar load \
+    --source "save_example.zip" \
+    --destination REGISTRY_URL \
+    --overwrite=true
+```
+
+By default, hangar will merge the new images into existing manifest list in destination registry server, if unexpected problem with the manifest list of the image copied to the destination registry, use the `--overwrite` option to fix it.

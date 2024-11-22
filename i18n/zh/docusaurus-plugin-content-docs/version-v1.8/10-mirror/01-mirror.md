@@ -73,6 +73,8 @@ Flags:
   -h, --help                              help for mirror
   -j, --jobs int                          worker number, copy images parallelly (1-20) (default 1)
       --os strings                        OS list of images (default [linux])
+      --overwrite                         overwrite exist manifest index in destination registry
+      --provenance                        copy SLSA provenance (default true)
       --remove-signatures                 do not copy image signatures when mirror images
       --sigstore-passphrase-file string   passphrase file of the sigstore private key
       --sigstore-private-key string       sign images by sigstore private key when mirror images
@@ -126,3 +128,17 @@ hangar mirror \
 ```
 
 默认情况下，如果被拷贝的镜像已经含有 Sigstore 签名，Mirror 命令在拷贝镜像时会拷贝它。您可使用 `--remove-signatures` 参数禁用拷贝容器镜像时的 Sigstore 签名拷贝。
+
+## 覆盖已有的 Manifest Index
+
+自 `v1.8.7` 起，可使用 `--overwrite` 参数覆盖掉目标镜像仓库已有的 Manifest 列表。
+
+```bash
+hangar mirror \
+    --file "example.txt" \
+    --source "SOURCE_REGISTRY" \
+    --destination "DESTINATION_REGISTRY" \
+    --overwrite=true
+```
+
+默认情况下，Hangar 会将新拷贝的镜像 Manifest 与目标镜像仓库已有的 Manifest List 相整合，如果目标镜像仓库的 Manifest List 出现问题，可使用 `--overwrite` 参数尝试修复。

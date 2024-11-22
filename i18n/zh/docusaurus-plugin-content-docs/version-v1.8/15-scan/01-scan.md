@@ -40,28 +40,28 @@ hangar scan \
         --os linux
 
 Flags:
-  -a, --arch strings                architecture list of images (default [amd64,arm64])
-  -y, --auto-yes                    answer yes automatically (used in shell script)
-      --cache string                trivy database cache directory (default "/Users/stwang/Library/Caches/trivy")
-  -o, --failed string               file name of the scan failed image list (default "scan-failed.txt")
-  -f, --file string                 image list file
-      --format string               output report format (available: json/yaml/csv/spdx-csv/spdx-json) (default "csv")
-  -h, --help                        help for scan
-  -j, --jobs int                    worker number, scan images parallelly (1-20) (default 1)
-      --offline-scan                scan in offline (air-gapped) mode
-      --os strings                  OS list of images (default [linux])
-      --project string              override all image projects in image list
-      --registry string             override all image registry URL in image list
-  -r, --report string               scan report output file (default "scan-report.[FORMAT]")
-      --scanner strings             list of scanners (available: vuln,misconfig,secret,license) (default [vuln])
-  -s, --server string               trivy server URL (scan as a trivy client mode)
-      --skip-db-update              skip updating trivy vulnerability database
-      --skip-java-db-update         skip updating trivy java index database
-      --timeout duration            timeout when scan each images (default 10m0s)
-      --tls-verify                  require HTTPS and verify certificates (default true)
-      --trivy-db-repo string        trivy vulnerability database repository (default "ghcr.io/aquasecurity/trivy-db")
-      --trivy-java-db-repo string   trivy java database repository (default "ghcr.io/aquasecurity/trivy-java-db")
-      --trivy-log-output            show trivy log (only available in single worker mode)
+  -a, --arch strings                 architecture list of images (default [amd64,arm64])
+  -y, --auto-yes                     answer yes automatically (used in shell script)
+      --cache string                 trivy database cache directory (default "/Users/stwang/Library/Caches/trivy")
+  -o, --failed string                file name of the scan failed image list (default "scan-failed.txt")
+  -f, --file string                  image list file
+      --format string                output report format (available: json,yaml,csv,spdx-csv,spdx-json) (default "csv")
+  -h, --help                         help for scan
+  -j, --jobs int                     worker number, scan images parallelly (1-20) (default 1)
+      --offline-scan                 scan in offline (air-gapped) mode
+      --os strings                   OS list of images (default [linux])
+      --project string               override all image projects in image list
+      --registry string              override all image registry URL in image list
+  -r, --report string                scan report output file (default "scan-report.[FORMAT]")
+      --scanner strings              list of scanners (available: vuln,misconfig,secret,license) (default [vuln])
+  -s, --server string                trivy server URL (scan as a trivy client mode)
+      --skip-db-update               skip updating trivy vulnerability database
+      --skip-java-db-update          skip updating trivy java index database
+      --timeout duration             timeout when scan each images (default 10m0s)
+      --tls-verify                   require HTTPS and verify certificates (default true)
+      --trivy-db-repo strings        trivy vulnerability database repositories (default [public.ecr.aws/aquasecurity/trivy-db:2,ghcr.io/aquasecurity/trivy-db:2])
+      --trivy-java-db-repo strings   trivy java database repositories (default [public.ecr.aws/aquasecurity/trivy-java-db:1,ghcr.io/aquasecurity/trivy-java-db:1])
+      --trivy-log-output             show trivy log (only available in single worker mode)
 
 Global Flags:
       --debug             enable debug output
