@@ -17,7 +17,7 @@ title: "自动化测试"
 
 按照以下步骤在本地运行 Hangar Validation Test：
 
-1. 在本地构建 Hangar 可执行文件，参考 [在本地构建 Hangar](/docs/v1.9/dev/build#在本地构建-hangar)。
+1. 在本地构建 Hangar 可执行文件，参考 [在本地构建 Hangar](/docs/v1.9/dev/build)。
 1. 安装 Python 依赖：
 
     ```sh

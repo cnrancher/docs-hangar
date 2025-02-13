@@ -92,4 +92,4 @@ You can obtain the example `/etc/containers/registries.d/default.yaml` registry 
 
 ### Error: `Signature for identity ... is not accepted`
 
-See [validate the mirrored image signature](/docs/v1.9/sign/validate#validate-the-mirrored-image-signature) for more information.
+See [validate the mirrored image signature](/docs/v1.8/sign/validate#validate-the-mirrored-image-signature) for more information.
