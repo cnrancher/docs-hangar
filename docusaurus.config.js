@@ -121,6 +121,11 @@ const config = {
                     lastVersion: "v1.8",
                     includeCurrentVersion: false,
                     versions: {
+                        "v1.9": {
+                            label: "v1.9",
+                            path: "v1.9",
+                            banner: "unreleased",
+                        },
                         "v1.8": {
                             label: "v1.8",
                             path: "v1.8",
@@ -129,12 +134,12 @@ const config = {
                         "v1.7": {
                             label: "v1.7",
                             path: "v1.7",
-                            banner: "none",
+                            banner: "unmaintained",
                         },
                         "v1.6": {
                             label: "v1.6",
                             path: "v1.6",
-                            banner: "none",
+                            banner: "unmaintained",
                         },
                     },
                 },

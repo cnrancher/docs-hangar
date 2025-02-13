@@ -1,0 +1,50 @@
+{
+  "version.label": {
+    "message": "v1.9",
+    "description": "The label for version v1.8"
+  },
+  "sidebar.docs.category.Mirror": {
+    "message": "Mirror",
+    "description": "The label for category Mirror in sidebar docs"
+  },
+  "sidebar.docs.category.Save": {
+    "message": "Save",
+    "description": "The label for category Save in sidebar docs"
+  },
+  "sidebar.docs.category.Load": {
+    "message": "Load",
+    "description": "The label for category Load in sidebar docs"
+  },
+  "sidebar.docs.category.Sync": {
+    "message": "Sync",
+    "description": "The label for category Sync in sidebar docs"
+  },
+  "sidebar.docs.category.Sign images": {
+    "message": "Sign images",
+    "description": "The label for category Sign images in sidebar docs"
+  },
+  "sidebar.docs.category.Scan images": {
+    "message": "View images",
+    "description": "The label for category View images in sidebar docs"
+  },
+  "sidebar.docs.category.View": {
+    "message": "Scan images",
+    "description": "The label for category Scan images in sidebar docs"
+  },
+  "sidebar.docs.category.Archive": {
+    "message": "Archive",
+    "description": "The label for category Archive in sidebar docs"
+  },
+  "sidebar.docs.category.Advanced Usage": {
+    "message": "Advanced Usage",
+    "description": "The label for category Advanced Usage in sidebar docs"
+  },
+  "sidebar.docs.category.Development": {
+    "message": "Development",
+    "description": "The label for category Development in sidebar docs"
+  },
+  "sidebar.docs.category.Best Practice": {
+    "message": "Best Practice",
+    "description": "The label for category Best Practice in sidebar docs"
+  }
+}
