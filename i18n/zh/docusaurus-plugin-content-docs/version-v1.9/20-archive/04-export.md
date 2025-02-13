@@ -31,9 +31,9 @@ Examples:
 
 # Export images from archive file
 hangar archive export \
-	--file IMAGE_LIST.txt \
-	--source SAVED_ARCHIVE.zip \
-	--destination EXPORT_OUTPUT.zip
+        --file IMAGE_LIST.txt \
+        --source SAVED_ARCHIVE.zip \
+        --destination EXPORT_OUTPUT.zip
 
 Flags:
   -y, --auto-yes                 answer yes automatically (used in shell script)

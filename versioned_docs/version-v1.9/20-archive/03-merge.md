@@ -31,9 +31,9 @@ Examples:
 
 # Merge multiple archive files
 hangar archive merge \
-	--file ARCHIVE_1.zip \
-	--file ARCHIVE_2.zip \
-	--output MERGE_OUTPUT.zip
+        --file ARCHIVE_1.zip \
+        --file ARCHIVE_2.zip \
+        --output MERGE_OUTPUT.zip
 
 Flags:
   -y, --auto-yes        answer yes automatically (used in shell script)
@@ -44,5 +44,4 @@ Flags:
 Global Flags:
       --debug             enable debug output
       --insecure-policy   run Hangar without policy check
-
 ```
