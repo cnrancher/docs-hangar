@@ -4,7 +4,7 @@ title: "Sign images with sigstore key-pair"
 
 `hangar sign` command is for signing container images with sigstore key-pair.
 
-::: note
+:::note
 
 The `hangar sign` command in version `1.8` is renamed to `signv1` in version `1.9` and marked as deprecated.
 

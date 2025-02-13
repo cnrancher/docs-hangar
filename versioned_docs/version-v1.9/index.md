@@ -21,7 +21,7 @@ Follow this instruction to setup a demo [distribution registry server](https://d
 
     ```txt title="example_image_list.txt"
     cnrancher/hangar:latest
-    cnrancher/hangar:v1.8.0
+    cnrancher/hangar:v1.9.0
     ```
 
     Use Hangar [mirror](/docs/v1.8/mirror/mirror) command to copy images from Docker Hub to the demo registry server:
@@ -85,6 +85,7 @@ The configuration file of hangar is compatible with the [containers/image](https
 - [sync](sync/sync): Sync (append) extra images into archive file.
 - [sign](sign/sign): Sign container images with sigstore key-pair.
 - [scan](scan/scan): Scan container image vulnerabilities.
+- [view](view/view): View container image SBOM/Provenance data.
 - [archive](archive/): Operations for the Hangar archive file.
 - [generate-list](generate-list/): Generate image list file for Rancher.
 Hanagr also provides some extra commands for advanced usage, see [advanced usage](advanced).

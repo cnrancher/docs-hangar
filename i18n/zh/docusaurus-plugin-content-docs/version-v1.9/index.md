@@ -21,7 +21,7 @@ sidebar_position: 0
 
     ```txt title="example_image_list.txt"
     cnrancher/hangar:latest
-    cnrancher/hangar:v1.8.0
+    cnrancher/hangar:v1.9.0
     ```
 
     使用 Hangar [Mirror](/docs/v1.8/mirror/mirror) 命令从 Docker Hub 拷贝镜像。
@@ -79,6 +79,7 @@ Hangar 的配置文件与 [containers/image](https://github.com/containers/image
 - [sync](/docs/v1.8/sync/sync): 向压缩归档文件中增添容器镜像。
 - [sign](sign/sign)：容器镜像加签。
 - [scan](scan/scan)：容器镜像漏洞扫描。
+- [view](view/view): 查看容器镜像安全信息。
 - [archive](archive/)：用于处理 Hangar 压缩包文件。
 - [generate-list](generate-list/)：用于生成 Rancher 镜像列表。
 除此之外，Hangar 提供了一些高级指令，可访问 [高级用法](/docs/v1.8/advanced) 页面获取更多信息。

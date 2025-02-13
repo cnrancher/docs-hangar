@@ -4,7 +4,7 @@ title: "Validate the signed image signature"
 
 Use `hangar sign validate` command for validate the signed image sigstore signature.
 
-::: note
+:::note
 
 The `hangar sign` command in version `1.8` is renamed to `signv1` in version `1.9` and marked as deprecated.
 

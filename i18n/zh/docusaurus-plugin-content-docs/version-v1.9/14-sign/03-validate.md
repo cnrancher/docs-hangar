@@ -4,7 +4,7 @@ title: 校验已加签的容器镜像
 
 `hangar sign validate` 命令用于对已加签的容器镜像进行校验。
 
-::: note
+:::note
 
 Hangar `1.8` 的 `sign` 命令在 `1.9` 中已重命名为 `signv1` 并标柱为已弃用。
 若需要使用 `1.8` 对应的签名功能，请执行 `hangar signv1 --help`。

@@ -4,7 +4,7 @@ title: 容器镜像加签
 
 `hangar sign` 命令使用 Sigstore 私钥为容器镜像加签。
 
-::: note
+:::note
 
 Hangar `1.8` 的 `sign` 命令在 `1.9` 中已重命名为 `signv1` 并标柱为已弃用。
 若需要使用 `1.8` 对应的签名功能，请执行 `hangar signv1 --help`。
