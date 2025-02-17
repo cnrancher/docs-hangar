@@ -50,10 +50,9 @@ Flags:
   -f, --file string                      image list file
       --format string                    output report format (available: json,yaml,csv) (default "json")
   -h, --help                             help for validate
-      --insecure-ignore-tlog             ignore transparency log verification, to be used when an artifact signature has not been uploaded to the transparency log. Artifacts cannot be publicly verified when not included in a log
+      --insecure-ignore-tlog             ignore transparency log verification, to be used when an artifact signature has not been uploaded to the transparency log.
   -j, --jobs int                         worker number, copy images parallelly (1-20) (default 1)
   -k, --key string                       path to the cosign public key file
-      --offline                          only allow offline verification
       --os strings                       OS list of images (default [linux])
       --project string                   override all image projects in image list
       --registry string                  override all image registry URL in image list
@@ -61,7 +60,6 @@ Flags:
   -r, --report string                    sign validate report output file (default "sign-validate-report.[FORMAT]")
       --timeout duration                 timeout when validate each images (default 10m0s)
       --tls-verify                       require HTTPS and verify certificates
-      --validate-manifest-index          validate cosign sigstore signature of the manifest index (default true)
 
 Global Flags:
       --debug             enable debug output

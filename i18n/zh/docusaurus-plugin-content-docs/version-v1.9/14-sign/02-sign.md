@@ -105,11 +105,14 @@ Hangar `1.8` 的 `sign` 命令在 `1.9` 中已重命名为 `signv1` 并标柱为
 ## Usage
 
 ```txt title="hangar sign --help"
-hangar sign --key cosign.key <IMAGE>
+Sign images with cosign sigstore private key
 
 Usage:
   hangar sign [flags]
   hangar sign [command]
+
+Examples:
+hangar sign --key cosign.key <IMAGE>
 
 Available Commands:
   validate    Validate the signed images with cosign sigstore public key
@@ -117,23 +120,23 @@ Available Commands:
 Flags:
   -a, --arch strings             architecture list of images (default [amd64,arm64])
   -y, --auto-yes                 answer yes automatically (used in shell script)
-  -o, --failed string            file name of the scan failed image list (default "scan-failed.txt")
+  -o, --failed string            file name of the scan failed image list (default "sign-failed.txt")
   -f, --file string              image list file
+      --fulcio-url string        address of sigstore PKI server (default "https://fulcio.sigstore.dev")
   -h, --help                     help for sign
   -j, --jobs int                 worker number, scan images parallelly (1-20) (default 1)
   -p, --key string               path to the private key file, KMS URI or Kubernetes Secret
       --oidc-client-id string    OIDC client ID for application (default "sigstore")
       --oidc-issuer string       OIDC provider to be used to issue ID token (default "https://oauth2.sigstore.dev/auth")
-      --oidc-provider string     Specify the provider to get the OIDC token from (Optional). If unset, all options will be tried. Options include: [spiffe, google, github-actions, filesystem, buildkite-agent]
+      --oidc-provider string     Specify the provider to get the OIDC token from (Optional) (available: spiffe, google, github-actions, filesystem, buildkite-agent)
       --os strings               OS list of images (default [linux])
       --passphrase-file string   private key passphrase file
       --project string           override all image projects in image list
       --registry string          override all image registry URL in image list
       --rekor-url string         address of rekor STL server (default "https://rekor.sigstore.dev")
-      --sign-manifest-index      create cosign sigstore signature for manifest index (default true)
       --skip-login               skip check the registry is logged in (used in shell script)
       --timeout duration         timeout when scan each images (default 10m0s)
-      --tlog-upload              whether or not to upload to the tlog (default true)
+      --tlog-upload              whether or not to upload to the cosign transparency log server (default true)
       --tls-verify               require HTTPS and verify certificates
 
 Global Flags:
