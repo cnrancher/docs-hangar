@@ -118,13 +118,14 @@ const config = {
                     sidebarPath: require.resolve("./sidebars.js"),
                     showLastUpdateTime: true,
                     editUrl: "https://github.com/cnrancher/docs-hangar/edit/main/",
-                    lastVersion: "v1.8",
+                    lastVersion: "v1.9",
                     includeCurrentVersion: false,
                     versions: {
                         "v1.9": {
                             label: "v1.9",
                             path: "v1.9",
-                            banner: "unreleased",
+                            // banner: "unreleased",
+                            banner: "none",
                         },
                         "v1.8": {
                             label: "v1.8",

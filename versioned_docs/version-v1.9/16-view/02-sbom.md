@@ -27,6 +27,7 @@ Usage:
 Flags:
   -y, --auto-yes               answer yes automatically (used in shell script)
   -h, --help                   help for sbom
+  -o, --output string          output filename (default: STDOUT)
       --override-arch string   use ARCH instead of the architecture of the machine for choosing images
       --override-os string     use OS instead of the running OS for choosing images
       --tls-verify             require HTTPS and verify certificates (default true)
