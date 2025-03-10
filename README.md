@@ -1,9 +1,9 @@
 Hangar Docs
 ===========
 
-This project use [Docusaurus 3](https://docusaurus.io/) generator to generate the docs of [Hangar](https://github.com/cnrancher/hangar).
+This project uses [Docusaurus 3](https://docusaurus.io/) to generate [Hangar](https://github.com/cnrancher/hangar) documentation.
 
-Visit <https://hangar.cnrancher.com> for the documents of Hangar.
+Visit <https://hangar.cnrancher.com> for Hangar documentation.
 
 License
 -------
