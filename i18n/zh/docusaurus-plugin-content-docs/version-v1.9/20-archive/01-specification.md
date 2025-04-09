@@ -18,6 +18,7 @@ title: "压缩文件格式"
 - [hangar archive ls](/docs/v1.9/archive/ls) 命令：查看镜像包中存储的镜像信息。
 - [hangar archive merge](/docs/v1.9/archive/merge) 命令：整合多个镜像包文件至一个新的镜像包文件。
 - [hangar archive export](/docs/v1.9/archive/export) 命令：从镜像包文件中导出部分镜像至一个新的镜像包文件。
+- [hangar archive store](/docs/v1.9/archive/store) 命令：保存自定义文件 / Helm Charts。
 
 ## 为什么使用 zip 格式？
 

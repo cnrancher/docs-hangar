@@ -18,6 +18,7 @@ And you can also use the [hangar archive](/docs/v1.9/archive/) command to operat
 - [hangar archive ls](/docs/v1.9/archive/ls): List the images in the archive file.
 - [hangar archive merge](/docs/v1.9/archive/merge): Merge multiple archive files into a new archive file.
 - [hangar archive export](/docs/v1.9/archive/export): Export images from archive file.
+- [hangar archive store](/docs/v1.9/archive/store): Storaging custom files / Helm Charts into the zip archive.
 
 ## Why using zip format?
 
