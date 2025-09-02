@@ -11,7 +11,7 @@ Use following command to view SLSA Provenance of container image.
 ```bash
 #!/bin/bash
 
-hangar view provenance cnrancher/rancher:v1.9.0
+hangar view provenance cnrancher/hangar:v1.9.0
 ```
 
 The container image should be built by Docker Buildx and the [SLSA Provenance](https://docs.docker.com/build/metadata/attestations/slsa-provenance/) output is enabled, or `hangar view provenance` will report unable to find the provenance data of the image.

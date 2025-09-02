@@ -11,7 +11,7 @@ title: 查看镜像 SLSA Provenance
 ```bash
 #!/bin/bash
 
-hangar view provenance cnrancher/rancher:v1.9.0
+hangar view provenance cnrancher/hangar:v1.9.0
 ```
 
 要求容器镜像由 Docker Buildx 构建且启用了 [SLSA Provenance](https://docs.docker.com/build/metadata/attestations/slsa-provenance/) 输出，否则执行 `hangar view provenance` 时将报错找不到 Provenance 数据。

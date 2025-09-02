@@ -11,7 +11,7 @@ Use following command to view the image SBOM data.
 ```bash
 #!/bin/bash
 
-hangar view sbom cnrancher/rancher:v1.9.0
+hangar view sbom cnrancher/hangar:v1.9.0
 ```
 
 The container image should be built by Docker Buildx and the [SBOM](https://docs.docker.com/build/metadata/attestations/sbom/) output is enabled, or `hangar view sbom` will report unable to find the SBOM data of the image.

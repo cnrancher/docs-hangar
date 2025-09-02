@@ -11,7 +11,7 @@ title: 查看镜像 SBOM 数据
 ```bash
 #!/bin/bash
 
-hangar view sbom cnrancher/rancher:v1.9.0
+hangar view sbom cnrancher/hangar:v1.9.0
 ```
 
 要求容器镜像由 Docker Buildx 构建且启用了 [SBOM](https://docs.docker.com/build/metadata/attestations/sbom/) 输出，否则执行 `hangar view sbom` 时将报错找不到 SBOM 数据。
