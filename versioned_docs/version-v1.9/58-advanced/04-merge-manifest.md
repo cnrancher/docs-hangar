@@ -16,7 +16,7 @@ hangar merge-manifest registry.io/library/image:latest \
     registry.io/library/image:arm64
 ```
 
-Use [inspect](/docs/v1.9/advanced/inspect) command to view the generated image manifest index.
+Use [inspect](/docs/v1.9/view/inspect) command to view the generated image manifest index.
 
 ## Usage
 

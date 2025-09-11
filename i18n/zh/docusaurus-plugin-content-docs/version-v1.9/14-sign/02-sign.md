@@ -38,7 +38,7 @@ Hangar `1.8` 的 `sign` 命令在 `1.9` 中已重命名为 `signv1` 并标柱为
         --jobs=4
     ```
 
-1. 您可以使用 [inspect](/docs/v1.9/advanced/inspect/) 命令查看容器镜像的 Sigstore 签名。
+1. 您可以使用 [inspect](/docs/v1.9/view/inspect/) 命令查看容器镜像的 Sigstore 签名。
 
     首先查看镜像的 SHA256 Digest，本例为 `sha256:25fd8fc1aefcc8ae46aae23daefcd7dcb97f676fa0bc72ba0cf7c1b75df4f22e`。
 

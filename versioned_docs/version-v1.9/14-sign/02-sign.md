@@ -39,7 +39,7 @@ Use following command to sign images.
         --jobs=4
     ```
 
-1. You can use [inspect](/docs/v1.9/advanced/inspect/) command to view the signed sigstore signature.
+1. You can use [inspect](/docs/v1.9/view/inspect/) command to view the signed sigstore signature.
 
     Use inspect to get the image `sha256` digest, in this example is `sha256:25fd8fc1aefcc8ae46aae23daefcd7dcb97f676fa0bc72ba0cf7c1b75df4f22e`.
 

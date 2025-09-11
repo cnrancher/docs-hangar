@@ -16,7 +16,7 @@ hangar merge-manifest registry.io/library/image:latest \
     registry.io/library/image:arm64
 ```
 
-可使用 [Inspect](/docs/v1.9/advanced/inspect) 命令查看生成的容器镜像 Manifest 索引。
+可使用 [Inspect](/docs/v1.9/view/inspect) 命令查看生成的容器镜像 Manifest 索引。
 
 ## 使用方法
 

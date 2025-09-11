@@ -32,7 +32,7 @@ title: "Mirror 命令"
         --jobs=4
     ```
 
-1. 使用 [Inspect](/docs/v1.9/advanced/inspect) 命令，查看已拷贝的镜像 Manifest。
+1. 使用 [Inspect](/docs/v1.9/view/inspect) 命令，查看已拷贝的镜像 Manifest。
 
     ```bash
     hangar inspect --raw docker://DESTINATION_REGISTRY_URL/cnrancher/hangar:latest

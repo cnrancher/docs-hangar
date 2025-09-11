@@ -32,7 +32,7 @@ Use following command to mirror multiple images between image registry servers p
         --jobs=4
     ```
 
-1. Use [inspect](/docs/v1.9/advanced/inspect) command to view the copied image manifest.
+1. Use [inspect](/docs/v1.9/view/inspect) command to view the copied image manifest.
 
     ```bash
     hangar inspect --raw docker://DESTINATION_REGISTRY_URL/cnrancher/hangar:latest
