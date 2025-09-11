@@ -18,13 +18,19 @@ hangar inspect --raw docker://nginx:latest
 hangar inspect --config docker://nginx:latest
 ```
 
+如需要批量查看容器镜像信息，请使用 [inspect list](/docs/v1.9/view/inspect-list/) 命令。
+
 ## 使用方法
 
 ```txt title="hangar inspect --help"
-Inspect provides basic functions of 'skopeo inspect' to inspect image manifest
+Inspect image manifests
 
 Usage:
-  hangar inspect IMAGR_REFERENCE [flags]
+  hangar inspect IMAGE_REFERENCE [flags]
+  hangar inspect [command]
+
+Aliases:
+  inspect, i
 
 Examples:
 # Inspect image manifest:
@@ -32,6 +38,12 @@ hangar inspect [image-reference]
 
 # Inspect RAW docker image maniefest:
 hangar inspect docker://docker.io/cnrancher/hangar:latest --raw
+
+# Inspect multiple container image by image-list file:
+hangar inspect list -f image-list.txt
+
+Available Commands:
+  list        Inspect multiple container images by image-list file
 
 Flags:
       --config                    output raw configuration
@@ -45,4 +57,6 @@ Flags:
 Global Flags:
       --debug             enable debug output
       --insecure-policy   run Hangar without policy check
+
+Use "hangar inspect [command] --help" for more information about a command.
 ```
