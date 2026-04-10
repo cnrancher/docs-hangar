@@ -130,7 +130,7 @@ const config = {
                         "v1.8": {
                             label: "v1.8",
                             path: "v1.8",
-                            banner: "none",
+                            banner: "unmaintained",
                         },
                         "v1.7": {
                             label: "v1.7",

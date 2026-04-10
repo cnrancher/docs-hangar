@@ -14,25 +14,26 @@
     "write-heading-ids": "docusaurus write-heading-ids"
   },
   "dependencies": {
-    "@docusaurus/core": "3.8.1",
-    "@docusaurus/module-type-aliases": "3.8.1",
-    "@docusaurus/plugin-content-docs": "3.8.1",
-    "@docusaurus/plugin-content-pages": "3.8.1",
-    "@docusaurus/preset-classic": "3.8.1",
+    "@docusaurus/core": "3.10.0",
+    "@docusaurus/faster": "3.10.0",
+    "@docusaurus/module-type-aliases": "3.10.0",
+    "@docusaurus/plugin-content-docs": "3.10.0",
+    "@docusaurus/plugin-content-pages": "3.10.0",
+    "@docusaurus/preset-classic": "3.10.0",
     "@docusaurus/types": "latest",
-    "@easyops-cn/docusaurus-search-local": "^0.44.5",
+    "@easyops-cn/docusaurus-search-local": "^0.55.1",
     "@mdx-js/react": "^3.0.0",
     "clsx": "^2.0.0",
     "nodejieba": "^3.4.2",
     "plugin-image-zoom": "^1.2.0",
     "prism-react-renderer": "^2.4.0",
     "prismjs": "^1.29.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^3.1.0",
-    "@docusaurus/types": "^3.1.0"
+    "@docusaurus/module-type-aliases": "^3.10.0",
+    "@docusaurus/types": "^3.10.0"
   },
   "browserslist": {
     "production": [
@@ -47,6 +48,9 @@
     ]
   },
   "engines": {
-    "node": ">=18.0"
+    "node": ">=20.0"
+  },
+  "overrides": {
+    "webpack": "5.105.4"
   }
 }
